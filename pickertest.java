@@ -3,16 +3,10 @@ import java.util.Scanner;
 import java.awt.event.*;
 
 public class pickertest{
-    int key;
-    int dx;
-    public void run(){
-        System.out.print("^");
-        Scanner m = new Scanner(Console.in);
-        while(true){ //
-            String key = m.nextLine();
-            if(key != null){
-                System.out.println(key);
-            }
-        }
+    Output m = new Output();
+    public void  run() throws Exception{
+        m.output("hej", 3, 2, true);
+        m.output("\nWelcome to Feralds World", 0,1,false);
+        m.output("How can i serve you?");
     }
 }

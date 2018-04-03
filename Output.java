@@ -6,10 +6,15 @@ public class Output{
     }
     public void output(String str) throws Exception{
         System.out.println(str);
-        TimeUnit.SECONDS.sleep(0);
     }
-    public void output(String str, int delay) throws Exception{
-        System.out.println(str);
-        TimeUnit.SECONDS.sleep(delay);
+    public void output(String str, int bd, int ad, boolean remove) throws Exception{
+        TimeUnit.SECONDS.sleep(bd);
+        if(remove){
+            System.out.print("\r                                              ");
+            System.out.print("\r"+str);
+        }else{
+            System.out.println(str);
+        }
+        TimeUnit.SECONDS.sleep(ad);
     }
 }
