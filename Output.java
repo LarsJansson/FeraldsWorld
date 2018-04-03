@@ -10,7 +10,7 @@ public class Output{
     public void output(String str, int bd, int ad, boolean remove) throws Exception{
         TimeUnit.SECONDS.sleep(bd);
         if(remove){
-            System.out.print("\r                                              ");
+            System.out.print("\r                                                             ");
             System.out.print("\r"+str);
         }else{
             System.out.print(str);
