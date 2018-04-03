@@ -16,8 +16,7 @@ public class TheGame
             i = ans.nextInt();
             if(i == 1)
             {
-                System.out.print("\nWelcome to FERALD'S WORLD!");
-                TimeUnit.SECONDS.sleep(4);
+                o.output("\nWelcome to FERALDS'S WORLD!",0,4,false);
                 System.out.print("\r                                                      ");
                 System.out.print("\rBefore the adventure can begin you must choose a hero!");
                 TimeUnit.SECONDS.sleep(4);
