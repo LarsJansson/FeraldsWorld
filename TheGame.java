@@ -6,6 +6,7 @@ import java.awt.*;
 public class TheGame
 {
     Output o = new Output();
+    Hero hero = new Hero();
     public void run() throws Exception
     {
         double speed = 0.5;
