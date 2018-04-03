@@ -8,7 +8,7 @@ public class pickertest{
     public void run(){
         System.out.print("^");
         Scanner m = new Scanner(Console.in);
-        while(true){
+        while(true){ //
             String key = m.nextLine();
             if(key != null){
                 System.out.println(key);
