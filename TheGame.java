@@ -8,11 +8,12 @@ public class TheGame
     Output o = new Output();
     public void run() throws Exception
     {
+        double speed = 0.5;
         int i = 0;
         while(i != 1)
         {
             o.clear();
-            o.output("\nPress START (or enter \"1\" if playing on a computer) to begin",0,0,false);
+            o.output("Press START (or enter \"1\" if playing on a computer) to begin\n",0.0,0.0,false);
             Scanner ans = new Scanner(System.in);
             try
             {
@@ -20,49 +21,35 @@ public class TheGame
             }
             catch(Exception e)
             {
-                o.output("I'll take that as a 1!");
+                o.clear();
+                o.outputC("I'll take that as a 1!",0.0,4.0*speed,true,1);
                 i = 1;
             }
             if(i == 1)
             {
-                o.output("\nWelcome to FERALDS'S WORLD!",0,4,false);
-                o.output("Before the adventure can begin you must choose a hero!",0,4,true);
-                System.out.print("\r                                                      ");
-                System.out.print("\rFirst, pick a RACE.");
-                TimeUnit.SECONDS.sleep(3);
-                System.out.print("\r                                                      ");
-                System.out.print("\rHuman?");
-                TimeUnit.SECONDS.sleep(2);
-                System.out.print("\r                                                      ");
-                System.out.print("\rOrch?");
-                TimeUnit.SECONDS.sleep(2);
-                System.out.print("\r                                                      ");
-                System.out.print("\rElf?");
-                TimeUnit.SECONDS.sleep(2);
-                System.out.print("\r                                                      ");
-                System.out.print("\rOooooor...");
-                TimeUnit.SECONDS.sleep(4);
-                System.out.print("\r                                                      ");
-                System.out.print("\rDwarf?");
-                TimeUnit.SECONDS.sleep(3);
-                System.out.print("\r                                                      ");
-                System.out.println("\rSince you're playing on a computer, choose a RACE by");
-                System.out.println("entering \"1\" (Human), \"2\" (Orch), \"3\" (Elf) or \"4\" (Dwarf):");
+                o.clear();
+                o.output("\nWelcome to FERALDS'S WORLD!",0.0,4.0*speed,false);
+                o.output("Before the adventure can begin you must choose a hero!",0.0,4.0*speed,true);
+                o.output("First, pick a RACE.",0.0,3.0*speed,true);
+                o.output("Human?",0.0,2.0*speed,true);
+                o.output("Orch?",0.0,2.0*speed,true);
+                o.output("Elf?",0.0,2.0*speed,true);
+                o.output("Oooor...",0.0,3.0*speed,true);
+                o.output("Dwarf?",0.0,3.0*speed,true);
+                o.output("Since you're playing on a computer, choose a RACE by\nentering \"1\" (Human), \"2\" (Orch), \"3\" (Elf) or \"4\" (Dwarf):\n",0.0,0.0,true);
                 Scanner ansRace = new Scanner(System.in);
                 int Race = ansRace.nextInt();
-                
                 if(Race == 1)
                 {
-                    TimeUnit.SECONDS.sleep(3);
-                    System.out.println("\nOh... A fancy human again. Oh well, to choose gender,\nenter a number between 1 and 10:");
+                    o.clear();
+                    o.output("\nOh... A fancy human again. Oh well, to choose gender,\nenter a number between 1 and 10:\n",2.0*speed,0.0,true);
                     Scanner ansGender = new Scanner(System.in);
                     int Gender = ansGender.nextInt();
                     if(true)
                     {
-                        TimeUnit.SECONDS.sleep(3);
-                        System.out.print("\nOk, this won't do...");
-                        TimeUnit.SECONDS.sleep(2);
-                        System.out.println("\rPlease choose either male (\"1\"), female (\"2\") or transgender (\"3\")!");
+                        o.clear();
+                        o.output("\nOk, this won't do...",3.0*speed,2.0*speed,false);
+                        o.output("Please choose either male (\"1\"), female (\"2\") or transgender (\"3\")!\n",0.0,0.0,true);
                         Scanner ansNewGender = new Scanner(System.in);
                         int NewGender = ansNewGender.nextInt();
                         String gender;
@@ -78,15 +65,14 @@ public class TheGame
                         {
                             gender = "TRANSGENDER";
                         }
-                        TimeUnit.SECONDS.sleep(3);
-                        System.out.print("\nOk. Now the game can finally begin!");
-                        TimeUnit.SECONDS.sleep(3);
-                        System.out.print("\r                                                      ");
-                        System.out.println("\rWait! Whats your name?");
+                        o.clear();
+                        o.output("\nOk. Now the game can finally begin!",3.0*speed,3.0*speed,false);
+                        o.output("Wait!",0.0,2.0*speed,true);
+                        o.output("Whats your name?\n",0.0,0.0,true);
                         Scanner name = new Scanner(System.in);
                         String Name = name.next();
-                        TimeUnit.SECONDS.sleep(3);
-                        System.out.println(String.format("\nYou have choosen to play as %s the "+gender+" HUMAN",Name)); 
+                        o.clear();
+                        o.output(String.format("\nYou have choosen to play as %s the "+gender+" HUMAN\n",Name),3*speed,0,true);
                     }
                 }
             }
