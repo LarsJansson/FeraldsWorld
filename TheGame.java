@@ -11,15 +11,22 @@ public class TheGame
         int i = 0;
         while(i != 1)
         {
+            o.clear();
             o.output("\nPress START (or enter \"1\" if playing on a computer) to begin",0,0,false);
             Scanner ans = new Scanner(System.in);
-            i = ans.nextInt();
+            try
+            {
+                i = ans.nextInt();
+            }
+            catch(Exception e)
+            {
+                o.output("I'll take that as a 1!");
+                i = 1;
+            }
             if(i == 1)
             {
                 o.output("\nWelcome to FERALDS'S WORLD!",0,4,false);
-                System.out.print("\r                                                      ");
-                System.out.print("\rBefore the adventure can begin you must choose a hero!");
-                TimeUnit.SECONDS.sleep(4);
+                o.output("Before the adventure can begin you must choose a hero!",0,4,true);
                 System.out.print("\r                                                      ");
                 System.out.print("\rFirst, pick a RACE.");
                 TimeUnit.SECONDS.sleep(3);
