@@ -5,12 +5,13 @@ import java.awt.*;
 
 public class TheGame
 {
+    //Output output = new Output();
     public static void main(String[] args) throws Exception
     {
         int i = 0;
         while(i != 1)
         {
-            output("test");
+            Output("test");
             System.out.println("Press START (or enter \"1\" if playing on a computer) to begin");
             Scanner ans = new Scanner(System.in);
             i = ans.nextInt();
