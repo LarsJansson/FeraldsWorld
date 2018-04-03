@@ -13,7 +13,7 @@ public class Output{
             System.out.print("\r                                              ");
             System.out.print("\r"+str);
         }else{
-            System.out.println(str);
+            System.out.print(str);
         }
         TimeUnit.SECONDS.sleep(ad);
     }
