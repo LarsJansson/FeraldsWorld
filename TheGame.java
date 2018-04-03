@@ -10,6 +10,7 @@ public class TheGame
         int i = 0;
         while(i != 1)
         {
+            output("test");
             System.out.println("Press START (or enter \"1\" if playing on a computer) to begin");
             Scanner ans = new Scanner(System.in);
             i = ans.nextInt();
