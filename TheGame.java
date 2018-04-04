@@ -78,9 +78,11 @@ public class TheGame
                         String Name = name.next();
                         hero.setName(Name);
                         o.clear();
-                        o.output("\nYou have choosen to play as "+hero.getNameU(1)+", the "+hero.getGenderU(1)+" "+hero.getRaceU(1)+"\n",3*speed,0,true);
+                        o.output("\nYou have choosen to play as "+hero.getNameU(1)+", the "+hero.getGenderU(1)+" "+hero.getRaceU(1)+"\n",3*speed,4*speed,true);
                     }
                 }
+                o.clear();
+                o.outputS("\nOnce upon a time there was a very nice text based game.\nIt was the best game ever designed by two human beings.\nPlus it had this awesome text feature!\n");
             }
         }
     }

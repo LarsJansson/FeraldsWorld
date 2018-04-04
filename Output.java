@@ -59,4 +59,12 @@ public class Output{
         }
         TimeUnit.SECONDS.sleep((long) ad);
     }
+    public void outputS(String str) throws Exception{
+        String[] arr = str.split("");
+        int i;
+        for(i = 0; i < arr.length; i++){
+            System.out.print(arr[i]);
+            TimeUnit.MILLISECONDS.sleep(100);
+        }
+    }
 }
