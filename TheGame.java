@@ -8,12 +8,12 @@ public class TheGame
     Output o = new Output();
     public void run() throws Exception
     {
-        double speed = 0.5;
+        double speed = 1;
         int i = 0;
         while(i != 1)
         {
             o.clear();
-            o.output("Press START (or enter \"1\" if playing on a computer) to begin\n",0.0,0.0,false);
+            o.output("\nPress START (or enter \"1\" if playing on a computer) to begin\n",0.0,0.0,false);
             Scanner ans = new Scanner(System.in);
             try
             {
@@ -22,7 +22,7 @@ public class TheGame
             catch(Exception e)
             {
                 o.clear();
-                o.outputC("I'll take that as a 1!",0.0,4.0*speed,true,1);
+                o.output("\nI'll take that as a 1!",0.0,4.0*speed,true);
                 i = 1;
             }
             if(i == 1)
