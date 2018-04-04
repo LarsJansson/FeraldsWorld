@@ -6,6 +6,7 @@ import java.awt.*;
 public class TheGame
 {
     Output o = new Output();
+    Hero hero = new Hero();
     public void run() throws Exception
     {
         double speed = 1;
@@ -41,6 +42,7 @@ public class TheGame
                 int Race = ansRace.nextInt();
                 if(Race == 1)
                 {
+                    hero.setRace("Human");
                     o.clear();
                     o.output("\nOh... A fancy human again. Oh well, to choose gender,\nenter a number between 1 and 10:\n",2.0*speed,0.0,true);
                     Scanner ansGender = new Scanner(System.in);
@@ -56,14 +58,17 @@ public class TheGame
                         if(NewGender == 1)
                         {
                             gender = "MALE";
+                            hero.setGender("Male");
                         }
                         else if(NewGender == 2)
                         {
                             gender = "FEMALE";
+                            hero.setGender("Female");
                         }
                         else
                         {
                             gender = "TRANSGENDER";
+                            hero.setGender("Transgender");
                         }
                         o.clear();
                         o.output("\nOk. Now the game can finally begin!",3.0*speed,3.0*speed,false);
@@ -71,8 +76,9 @@ public class TheGame
                         o.output("Whats your name?\n",0.0,0.0,true);
                         Scanner name = new Scanner(System.in);
                         String Name = name.next();
+                        hero.setName(Name);
                         o.clear();
-                        o.output(String.format("\nYou have choosen to play as %s the "+gender+" HUMAN\n",Name),3*speed,0,true);
+                        o.output("\nYou have choosen to play as "+hero.getNameU(1)+", the "+hero.getGenderU(1)+" "+hero.getRaceU(1)+"\n",3*speed,0,true);
                     }
                 }
             }
