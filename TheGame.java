@@ -50,15 +50,15 @@ public class TheGame
                 if(Race == 1)
                 {
                     hero.setRace("Human");
-                    o.clear();
-                    o.output("\nOh... A fancy human again. Oh well, to choose gender,\nenter a number between 1 and 10:\n",2.0*speed,0.0,true);
+                    o.clearGUI(t1);
+                    o.outputGUI(t1,"Oh... A fancy human again. Oh well, to choose gender,\nenter a number between 1 and 10:",2000*speed,0.0,true);
                     Scanner ansGender = new Scanner(System.in);
                     int Gender = ansGender.nextInt();
                     if(true)
                     {
-                        o.clear();
-                        o.output("\nOk, this won't do...",3.0*speed,2.0*speed,false);
-                        o.output("Please choose either male (\"1\"), female (\"2\") or transgender (\"3\")!\n",0.0,0.0,true);
+                        o.clearGUI(t1);
+                        o.outputGUI(t1,"Ok, this won't do...",3000*speed,2000*speed,false);
+                        o.outputGUI(t1,"Please choose either male (\"1\"), female (\"2\") or transgender (\"3\")!\n",0.0,0.0,true);
                         Scanner ansNewGender = new Scanner(System.in);
                         int NewGender = ansNewGender.nextInt();
                         String gender;
@@ -77,15 +77,15 @@ public class TheGame
                             gender = "TRANSGENDER";
                             hero.setGender("Transgender");
                         }
-                        o.clear();
-                        o.output("\nOk. Now the game can finally begin!",3.0*speed,3.0*speed,false);
-                        o.output("Wait!",0.0,2.0*speed,true);
-                        o.output("Whats your name?\n",0.0,0.0,true);
+                        o.clearGUI(t1);
+                        o.outputGUI(t1,"Ok. Now the game can finally begin!",3000*speed,3000*speed,false);
+                        o.outputGUI(t1,"Wait!",0.0,2000*speed,true);
+                        o.outputGUI(t1,"Whats your name?",0.0,0.0,true);
                         Scanner name = new Scanner(System.in);
                         String Name = name.next();
                         hero.setName(Name);
-                        o.clear();
-                        o.output("\nYou have choosen to play as "+hero.getNameU(1)+", the "+hero.getGenderU(1)+" "+hero.getRaceU(1)+"\n",3*speed,0,true);
+                        o.clearGUI(t1);
+                        o.outputGUI(t1,"You have choosen to play as "+hero.getNameU(1)+", the "+hero.getGenderU(1)+" "+hero.getRaceU(1)+"",3000*speed,0.0,true);
                     }
                 }
             }
