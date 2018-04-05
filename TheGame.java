@@ -15,7 +15,7 @@ public class TheGame
         JTextPane t1 = new JTextPane();
         JTextPane t2 = new JTextPane();
         
-        inputPanel.setPreferredSize(new Dimension(0, 100));
+        //inputPanel.setPreferredSize(new Dimension(100, 100));
         textPanel.setBackground(Color.darkGray);
         inputPanel.setBackground(Color.BLACK);
         inputPanel.setForeground(Color.WHITE);
@@ -46,8 +46,13 @@ public class TheGame
             StyleConstants.setFontSize(att_t2, 25);
             t2.setCharacterAttributes(att_t2, true);
  
-            frame.add(textPanel, BorderLayout.NORTH);
-            frame.add(inputPanel, BorderLayout.SOUTH);
+            GridBagConstraints c = new GridBagConstraints();
+            c.anchor = GridBagConstraints.PAGE_START;
+            c.weighty = 0.0;
+            c.weightx = 0.0;
+            frame.add(textPanel, c);
+            c.anchor = GridBagConstraints.PAGE_END;
+            frame.add(inputPanel, c);
 
             
             o.clear();
