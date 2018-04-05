@@ -8,6 +8,7 @@ public class start{
         frame.setBackground(Color.BLACK);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setLayout(new GridBagLayout());
+
         TheGame g = new TheGame();
         g.run(frame);
     }

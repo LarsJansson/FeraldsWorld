@@ -1,4 +1,7 @@
 import javax.swing.*;
+import java.awt.*;
+import javax.swing.text.*;
+
 
 public class Frame extends JFrame{
     public Frame(){
