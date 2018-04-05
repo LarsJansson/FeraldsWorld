@@ -8,7 +8,7 @@ public class FrameBuilder{
         inputPanel.setBackground(Color.BLACK);
         inputPanel.setForeground(Color.WHITE);
 
-        inputPanel.setFont(new Font("Courier New", Font.PLAIN, 25));
+        inputPanel.setFont(new Font("Courier New", Font.PLAIN, 14));
 
         t1.setBackground(Color.BLACK);
         t2.setBackground(Color.BLACK);
@@ -20,7 +20,7 @@ public class FrameBuilder{
         StyleConstants.setAlignment(att_t1, StyleConstants.ALIGN_LEFT);
         StyleConstants.setForeground(att_t1, Color.WHITE);
         StyleConstants.setBackground(att_t1, Color.BLACK);
-        StyleConstants.setFontSize(att_t1, 25);
+        StyleConstants.setFontSize(att_t1, 14);
         StyleConstants.setBold(att_t1, false);
         StyleConstants.setFontFamily(att_t1, "Courier New");
 
@@ -30,7 +30,7 @@ public class FrameBuilder{
         StyleConstants.setAlignment(att_t2, StyleConstants.ALIGN_RIGHT);
         StyleConstants.setForeground(att_t2, Color.WHITE);
         StyleConstants.setBackground(att_t2, Color.BLACK);
-        StyleConstants.setFontSize(att_t2, 25);
+        StyleConstants.setFontSize(att_t2, 14);
         t2.setCharacterAttributes(att_t2, true);
         GridBagConstraints c = new GridBagConstraints();
         c.fill = GridBagConstraints.BOTH;

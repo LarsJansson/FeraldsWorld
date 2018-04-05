@@ -22,12 +22,8 @@ public class TheGame
         int i = 0;
         while(i != 1){
             o.clear();
-            o.output("Press START (or enter \"1\" if playing on a computer) to begin\n",0.0,0.0,false);
+            o.outputGUI(t1,"Press START (or enter \"1\" if playing on a computer) to begin\n",0.0,0.0,false);
 
-            o.outputGUI(t1, "TEXT 1", 500, 500, true);
-            o.outputGUI(t1, "\nTEXT 2", 500, 500, true);
-            
-            o.outputGUI(t2, "GAME PANE", 0, 0, true);
             Scanner ans = new Scanner(System.in);
             try
             {
