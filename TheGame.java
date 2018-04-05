@@ -19,7 +19,7 @@ public class TheGame
             frame.add(textPanel);
             o.clear();
             o.output("Press START (or enter \"1\" if playing on a computer) to begin\n",0.0,0.0,false);
-            o.outputGUI(t1, "Press..", 0, 0, true, 1);
+            o.outputGUI(t1, "Press..", 0, 0, true);
             Scanner ans = new Scanner(System.in);
             try
             {
@@ -29,7 +29,7 @@ public class TheGame
             {
                 o.clear();
                 o.outputC("I'll take that as a 1!",0.0,4.0*speed,true,1);
-                o.outputGUI(t1, "I'll...", 0, 4000*speed, true, 1);
+                o.outputGUI(t1, "I'll...", 0, 4000*speed, true);
                 i = 1;
             }
             if(i == 1)
