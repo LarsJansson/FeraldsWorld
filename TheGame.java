@@ -2,32 +2,61 @@ import java.util.*;
 import java.util.concurrent.TimeUnit;
 import javax.swing.*;
 import java.awt.*;
+import javax.swing.text.*;
 
 public class TheGame
 {
     Output o = new Output();
     Hero hero = new Hero();
     public void run(JFrame frame) throws Exception {
-        JLabel t1 = new JLabel("test", SwingConstants.LEFT);
+        
         JPanel textPanel = new JPanel();
         JTextField inputPanel = new JTextField();
-        inputPanel.setPreferredSize(new Dimension(100, 40));
-        textPanel.setPreferredSize(new Dimension(100, 4000));
-        textPanel.setBackground(Color.BLACK);
+        JTextPane t1 = new JTextPane();
+        JTextPane t2 = new JTextPane();
+        
+        inputPanel.setPreferredSize(new Dimension(0, 100));
+        textPanel.setBackground(Color.darkGray);
         inputPanel.setBackground(Color.BLACK);
         inputPanel.setForeground(Color.WHITE);
+        t1.setBackground(Color.BLACK);
+        t2.setBackground(Color.BLACK);
         double speed = 0.5;
         int i = 0;
         while(i != 1)
         {
-            textPanel.add(t1);
-            t1.setForeground(Color.WHITE);
-            t1.setBackground(Color.WHITE);
+            textPanel.setLayout(new BorderLayout());
+            textPanel.add(t1, BorderLayout.WEST);
+            textPanel.add(t2, BorderLayout.EAST);
+            
+            SimpleAttributeSet att_t1 = new SimpleAttributeSet();
+            StyleConstants.setAlignment(att_t1, StyleConstants.ALIGN_LEFT);
+            StyleConstants.setForeground(att_t1, Color.WHITE);
+            StyleConstants.setBackground(att_t1, Color.GRAY);
+            StyleConstants.setFontSize(att_t1, 25);
+            StyleConstants.setBold(att_t1, false);
+            StyleConstants.setFontFamily(att_t1, "Terminal");
+
+            t1.setCharacterAttributes(att_t1, true);
+
+            SimpleAttributeSet att_t2 = new SimpleAttributeSet();
+            StyleConstants.setAlignment(att_t2, StyleConstants.ALIGN_RIGHT);
+            StyleConstants.setForeground(att_t2, Color.WHITE);
+            StyleConstants.setBackground(att_t2, Color.GRAY);
+            StyleConstants.setFontSize(att_t2, 25);
+            t2.setCharacterAttributes(att_t2, true);
+ 
             frame.add(textPanel, BorderLayout.NORTH);
             frame.add(inputPanel, BorderLayout.SOUTH);
+
+            
             o.clear();
             o.output("Press START (or enter \"1\" if playing on a computer) to begin\n",0.0,0.0,false);
-            o.outputGUI(t1, "Press..", 0, 0, true);
+
+            o.outputGUI(t1, "TEXT 1", 500, 500, true);
+            o.outputGUI(t1, "\nTEXT 2", 500, 500, true);
+            
+            o.outputGUI(t2, "GAME PANE", 0, 0, true);
             Scanner ans = new Scanner(System.in);
             try
             {

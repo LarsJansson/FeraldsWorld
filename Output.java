@@ -61,10 +61,10 @@ public class Output{
         }
         TimeUnit.SECONDS.sleep((long) ad);
     }
-    public void outputGUI(JLabel l, String s, double bd, double ad, boolean remove) throws Exception{
+    public void outputGUI(JTextPane l, String s, double bd, double ad, boolean remove) throws Exception{
+        String oldText = l.getText();
         TimeUnit.MILLISECONDS.sleep((long) bd);
-        l.setText(s);
-        l.setHorizontalAlignment(SwingConstants.LEFT);
+        l.setText(oldText + s);
         TimeUnit.MILLISECONDS.sleep((long) ad);
     }
 }
