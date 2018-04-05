@@ -64,6 +64,7 @@ public class Output{
     public void outputGUI(JLabel l, String s, double bd, double ad, boolean remove) throws Exception{
         TimeUnit.MILLISECONDS.sleep((long) bd);
         l.setText(s);
+        l.setHorizontalAlignment(SwingConstants.LEFT);
         TimeUnit.MILLISECONDS.sleep((long) ad);
     }
 }

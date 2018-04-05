@@ -8,16 +8,23 @@ public class TheGame
     Output o = new Output();
     Hero hero = new Hero();
     public void run(JFrame frame) throws Exception {
-        JLabel t1 = new JLabel("test");
+        JLabel t1 = new JLabel("test", SwingConstants.LEFT);
         JPanel textPanel = new JPanel();
+        JTextField inputPanel = new JTextField();
+        inputPanel.setPreferredSize(new Dimension(100, 40));
+        textPanel.setPreferredSize(new Dimension(100, 4000));
         textPanel.setBackground(Color.BLACK);
+        inputPanel.setBackground(Color.BLACK);
+        inputPanel.setForeground(Color.WHITE);
         double speed = 0.5;
         int i = 0;
         while(i != 1)
         {
             textPanel.add(t1);
             t1.setForeground(Color.WHITE);
-            frame.add(textPanel);
+            t1.setBackground(Color.WHITE);
+            frame.add(textPanel, BorderLayout.NORTH);
+            frame.add(inputPanel, BorderLayout.SOUTH);
             o.clear();
             o.output("Press START (or enter \"1\" if playing on a computer) to begin\n",0.0,0.0,false);
             o.outputGUI(t1, "Press..", 0, 0, true);
