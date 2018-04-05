@@ -7,14 +7,19 @@ public class TheGame
 {
     Output o = new Output();
     Hero hero = new Hero();
-    public void run() throws Exception
-    {
-        double speed = 1;
+    public void run(JFrame frame) throws Exception {
+        JLabel t1 = new JLabel("test");
+        JPanel textPanel = new JPanel();
+        textPanel.setBackground(Color.BLACK);
+        double speed = 0.5;
         int i = 0;
         while(i != 1)
         {
+            textPanel.add(t1);
+            frame.add(textPanel);
             o.clear();
-            o.output("\nPress START (or enter \"1\" if playing on a computer) to begin\n",0.0,0.0,false);
+            o.output("Press START (or enter \"1\" if playing on a computer) to begin\n",0.0,0.0,false);
+            o.outputGUI(t1, "Press..", 0, 0, true, 1);
             Scanner ans = new Scanner(System.in);
             try
             {
@@ -23,7 +28,8 @@ public class TheGame
             catch(Exception e)
             {
                 o.clear();
-                o.output("\nI'll take that as a 1!",0.0,4.0*speed,true);
+                o.outputC("I'll take that as a 1!",0.0,4.0*speed,true,1);
+                o.outputGUI(t1, "I'll...", 0, 4000*speed, true, 1);
                 i = 1;
             }
             if(i == 1)
@@ -78,11 +84,9 @@ public class TheGame
                         String Name = name.next();
                         hero.setName(Name);
                         o.clear();
-                        o.output("\nYou have choosen to play as "+hero.getNameU(1)+", the "+hero.getGenderU(1)+" "+hero.getRaceU(1)+"\n",3*speed,4*speed,true);
+                        o.output("\nYou have choosen to play as "+hero.getNameU(1)+", the "+hero.getGenderU(1)+" "+hero.getRaceU(1)+"\n",3*speed,0,true);
                     }
                 }
-                o.clear();
-                o.outputS("\nOnce upon a time there was a very nice text based game.\nIt was the best game ever designed by two human beings.\nPlus it had this awesome text feature!\n");
             }
         }
     }

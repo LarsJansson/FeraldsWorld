@@ -1,4 +1,5 @@
 import java.util.concurrent.TimeUnit;
+import javax.swing.*;
 
 public class Output{
     public static final String RESET    = "\u001B[0m";
@@ -59,12 +60,9 @@ public class Output{
         }
         TimeUnit.SECONDS.sleep((long) ad);
     }
-    public void outputS(String str) throws Exception{
-        String[] arr = str.split("");
-        int i;
-        for(i = 0; i < arr.length; i++){
-            System.out.print(arr[i]);
-            TimeUnit.MILLISECONDS.sleep(100);
-        }
+    public void outputGUI(JLabel l, String s, double bd, double ad, boolean remove, int color) throws Exception{
+        TimeUnit.MILLISECONDS.sleep((long) bd);
+        l.setText(s);
+        TimeUnit.MILLISECONDS.sleep((long) ad);
     }
 }
