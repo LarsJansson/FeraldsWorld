@@ -82,7 +82,7 @@ private String gender = "";
     public String colorize(String s, int c){
         String pickedColor = "";
         if (c == 1)
-            return RED+s+RESET;
+            return "<html><font color = red>"+s+"</font>";
         else if (c == 1)
             return GREEN+s+RESET;
         else if (c == 2)
