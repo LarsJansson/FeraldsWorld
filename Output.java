@@ -67,10 +67,11 @@ public class Output{
         TimeUnit.SECONDS.sleep((long) ad);
     }
     public void outputGUI(JTextPane tp, String s, double bd, double ad, boolean remove) throws Exception{
+        String oldText = "";
         if (remove){
-            String oldText = "";
+            oldText = "";
         }else{
-            String oldText = tp.getText();
+            oldText = tp.getText();
         }
         TimeUnit.MILLISECONDS.sleep((long) bd);
         tp.setText(oldText + s);
