@@ -16,6 +16,7 @@ public class TheGame
         while(i != 1)
         {
             textPanel.add(t1);
+            t1.setForeground(Color.WHITE);
             frame.add(textPanel);
             o.clear();
             o.output("Press START (or enter \"1\" if playing on a computer) to begin\n",0.0,0.0,false);
