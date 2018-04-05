@@ -23,7 +23,6 @@ public class TheGame
         while(i != 1){
             o.clear();
             o.outputGUI(t1,"Press START (or enter \"1\" if playing on a computer) to begin\n",0.0,0.0,false);
-
             Scanner ans = new Scanner(System.in);
             try
             {
@@ -31,23 +30,21 @@ public class TheGame
             }
             catch(Exception e)
             {
-                o.clear();
-                o.outputC("I'll take that as a 1!",0.0,4.0*speed,true,1);
-                o.outputGUI(t1, "I'll...", 0, 4000*speed, true);
-                i = 1;
+                o.clearGUI(t1);
+                o.outputGUI(t1,"I'll take that as a 1!",0.0,4000*speed,true);
             }
             if(i == 1)
             {
-                o.clear();
-                o.output("\nWelcome to FERALDS'S WORLD!",0.0,4.0*speed,false);
-                o.output("Before the adventure can begin you must choose a hero!",0.0,4.0*speed,true);
-                o.output("First, pick a RACE.",0.0,3.0*speed,true);
-                o.output("Human?",0.0,2.0*speed,true);
-                o.output("Orch?",0.0,2.0*speed,true);
-                o.output("Elf?",0.0,2.0*speed,true);
-                o.output("Oooor...",0.0,3.0*speed,true);
-                o.output("Dwarf?",0.0,3.0*speed,true);
-                o.output("Since you're playing on a computer, choose a RACE by\nentering \"1\" (Human), \"2\" (Orch), \"3\" (Elf) or \"4\" (Dwarf):\n",0.0,0.0,true);
+                o.clearGUI(t1);
+                o.outputGUI(t1,"Welcome to FERALDS'S WORLD!",0.0,4000*speed,false);
+                o.outputGUI(t1,"Before the adventure can begin you must choose a hero!",0.0,4000*speed,true);
+                o.outputGUI(t1,"First, pick a RACE.",0.0,3000*speed,true);
+                o.outputGUI(t1,"Human?",0.0,2000*speed,true);
+                o.outputGUI(t1,"Orch?",0.0,2000*speed,true);
+                o.outputGUI(t1,"Elf?",0.0,2000*speed,true);
+                o.outputGUI(t1,"Oooor...",0.0,3000*speed,true);
+                o.outputGUI(t1,"Dwarf?",0.0,3000*speed,true);
+                o.outputGUI(t1,"Since you're playing on a computer, choose a RACE by\nentering \"1\" (Human), \"2\" (Orch), \"3\" (Elf) or \"4\" (Dwarf):",0.0,0.0,true);
                 Scanner ansRace = new Scanner(System.in);
                 int Race = ansRace.nextInt();
                 if(Race == 1)
