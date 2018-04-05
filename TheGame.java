@@ -8,6 +8,7 @@ import javax.swing.text.*;
 public class TheGame
 {
     Output o = new Output();
+    Inventory inv = new Inventory();
     Hero hero = new Hero();
     public void run(JFrame frame) throws Exception {
         JPanel textPanel = new JPanel();
@@ -22,6 +23,7 @@ public class TheGame
         int i = 0;
         while(i != 1){
             o.clear();
+            inv.clearInventory(t2);
             o.outputGUI(t1,"Press START (or enter \"1\" if playing on a computer) to begin\n",0.0,0.0,false);
             Scanner ans = new Scanner(System.in);
             try
@@ -37,6 +39,7 @@ public class TheGame
             {
                 o.clearGUI(t1);
                 o.outputGUI(t1,"Welcome to FERALDS'S WORLD!",0.0,4000*speed,false);
+                inv.addItem(t2, "Pants!");
                 o.outputGUI(t1,"Before the adventure can begin you must choose a hero!",0.0,4000*speed,true);
                 o.outputGUI(t1,"First, pick a RACE.",0.0,3000*speed,true);
                 o.outputGUI(t1,"Human?",0.0,2000*speed,true);

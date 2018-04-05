@@ -24,7 +24,7 @@ public class FrameBuilder{
         StyleConstants.setBold(att_t1, false);
         StyleConstants.setFontFamily(att_t1, "Courier New");
         t1.setEditable(false);
-        t1.setContentType("HTML/plain");
+        t1.setContentType("HTML");
         t1.setCharacterAttributes(att_t1, true);
 
         SimpleAttributeSet att_t2 = new SimpleAttributeSet();
