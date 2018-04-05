@@ -61,10 +61,20 @@ public class Output{
         }
         TimeUnit.SECONDS.sleep((long) ad);
     }
-    public void outputGUI(JTextPane l, String s, double bd, double ad, boolean remove) throws Exception{
-        String oldText = l.getText();
+    public void outputGUI(JTextPane tp, String s, double bd, double ad, boolean remove) throws Exception{
+        String oldText = tp.getText();
         TimeUnit.MILLISECONDS.sleep((long) bd);
-        l.setText(oldText + s);
+        tp.setText(oldText + s);
         TimeUnit.MILLISECONDS.sleep((long) ad);
     }
+    public void outputGUIS(JTextPane tp, String s) throws Exception{
+        clear();
+        tp.setText("");
+        String[] splitString = s.split("");
+        for (String character : splitString){
+            TimeUnit.MILLISECONDS.sleep(150);
+            tp.setText(tp.getText() + character);
+        }
+    }
+
 }
