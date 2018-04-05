@@ -33,7 +33,12 @@ public class Output{
         System.out.print("\033[H\033[2J");
         System.out.flush();
     }
-    public void outputC(String str, double bd, double ad, boolean remove, int color) throws Exception{
+
+    public void clearGUI(JTextPane tp){
+        tp.setText("");
+    }
+
+   public void outputC(String str, double bd, double ad, boolean remove, int color) throws Exception{
         String pickedColor = "";
         if(color == 1)
             pickedColor = RED;

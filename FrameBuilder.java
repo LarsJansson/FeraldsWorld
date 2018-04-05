@@ -23,7 +23,7 @@ public class FrameBuilder{
         StyleConstants.setFontSize(att_t1, 14);
         StyleConstants.setBold(att_t1, false);
         StyleConstants.setFontFamily(att_t1, "Courier New");
-
+        t1.setEditable(false);
         t1.setCharacterAttributes(att_t1, true);
 
         SimpleAttributeSet att_t2 = new SimpleAttributeSet();
@@ -31,7 +31,9 @@ public class FrameBuilder{
         StyleConstants.setForeground(att_t2, Color.WHITE);
         StyleConstants.setBackground(att_t2, Color.BLACK);
         StyleConstants.setFontSize(att_t2, 14);
+        t1.setEditable(false);
         t2.setCharacterAttributes(att_t2, true);
+        
         GridBagConstraints c = new GridBagConstraints();
         c.fill = GridBagConstraints.BOTH;
         c.weightx = 1.0;
