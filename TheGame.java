@@ -20,7 +20,8 @@ public class TheGame
         {
             public void actionPerformed(ActionEvent event)
             {
-                System.out.println(inputPanel.getText());    
+                int j = Integer.parseInt(inputPanel.getText());
+                inputPanel.setText("");
             }
         });
       
@@ -30,20 +31,21 @@ public class TheGame
         double speed = 0.5;
         int i = 0;
         while(i != 1){
+            int j = 0;
             o.clear();
             inv.clearInventory(t2);
             o.outputGUI(t1,"Press START (or enter \"1\" if playing on a computer) to begin\n",0.0,0.0,false);
-            Scanner ans = new Scanner(System.in);
-            try
-            {
-                i = ans.nextInt();
-            }
-            catch(Exception e)
-            {
-                o.clearGUI(t1);
-                o.outputGUI(t1,"I'll take that as a 1!",0.0,4000*speed,true);
-            }
-            if(i == 1)
+            //Scanner ans = new Scanner(System.in);
+            //try
+            //{
+            //    i = ans.nextInt();
+            //}
+            //catch(Exception e)
+            //{
+            //    o.clearGUI(t1);
+            //    o.outputGUI(t1,"I'll take that as a 1!",0.0,4000*speed,true);
+            //}
+            if(j == 1)
             {
                 o.clearGUI(t1);
                 o.outputGUI(t1,"Welcome to FERALDS'S WORLD!",0.0,4000*speed,false);
