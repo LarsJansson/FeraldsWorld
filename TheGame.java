@@ -10,12 +10,14 @@ public class TheGame
     Output o = new Output();
     Inventory inv = new Inventory();
     Hero hero = new Hero();
+    Stats stats = new Stats();
 
     public void run(JFrame frame) throws Exception {
         JPanel textPanel = new JPanel();
         JTextField inputPanel = new JTextField();
         JTextPane t1 = new JTextPane();
         JTextPane t2 = new JTextPane();
+        JTextPane t3 = new JTextPane();
         inputPanel.addActionListener(new ActionListener()
         {
             public void actionPerformed(ActionEvent event)
@@ -26,13 +28,13 @@ public class TheGame
         });
       
         FrameBuilder bill = new FrameBuilder();
-        bill.build(frame, inputPanel, textPanel, t1, t2);
+        bill.build(frame, inputPanel, textPanel, t1, t2, t3);
        
         double speed = 0.5;
         int i = 0;
         while(i != 1){
             o.clear();
-            inv.clearInventory(t2);
+            inv.clear(t2);
             o.outputGUI(t1,"Press START (or enter \"1\" if playing on a computer) to begin\n",0.0,0.0,false);
             Scanner ans = new Scanner(System.in);
             try
@@ -97,7 +99,8 @@ public class TheGame
                         String Name = name.next();
                         hero.setName(Name);
                         o.clearGUI(t1);
-                        o.outputGUI(t1,String.format("You have choosen to play as %s, the %s %s",hero.getNameU(1),hero.getGenderU(1),hero.getRaceU(1)),3000*speed,0.0,true);
+                        o.outputGUI(t1,String.format("You have choosen to play as %s, the %s %s",hero.getNameU(),hero.getGenderU(),hero.getRaceU()),3000*speed,0.0,true);
+                        stats.updateStats(t3,hero);
                         o.outputGUIS(t1,"\"Zzzz...\"",0.0,3000*speed,true);
                         o.outputGUIS(t1,"\"Zzzzzzzz....\"",0.0,3000*speed,true);
                         o.outputGUIS(t1,"\"Hrmph... huugh.. uuhm...\"",0.0,4000*speed,true);
