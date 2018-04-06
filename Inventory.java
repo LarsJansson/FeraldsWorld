@@ -13,8 +13,8 @@ public class Inventory{
     }
 
     public void addItem(JTextPane tp, String s) throws Exception{
-        String item = s.concat("\n"+s);
-        String[] splitString = item.split("");
+        tp.setText(tp.getText()+"\n");
+        String[] splitString = s.split("");
         for (String character : splitString){
             tp.setText(tp.getText() + character);
         }
