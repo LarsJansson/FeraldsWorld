@@ -30,7 +30,7 @@ public class TheGame
         FrameBuilder bill = new FrameBuilder();
         bill.build(frame, inputPanel, textPanel, t1, t2, t3);
        
-        double speed = 0.5;
+        double speed = 0.05;
         int i = 0;
         while(i != 1){
             o.clear();
