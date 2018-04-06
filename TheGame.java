@@ -3,18 +3,26 @@ import java.util.concurrent.TimeUnit;
 import javax.swing.*;
 import java.awt.*;
 import javax.swing.text.*;
-
+import java.awt.event.*;
 
 public class TheGame
 {
     Output o = new Output();
     Inventory inv = new Inventory();
     Hero hero = new Hero();
+
     public void run(JFrame frame) throws Exception {
         JPanel textPanel = new JPanel();
         JTextField inputPanel = new JTextField();
         JTextPane t1 = new JTextPane();
         JTextPane t2 = new JTextPane();
+        inputPanel.addActionListener(new ActionListener()
+        {
+            public void actionPerformed(ActionEvent event)
+            {
+                System.out.println(inputPanel.getText());    
+            }
+        });
       
         FrameBuilder bill = new FrameBuilder();
         bill.build(frame, inputPanel, textPanel, t1, t2);
