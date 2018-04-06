@@ -14,7 +14,6 @@ public class Stats{
     }
 
     public void updateStats(JTextPane tp, Hero hero) throws Exception{
-        System.out.println(hero);
         StyledDocument doc = tp.getStyledDocument();
         AttributeSet set = doc.getCharacterElement(1).getAttributes();
         Style style = tp.addStyle("", null);
