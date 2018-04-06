@@ -99,6 +99,11 @@ public class TheGame
                         hero.setName(Name);
                         o.clearGUI(t1);
                         o.outputGUI(t1,String.format("You have choosen to play as %s, the %s %s",hero.getNameU(1),hero.getGenderU(1),hero.getRaceU(1)),3000*speed,0.0,true);
+                        o.outputGUIS(t1,"\"Zzzz...\"",0.0,3000*speed,true);
+                        o.outputGUIS(t1,"\"Zzzzzzzz....\"",0.0,3000*speed,true);
+                        o.outputGUIS(t1,"\"Hrmph... huugh.. uuhm...\"",0.0,4000*speed,true);
+                        o.outputGUIS(t1,"\"What? ",0.0,3000*speed,true);
+                        o.outputGUIS(t1,"Where am I?\"",0.0,3000*speed,false);
                     }
                 }
             }
