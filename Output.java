@@ -108,5 +108,17 @@ public class Output{
         }
         TimeUnit.MILLISECONDS.sleep((long)ad);
     }
-
+    public void outputGUISQ(JTextPane tp, String s, double bd, double ad, boolean remove) throws Exception{
+        if(remove == true)
+            tp.setText("");
+        String[] splitString = s.split("");
+        TimeUnit.MILLISECONDS.sleep((long)bd);
+        int i;
+        for (i = 0; i < splitString.length; i++){
+            TimeUnit.MILLISECONDS.sleep(150);
+            tp.setText(tp.getText().replaceAll("\"",""));
+            tp.setText("\"" + tp.getText() + splitString[i] + "\"");
+        }
+        TimeUnit.MILLISECONDS.sleep((long)ad);
+    }
 }

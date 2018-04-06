@@ -32,7 +32,6 @@ public class TheGame
                 str = inputPanel.getText();
                 inputPanel.setText("");
                 setInput(str);
-                System.out.println(str);
             }
         };
         inputPanel.addActionListener(al);
@@ -41,8 +40,8 @@ public class TheGame
         bill.build(frame, inputPanel, textPanel, t1, t2, t3);
        
         double speed = 0.05;
-        int i = 0;
-        while(i != 1){
+        boolean restart = true;
+        while(restart){
             o.clear();
             inv.clear(t2);
             o.outputGUI(t1,"Press START (or enter \"1\" if playing on a computer) to begin\n",0.0,0.0,false);
@@ -113,11 +112,13 @@ public class TheGame
                         o.clearGUI(t1);
                         o.outputGUI(t1,String.format("You have choosen to play as %s, the %s %s",hero.getNameU(),hero.getGenderU(),hero.getRaceU()),3000*speed,0.0,true);
                         stats.updateStats(t3,hero);
-                        o.outputGUIS(t1,"\"Zzzz...\"",0.0,3000*speed,true);
-                        o.outputGUIS(t1,"\"Zzzzzzzz....\"",0.0,3000*speed,true);
-                        o.outputGUIS(t1,"\"Hrmph... huugh.. uuhm...\"",0.0,4000*speed,true);
-                        o.outputGUIS(t1,"\"What? ",0.0,3000*speed,true);
-                        o.outputGUIS(t1,"Where am I?\"",0.0,3000*speed,false);
+                        o.outputGUISQ(t1,"Zzzz...",0.0,3000*speed,true);
+                        o.outputGUISQ(t1,"Zzzzzzzz....",0.0,3000*speed,true);
+                        o.outputGUISQ(t1,"Hrmph... huugh.. uuhm...",0.0,4000*speed,true);
+                        o.outputGUISQ(t1,"What? ",0.0,3000*speed,true);
+                        o.outputGUISQ(t1,"Where am I?",0.0,3000*speed,false);
+
+                        restart = false;
                     }
                 }
             }
