@@ -96,14 +96,17 @@ public class Output{
         catch (BadLocationException e){}
     }
 
-    public void outputGUIS(JTextPane tp, String s) throws Exception{
-        clear();
-        tp.setText("");
+    public void outputGUIS(JTextPane tp, String s, double bd, double ad, boolean remove) throws Exception{
+        if(remove == true)
+            tp.setText("");
         String[] splitString = s.split("");
-        for (String character : splitString){
+        TimeUnit.MILLISECONDS.sleep((long)bd);
+        int i;
+        for (i = 0; i < splitString.length; i++){
             TimeUnit.MILLISECONDS.sleep(150);
-            tp.setText(tp.getText() + character);
+            tp.setText(tp.getText() + splitString[i]);
         }
+        TimeUnit.MILLISECONDS.sleep((long)ad);
     }
 
 }

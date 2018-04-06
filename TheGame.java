@@ -31,21 +31,20 @@ public class TheGame
         double speed = 0.5;
         int i = 0;
         while(i != 1){
-            int j = 0;
             o.clear();
             inv.clearInventory(t2);
             o.outputGUI(t1,"Press START (or enter \"1\" if playing on a computer) to begin\n",0.0,0.0,false);
-            //Scanner ans = new Scanner(System.in);
-            //try
-            //{
-            //    i = ans.nextInt();
-            //}
-            //catch(Exception e)
-            //{
-            //    o.clearGUI(t1);
-            //    o.outputGUI(t1,"I'll take that as a 1!",0.0,4000*speed,true);
-            //}
-            if(j == 1)
+            Scanner ans = new Scanner(System.in);
+            try
+            {
+                i = ans.nextInt();
+            }
+            catch(Exception e)
+            {
+                o.clearGUI(t1);
+                o.outputGUI(t1,"I'll take that as a 1!",0.0,4000*speed,true);
+            }
+            if(i == 1)
             {
                 o.clearGUI(t1);
                 o.outputGUI(t1,"Welcome to FERALDS'S WORLD!",0.0,4000*speed,false);
@@ -99,6 +98,11 @@ public class TheGame
                         hero.setName(Name);
                         o.clearGUI(t1);
                         o.outputGUI(t1,String.format("You have choosen to play as %s, the %s %s",hero.getNameU(1),hero.getGenderU(1),hero.getRaceU(1)),3000*speed,0.0,true);
+                        o.outputGUIS(t1,"\"Zzzz...\"",0.0,3000*speed,true);
+                        o.outputGUIS(t1,"\"Zzzzzzzz....\"",0.0,3000*speed,true);
+                        o.outputGUIS(t1,"\"Hrmph... huugh.. uuhm...\"",0.0,4000*speed,true);
+                        o.outputGUIS(t1,"\"What? ",0.0,3000*speed,true);
+                        o.outputGUIS(t1,"Where am I?\"",0.0,3000*speed,false);
                     }
                 }
             }
