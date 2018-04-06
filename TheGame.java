@@ -112,9 +112,17 @@ public class TheGame
                         o.clearGUI(t1);
                         o.outputGUI(t1,String.format("You have choosen to play as %s, the %s %s",hero.getNameU(),hero.getGenderU(),hero.getRaceU()),3000*speed,0.0,true);
                         stats.updateStats(t3,hero);
-                        o.outputGUISQ(t1,"Zzzz...",0.0,3000*speed,true);
-                        o.outputGUISQ(t1,"Zzzzzzzz....",0.0,3000*speed,true);
-                        o.outputGUISQ(t1,"Hrmph... huugh.. uuhm...",0.0,4000*speed,true);
+                        o.outputGUISQ(t1,"Zzzz......",0.0,3000*speed,true);
+                        o.outputGUISQ(t1,"Zzzzzzzz...",0.0,2000*speed,true);
+                        o.outputGUISQ(t1,"Hrmph...",0.0,3000*speed,true);
+                        String g;
+                        if(hero.getGender() == "Male")
+                            g = "He";
+                        else if(hero.getGender() == "Female")
+                            g = "She";
+                        else
+                            g = "He/she";
+                        o.outputGUIS(t1,g + " is waking up.",0.0,3000*speed,true);
                         o.outputGUISQ(t1,"What? ",0.0,3000*speed,true);
                         o.outputGUISQ(t1,"Where am I?",0.0,3000*speed,false);
 
