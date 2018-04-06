@@ -26,28 +26,27 @@ public class FrameBuilder{
         StyleConstants.setBold(att_t1, false);
         StyleConstants.setFontFamily(att_t1, "Courier New");
         t1.setEditable(false);
-        t1.setContentType("HTML");
         t1.setCharacterAttributes(att_t1, true);
 
-        SimpleAttributeSet att_t2 = new SimpleAttributeSet();
-        StyleConstants.setAlignment(att_t2, StyleConstants.ALIGN_RIGHT);
-        StyleConstants.setForeground(att_t2, Color.WHITE);
-        StyleConstants.setBackground(att_t2, Color.BLACK);
-        StyleConstants.setFontSize(att_t2, 14);
-        t2.setEditable(false);
-        t2.setContentType("HTML/plain");
-        t2.setCharacterAttributes(att_t2, true);
-        t2.setParagraphAttributes(att_t2, true);
+        //SimpleAttributeSet att_t2 = new SimpleAttributeSet();
+        //StyleConstants.setAlignment(att_t2, StyleConstants.ALIGN_RIGHT);
+        //StyleConstants.setForeground(att_t2, Color.WHITE);
+        //StyleConstants.setBackground(att_t2, Color.BLACK);
+        //StyleConstants.setFontSize(att_t2, 14);
+        //t2.setEditable(false);
+        //t2.setContentType("HTML/plain");
+        //t2.setCharacterAttributes(att_t2, true);
+        //t2.setParagraphAttributes(att_t2, true);
 
-        SimpleAttributeSet att_t3 = new SimpleAttributeSet();
-        StyleConstants.setAlignment(att_t3, StyleConstants.ALIGN_RIGHT);
-        StyleConstants.setForeground(att_t3, Color.RED);
-        StyleConstants.setBackground(att_t3, Color.BLACK);
-        StyleConstants.setFontSize(att_t3, 14);
-        t3.setEditable(false);
-        t3.setContentType("HTML/plain");
-        t3.setCharacterAttributes(att_t3, true);
-        t3.setParagraphAttributes(att_t3, true);
+        //SimpleAttributeSet att_t3 = new SimpleAttributeSet();
+        //StyleConstants.setAlignment(att_t3, StyleConstants.ALIGN_RIGHT);
+        //StyleConstants.setForeground(att_t3, Color.RED);
+        //StyleConstants.setBackground(att_t3, Color.BLACK);
+        //StyleConstants.setFontSize(att_t3, 14);
+        //t3.setEditable(false);
+        //t3.setContentType("HTML/plain");
+        //t3.setCharacterAttributes(att_t3, true);
+        //t3.setParagraphAttributes(att_t3, true);
 
 
         GridBagConstraints c = new GridBagConstraints();

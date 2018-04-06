@@ -5,7 +5,23 @@ import java.awt.*;
 
 public class Inventory{
 
-    public void Inventory(JTextPane tp){
+    private SimpleAttributeSet att;
+
+    public void Format(){
+        StyleConstants.setAlignment(att, StyleConstants.ALIGN_RIGHT);
+        StyleConstants.setForeground(att, Color.WHITE);
+        StyleConstants.setBackground(att, Color.BLACK);
+        StyleConstants.setFontSize(att, 14);
+        StyleConstants.setBold(att, false);
+        StyleConstants.setFontFamily(att, "Courier New");
+    }
+
+    public Inventory(JTextPane tp){
+        att = new SimpleAttributeSet();
+        Format();
+        tp.setEditable(false);
+        tp.setCharacterAttributes(att, true);
+        tp.setParagraphAttributes(att, true);
         tp.setText("INVENTORY");
     }
 
@@ -15,10 +31,8 @@ public class Inventory{
 
     public void addItem(JTextPane tp, String s) throws Exception{
         StyledDocument doc = tp.getStyledDocument();
-        AttributeSet set = doc.getCharacterElement(1).getAttributes();
         Style style = tp.addStyle("", null);
         StyleConstants.setForeground(style, Color.WHITE);
-        tp.setCharacterAttributes(style, true);
         
         try {
             doc.insertString(doc.getLength(), "\n", style);
@@ -29,7 +43,6 @@ public class Inventory{
 
    public void addItem(JTextPane tp, String s, Color c) throws Exception{
         StyledDocument doc = tp.getStyledDocument();
-        AttributeSet set = doc.getCharacterElement(0).getAttributes();
         Style style = tp.addStyle("", null);
         StyleConstants.setForeground(style, c);
         tp.setCharacterAttributes(style, true);

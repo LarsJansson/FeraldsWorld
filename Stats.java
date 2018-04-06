@@ -5,7 +5,23 @@ import java.awt.*;
 
 public class Stats{
 
-    public void Stats(JTextPane tp){
+    private SimpleAttributeSet att;
+
+    public void Format(){
+        StyleConstants.setAlignment(att, StyleConstants.ALIGN_RIGHT);
+        StyleConstants.setForeground(att, Color.WHITE);
+        StyleConstants.setBackground(att, Color.BLACK);
+        StyleConstants.setFontSize(att, 14);
+        StyleConstants.setBold(att, false);
+        StyleConstants.setFontFamily(att, "Courier New");
+    }
+
+    public Stats(JTextPane tp){
+        att = new SimpleAttributeSet();
+        Format();
+        tp.setEditable(false);
+        tp.setCharacterAttributes(att, true);
+        tp.setParagraphAttributes(att, true);
         tp.setText("STATS");
     }
 
@@ -16,14 +32,20 @@ public class Stats{
     public void updateStats(JTextPane tp, Hero hero) throws Exception{
         StyledDocument doc = tp.getStyledDocument();
         AttributeSet set = doc.getCharacterElement(1).getAttributes();
-        Style style = tp.addStyle("", null);
-        StyleConstants.setForeground(style, Color.WHITE);
-        tp.setCharacterAttributes(style, true);
+        Style style1 = tp.addStyle("", null);
+        Style style2 = tp.addStyle("", null);
+        StyleConstants.setForeground(style1, Color.darkGray);
+        StyleConstants.setForeground(style2, Color.BLUE);
         
         try {
-            doc.insertString(doc.getLength(), "\n", style);
-            doc.insertString(doc.getLength(),
-                    "Name: " + hero.getName() + "\t" + "Race: " + hero.getRace() + "\t" +  "Gender: " + hero.getGender(), style);
+            doc.insertString(doc.getLength(), "\n", style1);
+            doc.insertString(doc.getLength(), "Name: ", style1);
+            doc.insertString(doc.getLength(), hero.getName()+"\t", style2);
+            doc.insertString(doc.getLength(), "Race : ", style1);
+            doc.insertString(doc.getLength(), hero.getRace()+"\t", style2);
+            doc.insertString(doc.getLength(), "Gender : ", style1);
+            doc.insertString(doc.getLength(), hero.getGender(), style2);
+
             }
         catch (BadLocationException e){}
     }
