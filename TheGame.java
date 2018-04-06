@@ -40,10 +40,8 @@ public class TheGame
 
     public void run() throws Exception {
         frame.dispose();
-        if(false){
-            Quest0 q0 = new Quest0();
-            q0.run(inv, stats, hero);
-        }
+        Quest0 q0 = new Quest0();
+        q0.run(inv, stats, hero);
         Quest1 q1 = new Quest1();
         q1.run(inv, stats, hero);
         

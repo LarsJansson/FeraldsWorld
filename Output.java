@@ -133,8 +133,7 @@ public class Output{
         int i;
         for (i = 0; i < splitString.length; i++){
             TimeUnit.MILLISECONDS.sleep(150);
-            tp.setText(tp.getText().replaceAll("\"",""));
-            tp.setText("\"" + tp.getText() + splitString[i] + "\"");
+            tp.setText("\"" + tp.getText().replaceAll("\"","") + splitString[i] + "\"");
         }
         TimeUnit.MILLISECONDS.sleep((long)ad);
     }
