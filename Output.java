@@ -95,6 +95,23 @@ public class Output{
         }
         catch (BadLocationException e){}
     }
+    
+    public void outputGUIH(JTextPane tp, String s, double bd, double ad, boolean remove, Color c) throws Exception{
+        StyledDocument doc = tp.getStyledDocument();
+        AttributeSet set = doc.getCharacterElement(0).getAttributes();
+        Style style = tp.addStyle("", null);
+        StyleConstants.setForeground(style, c);
+        StyleConstants.setFontFamily(style, "Courier New");
+        StyleConstants.setFontSize(style, 34);
+        tp.setCharacterAttributes(style, true);
+
+        try{
+            TimeUnit.MILLISECONDS.sleep((long) bd);
+            doc.insertString(doc.getLength(), s, style);
+            TimeUnit.MILLISECONDS.sleep((long) ad);
+        }
+        catch (BadLocationException e){}
+    }
 
     public void outputGUIS(JTextPane tp, String s, double bd, double ad, boolean remove) throws Exception{
         if(remove == true)
