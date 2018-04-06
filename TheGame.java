@@ -39,7 +39,7 @@ public class TheGame
             {
                 o.clearGUI(t1);
                 o.outputGUI(t1,"Welcome to FERALDS'S WORLD!",0.0,4000*speed,false);
-                inv.addItem(t2, "Pants!");
+                inv.addItem(t2,"Pants!");
                 o.outputGUI(t1,"Before the adventure can begin you must choose a hero!",0.0,4000*speed,true);
                 o.outputGUI(t1,"First, pick a RACE.",0.0,3000*speed,true);
                 o.outputGUI(t1,"Human?",0.0,2000*speed,true);
@@ -88,7 +88,7 @@ public class TheGame
                         String Name = name.next();
                         hero.setName(Name);
                         o.clearGUI(t1);
-                        o.outputGUI(t1,"You have choosen to play as "+hero.getNameU(1)+", the "+hero.getGenderU(1)+" "+hero.getRaceU(1)+"",3000*speed,0.0,true);
+                        o.outputGUI(t1,String.format("You have choosen to play as %s, the %s %s",hero.getNameU(1),hero.getGenderU(1),hero.getRaceU(1)),3000*speed,0.0,true);
                     }
                 }
             }
