@@ -1,6 +1,7 @@
 import java.util.concurrent.TimeUnit;
 import javax.swing.*;
 import java.awt.*;
+import javax.swing.text.*;
 
 public class Output{
     public static final String RESET    = "\u001B[0m";
@@ -77,6 +78,24 @@ public class Output{
         tp.setText(oldText + s);
         TimeUnit.MILLISECONDS.sleep((long) ad);
     }
+
+    public void outputGUIC(JTextPane tp, String s, double bd, double ad, boolean remove, Color c) throws Exception{
+        StyledDocument doc = tp.getStyledDocument();
+        AttributeSet set = doc.getCharacterElement(0).getAttributes();
+        Style style = tp.addStyle("", null);
+        StyleConstants.setForeground(style, c);
+        StyleConstants.setFontFamily(style, "Courier New");
+        StyleConstants.setFontSize(style, 14);
+        tp.setCharacterAttributes(style, true);
+
+        try{
+            TimeUnit.MILLISECONDS.sleep((long) bd);
+            doc.insertString(doc.getLength(), s, style);
+            TimeUnit.MILLISECONDS.sleep((long) ad);
+        }
+        catch (BadLocationException e){}
+    }
+
     public void outputGUIS(JTextPane tp, String s) throws Exception{
         clear();
         tp.setText("");

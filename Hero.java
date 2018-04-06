@@ -25,23 +25,23 @@ private String gender = "";
         this.gender = gender;
     }
 
-    public String getName(int c){
-        return colorize(this.name, c);
+    public String getName(){
+        return this.name;
     }
-    public String getRace(int c){
-        return colorize(this.race, c);
+    public String getRace(){
+        return this.race;
     }
-    public String getGender(int c){
-        return colorize(this.gender, c);
+    public String getGender(){
+        return this.gender;
     }
-    public String getNameU(int c){
-        return colorize(this.name.toUpperCase(), c);
+    public String getNameU(){
+        return this.name.toUpperCase();
     }
-    public String getRaceU(int c){
-        return colorize(this.race.toUpperCase(), c);
+    public String getRaceU(){
+        return this.race.toUpperCase();
     }
-    public String getGenderU(int c){
-        return colorize(this.gender.toUpperCase(), c);
+    public String getGenderU(){
+        return this.gender.toUpperCase();
     }
     public boolean isHuman(){
         if (race.equals("Human"))
