@@ -8,6 +8,7 @@ public class Quest1 extends TheGame{
         inputPanel.addActionListener(al);
         inputPanel.addKeyListener(kl);
         bill.build(frame, inputPanel, textPanel, t1, t2, t3);
+        inputPanel.grabFocus(); 
         stats.updateStats(t3, hero);
         //o.outputGUIH(t1,"Quest 1 begins...", 0.0, 0.0, true, Color.RED);
         o.output(t1,"As your other sences starts to return, you finally\nmanage to get up on your feet",0.0,3000*speed,true);

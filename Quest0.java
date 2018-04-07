@@ -8,7 +8,7 @@ public class Quest0 extends TheGame{
     public void run(Inventory inv, Stats stats, Hero hero) throws Exception {
         inputPanel.addActionListener(al);
         bill.build(frame, inputPanel, textPanel, t1, t2, t3);
-        
+        inputPanel.grabFocus(); 
         while(restart){
             o.clearGUI(t1);
             inv.clear(t2);
