@@ -25,6 +25,7 @@ public class Quest1 extends TheGame{
         
         Picker picker = new Picker();
         String[] options = {"North", "South", "East", "West"};
+        String[] hints = {"Thick Forest", "Opening", "Small cabin?", "Small path"};
         pickerPosition = 0;
         while(model.getInput().equals("")){
             Thread.sleep(50);
@@ -32,7 +33,7 @@ public class Quest1 extends TheGame{
                 pickerPosition = 0;
             if(pickerPosition < 0)
                 pickerPosition = options.length - 1;
-            picker.pickOption(t1, options, pickerPosition, "Where do you want do go?");
+            picker.pickOption(t1, options, hints, pickerPosition, "Where do you want do go?");
             inputPanel.setText(options[pickerPosition]);
         }
         inputPanel.setText("");model.setInput("");
