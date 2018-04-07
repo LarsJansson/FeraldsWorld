@@ -104,11 +104,16 @@ public class Output{
         StyleConstants.setFontFamily(style, "Courier New");
         StyleConstants.setFontSize(style, 34);
         tp.setCharacterAttributes(style, true);
-
+        doc.insertString(doc.getLength(), s, style);
         try{
-            TimeUnit.MILLISECONDS.sleep((long) bd);
-            doc.insertString(doc.getLength(), s, style);
-            TimeUnit.MILLISECONDS.sleep((long) ad);
+            for(int m = 0; m<255; m++){
+                TimeUnit.MILLISECONDS.sleep(5);
+                Color color = new Color(0+m, 0+m, 0+m);
+                StyleConstants.setForeground(style, color);
+                tp.setCharacterAttributes(style, true);
+                doc.remove(0, s.length());
+                doc.insertString(0, s, style);
+            }
         }
         catch (BadLocationException e){}
     }

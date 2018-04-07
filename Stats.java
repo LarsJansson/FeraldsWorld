@@ -30,6 +30,7 @@ public class Stats{
     }
 
     public void updateStats(JTextPane tp, Hero hero) throws Exception{
+        tp.setText("");
         StyledDocument doc = tp.getStyledDocument();
         AttributeSet set = doc.getCharacterElement(1).getAttributes();
         Style style1 = tp.addStyle("", null);
@@ -44,7 +45,9 @@ public class Stats{
             doc.insertString(doc.getLength(), "Race : ", style1);
             doc.insertString(doc.getLength(), hero.getRace()+"\t", style2);
             doc.insertString(doc.getLength(), "Gender : ", style1);
-            doc.insertString(doc.getLength(), hero.getGender(), style2);
+            doc.insertString(doc.getLength(), hero.getGender()+"\t", style2);
+            doc.insertString(doc.getLength(), "XP :", style1);
+            doc.insertString(doc.getLength(), Integer.toString(hero.getXp()), style2);
 
             }
         catch (BadLocationException e){}

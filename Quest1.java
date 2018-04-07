@@ -9,7 +9,7 @@ public class Quest1 extends TheGame{
         bill.build(frame, inputPanel, textPanel, t1, t2, t3);
         stats.updateStats(t3, hero);
         o.outputGUIH(t1,"Quest 1 begins...", 0.0, 0.0, true, Color.RED);
-
+        stats.updateStats(t3, hero);
         super.hero = hero;
     }
 }
