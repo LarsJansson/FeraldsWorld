@@ -31,7 +31,7 @@ public class TheGame
         frame.setLayout(new GridBagLayout());
         frame.setVisible(true);
     }
-    double speed = 0.5;
+    double speed = 1;
     boolean restart = true;
 
     public void setInput(String str){

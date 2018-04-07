@@ -118,26 +118,26 @@ public class Output{
         catch (BadLocationException e){}
     }
 
-    public void outputGUIS(JTextPane tp, String s, double bd, double ad, boolean remove) throws Exception{
+    public void outputGUIS(JTextPane tp, String s, double bd, double ad, double sp, boolean remove) throws Exception{
         if(remove == true)
             tp.setText("");
         String[] splitString = s.split("");
         TimeUnit.MILLISECONDS.sleep((long)bd);
         int i;
         for (i = 0; i < splitString.length; i++){
-            TimeUnit.MILLISECONDS.sleep(150);
+            TimeUnit.MILLISECONDS.sleep((long)sp);
             tp.setText(tp.getText() + splitString[i]);
         }
         TimeUnit.MILLISECONDS.sleep((long)ad);
     }
-    public void outputGUISQ(JTextPane tp, String s, double bd, double ad, boolean remove) throws Exception{
+    public void outputGUISQ(JTextPane tp, String s, double bd, double ad, double sp, boolean remove) throws Exception{
         if(remove == true)
             tp.setText("");
         String[] splitString = s.split("");
         TimeUnit.MILLISECONDS.sleep((long)bd);
         int i;
         for (i = 0; i < splitString.length; i++){
-            TimeUnit.MILLISECONDS.sleep(150);
+            TimeUnit.MILLISECONDS.sleep((long)sp);
             tp.setText("\"" + tp.getText().replaceAll("\"","") + splitString[i] + "\"");
         }
         TimeUnit.MILLISECONDS.sleep((long)ad);

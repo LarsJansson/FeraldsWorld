@@ -24,13 +24,13 @@ public class Quest0 extends TheGame{
                 o.clearGUI(t1);
                 o.outputGUI(t1,"Welcome to FERALDS'S WORLD!",0.0,4000*speed,false);
                 inv.addItem(t2,"Pants!");
-                o.outputGUI(t1,"Before the adventure can begin you must choose a hero!",0.0,4000*speed,true);
+                o.outputGUI(t1,"Before the adventure can begin you must choose a hero!",0.0,3000*speed,true);
                 o.outputGUI(t1,"First, pick a RACE.",0.0,3000*speed,true);
                 o.outputGUI(t1,"Human?",0.0,2000*speed,true);
                 o.outputGUI(t1,"Orch?",0.0,2000*speed,true);
                 o.outputGUI(t1,"Elf?",0.0,2000*speed,true);
-                o.outputGUI(t1,"Oooor...",0.0,3000*speed,true);
-                o.outputGUI(t1,"Dwarf?",0.0,3000*speed,true);
+                o.outputGUI(t1,"Oooor...",0.0,2000*speed,true);
+                o.outputGUI(t1,"Dwarf?",0.0,2000*speed,true);
                 
                 inputPanel.setText("");
                 input = inputPanel.getText();
@@ -161,24 +161,23 @@ public class Quest0 extends TheGame{
                 
                 hero.setName(input);
                 o.clearGUI(t1);
-                o.outputGUI(t1,String.format("You have choosen to play as %s, the %s %s",hero.getNameU(),hero.getGenderU(),hero.getRaceU()),3000*speed,0.0,true);
+                o.outputGUI(t1,String.format("You have choosen to play as %s, the %s %s",hero.getNameU(),hero.getGenderU(),hero.getRaceU()),3000*speed,4000*speed,true);
                 stats.updateStats(t3,hero);
-                o.outputGUISQ(t1,"Zzzz......",0.0,3000*speed,true);
-                o.outputGUISQ(t1,"Zzzzzzzz...",0.0,2000*speed,true);
-                o.outputGUISQ(t1,"Hrmph...",0.0,3000*speed,true);
+                o.outputGUISQ(t1,"Zzzz......",0.0,3000*speed,150*speed,true);
+                o.outputGUISQ(t1,"Zzzzzzzz...",0.0,2000*speed,150*speed,true);
+                o.outputGUISQ(t1,"Hrmph...",0.0,3000*speed,75*speed,true);
                 String g;
                 
                 if(hero.getGender() == "Male")
                     g = "He";
                 else if(hero.getGender() == "Female")
                     g = "She";
-                
                 else
                     g = "He/she";
                
-                o.outputGUIS(t1,g + " is waking up.",0.0,3000*speed,true);
-                o.outputGUISQ(t1,"What? ",0.0,3000*speed,true);
-                o.outputGUISQ(t1,"Where am I?",0.0,3000*speed,false);
+                o.outputGUIS(t1,g + " is waking up.",0.0,3000*speed,150*speed,true);
+                o.outputGUISQ(t1,"What?",0.0,2000*speed,150*speed,true);
+                o.outputGUISQ(t1," Where am I?",0.0,3000*speed,150*speed,false);
 
                 restart = false;
                 frame.dispose();
