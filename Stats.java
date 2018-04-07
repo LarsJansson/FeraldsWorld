@@ -36,7 +36,7 @@ public class Stats{
         Style style1 = tp.addStyle("", null);
         Style style2 = tp.addStyle("", null);
         StyleConstants.setForeground(style1, Color.darkGray);
-        StyleConstants.setForeground(style2, Color.BLUE);
+        StyleConstants.setForeground(style2, Color.RED);
         
         try {
             doc.insertString(doc.getLength(), "\n", style1);

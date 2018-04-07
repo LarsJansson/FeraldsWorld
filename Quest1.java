@@ -16,6 +16,24 @@ public class Quest1 extends TheGame{
         o.output(t1,"When you look to the east, you see something between the trees.",0.0,3000*speed,true);
         o.output(t1,"\nIt looks like the contours of small cabin or something!",0.0,3000*speed,false);
         o.output(t1,"In the other direction there is a small path leading further into the woods.",0.0,3000*speed,true);
+        o.output(t1,"Where do you want do go?",0.0,0.0,true);
+        String choice = "North";
+        switch(choice){
+            case "North": if(hero.getXp() < 50){
+                              o.output(t1,"The forest looks pretty creepy for a "+hero.getGender()+" "+hero.getRace()+".\nYou need at least 50 XP",3000*speed,3000*speed,true);
+                          }
+                          else{
+                              o.output(t1,"Woodquest! Yeah baby!",0.0,3000*speed,true);       
+                          }
+                          break;
+            case "South": o.output(t1,"",0.0,0.0,true);
+                          break;
+             case "East": o.output(t1,"",0.0,0.0,true);
+                          break;
+             case "West": o.output(t1,"",0.0,0.0,true);
+                          break;
+                 default: break;
+        }
         stats.updateStats(t3, hero);
         super.hero = hero;
     }
