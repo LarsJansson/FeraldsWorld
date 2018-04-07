@@ -176,8 +176,11 @@ public class Quest0 extends TheGame{
                     g = "He/she";
                
                 o.outputGUIS(t1,g + " is waking up.",0.0,3000*speed,150*speed,true);
-                o.outputGUISQ(t1,"What?",0.0,2000*speed,150*speed,true);
-                o.outputGUISQ(t1," Where am I?",0.0,3000*speed,150*speed,false);
+                o.outputGUISQ(t1,"What?",0.0,2000*speed,100*speed,true);
+                o.outputGUISQ(t1," Where am I?",0.0,4000*speed,100*speed,false);
+                o.outputGUIS(t1,"As I tried to rise, it felt like the cold hard ground rose up around my body.",0.0,2000*speed,75*speed,true);
+                o.outputGUIS(t1,"\nEven though the sun was already halfway up, I was still to disoriented\nto rely on any other sences than smell and touch.",0.0,3000*speed,75*speed,true);
+                 o.outputGUIS(t1,"\nThe giant twig that had found its home in my butt told me I was in a forest.",0.0,3000*speed,75*speed,true);
 
                 restart = false;
                 frame.dispose();
