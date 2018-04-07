@@ -6,10 +6,16 @@ import java.awt.event.*;
 
 public class TheGame
 {
+    double speed = 0.05;
+    boolean restart = true;
+    int pickerPosition = 1;
+    String input = "";
+    
+    final DataModel model = new DataModel();
+
     JFrame frame = new Frame("FERALDS WORLD");
     Output o = new Output();
     Hero hero = new Hero();
-    String input = "";
     JPanel textPanel = new JPanel();
     JTextField inputPanel = new JTextField();
     JTextPane t1 = new JTextPane();
@@ -17,25 +23,40 @@ public class TheGame
     JTextPane t3 = new JTextPane();
     Inventory inv = new Inventory(t2);
     Stats stats = new Stats(t3);
-            
-    ActionListener al =  new ActionListener(){
-        public String str;
-        public void actionPerformed(ActionEvent event){
-            str = inputPanel.getText();
-            inputPanel.setText("");
-            setInput(str);
-        }};
     FrameBuilder bill = new FrameBuilder();
+            
+    EnterStroke al =  new EnterStroke(inputPanel, model);
+    
+    KeyListener kl = new KeyListener(){
+        public void keyPressed(KeyEvent e){
+            //System.out.println(e);
+            if (e.getKeyCode() == KeyEvent.VK_LEFT)
+                {}//System.out.println("left");
+            else if (e.getKeyCode() == KeyEvent.VK_RIGHT)
+                {}//System.out.println("right");
+            else if (e.getKeyCode() == KeyEvent.VK_UP)
+                changePosition(-1);
+            else if (e.getKeyCode() == KeyEvent.VK_DOWN)
+                changePosition(1);
+        }
+        public void keyReleased(KeyEvent e){}
+        public void keyTyped(KeyEvent e){}
+    };
+    
     public TheGame(){
         frame.setBackground(Color.BLACK);
         frame.setLayout(new GridBagLayout());
         frame.setVisible(true);
     }
-    double speed = 1;
-    boolean restart = true;
-
-    public void setInput(String str){
+        public void setInput(String str){
          input = str;
+    }
+
+    public void changePosition(int p){
+        pickerPosition += p;
+    }
+    public void setPosition(int p){
+        pickerPosition = p;
     }
 
     public void run() throws Exception {

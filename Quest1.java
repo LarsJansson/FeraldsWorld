@@ -6,6 +6,7 @@ import java.awt.*;
 public class Quest1 extends TheGame{
     public void run(Inventory inv, Stats stats, Hero hero) throws Exception{
         inputPanel.addActionListener(al);
+        inputPanel.addKeyListener(kl);
         bill.build(frame, inputPanel, textPanel, t1, t2, t3);
         stats.updateStats(t3, hero);
         //o.outputGUIH(t1,"Quest 1 begins...", 0.0, 0.0, true, Color.RED);
@@ -17,7 +18,25 @@ public class Quest1 extends TheGame{
         o.output(t1,"\nIt looks like the contours of small cabin or something!",0.0,3000*speed,false);
         o.output(t1,"In the other direction there is a small path leading further into the woods.",0.0,3000*speed,true);
         o.output(t1,"Where do you want do go?",0.0,0.0,true);
-        String choice = "North";
+        
+        hero.xpInc(1000);
+        stats.updateStats(t3, hero);
+        
+        Picker picker = new Picker();
+        String[] options = {"North", "South", "East", "West"};
+        pickerPosition = 0;
+        while(model.getInput().equals("")){
+            Thread.sleep(50);
+            if(pickerPosition > options.length - 1)
+                pickerPosition = 0;
+            if(pickerPosition < 0)
+                pickerPosition = options.length - 1;
+            picker.pickOption(t1, options, pickerPosition, "Where do you want do go?");
+            inputPanel.setText(options[pickerPosition]);
+        }
+        inputPanel.setText("");model.setInput("");
+        String choice = options[pickerPosition];
+        
         switch(choice){
             case "North": if(hero.getXp() < 50){
                               o.output(t1,"The forest looks pretty creepy for a "+hero.getGender()+" "+hero.getRace()+".\nYou need at least 50 XP",3000*speed,3000*speed,true);
