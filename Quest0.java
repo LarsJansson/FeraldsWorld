@@ -127,7 +127,9 @@ public class Quest0 extends TheGame{
                         input = inputPanel.getText();
                             
                         o.clearGUI(t1);
-                        o.output(t1,"Maybe this is a stupid question, but do dwarfs have genders?\nIf you do, enter (\"1\") for male,(\"2\") for female or (\"3\") for transgender.",0.0,0.0,true);
+                        o.output(t1,"Maybe this is a stupid question...",0.0,0.0,true);
+                        o.output(t1,"\nDo dwarfs have genders?",3000*speed,2000*speed,false);
+                        o.output(t1,"\nIf you do, enter (\"1\") for male,(\"2\") for female or (\"3\") for transgender.",2000*speed,0.0,false);
                         inputPanel.setText("");
                         input = inputPanel.getText();
                         
@@ -178,7 +180,7 @@ public class Quest0 extends TheGame{
                 o.outputSlowQuote(t1,"What?",0.0,2000*speed,100*speed,true);
                 o.outputSlowQuote(t1," Where am I?",0.0,4000*speed,100*speed,false);
                 o.outputSlow(t1,"As I tried to rise, it felt like the cold hard ground rose up around my body.",0.0,2000*speed,75*speed,true);
-                o.outputSlow(t1,"Even though the sun was already halfway up, I was still to disoriented\nto rely on any other sence than touch.",0.0,3000*speed,75*speed,true);
+                o.outputSlow(t1,"Even though the sun was already halfway up, I was still too disoriented\nto rely on any other sence than touch.",0.0,3000*speed,75*speed,true);
                 o.outputSlow(t1,"The giant twig that had found its home in my butt told me I was in a forest.",0.0,3000*speed,75*speed,true);
                 o.outputSlow(t1,"\nAnd I had no clothes...",0.0,4000*speed,75*speed,false);
 
