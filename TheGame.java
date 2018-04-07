@@ -6,14 +6,14 @@ import java.awt.event.*;
 
 public class TheGame
 {
-    double speed = 0.05;
+    double speed = 1;
     boolean restart = true;
     int pickerPosition = 1;
     String input = "";
     
     final DataModel model = new DataModel();
 
-    JFrame frame = new Frame("FERALDS WORLD");
+    JFrame frame = new Frame("FERALD'S WORLD");
     Output o = new Output();
     Hero hero = new Hero();
     JPanel textPanel = new JPanel();
@@ -29,7 +29,7 @@ public class TheGame
     
     KeyListener kl = new KeyListener(){
         public void keyPressed(KeyEvent e){
-            //System.out.println(e);
+            //System.out.println(e.getKeyCode());
             if (e.getKeyCode() == KeyEvent.VK_LEFT)
                 {}//System.out.println("left");
             else if (e.getKeyCode() == KeyEvent.VK_RIGHT)

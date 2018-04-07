@@ -37,6 +37,12 @@ public class Hero{
     public String getGenderU(){
         return this.gender.toUpperCase();
     }
+    public String getRaceL(){
+        return this.race.toLowerCase();
+    }
+    public String getGenderL(){
+        return this.gender.toLowerCase();
+    }
     public int getXp(){
         return xp;
     }

@@ -20,8 +20,8 @@ public class Quest1 extends TheGame{
         o.output(t1,"In the other direction there is a small path leading further into the woods.",0.0,3000*speed,true);
         o.output(t1,"Where do you want do go?",0.0,0.0,true);
         
-        hero.xpInc(1000);
-        stats.updateStats(t3, hero);
+        //hero.xpInc(1000);
+        //stats.updateStats(t3, hero);
         
         Picker picker = new Picker();
         String[] options = {"North", "South", "East", "West"};
@@ -41,13 +41,16 @@ public class Quest1 extends TheGame{
         
         switch(choice){
             case "North": if(hero.getXp() < 50){
-                              o.output(t1,"The forest looks pretty creepy for a "+hero.getGender()+" "+hero.getRace()+".\nYou need at least 50 XP",3000*speed,3000*speed,true);
+                              o.output(t1,"The forest looks pretty creepy for a "+hero.getGenderL()+" "+hero.getRaceL()+".\nYou need at least 50 XP",3000*speed,3000*speed,true);
                           }
                           else{
                               o.output(t1,"Woodquest! Yeah baby!",0.0,3000*speed,true);       
                           }
                           break;
-            case "South": o.output(t1,"",0.0,0.0,true);
+            case "South": //if(inv.getInventory() == pants)
+                          o.output(t1,"Pants",0.0,0.0,true);
+                          //else
+                              //o.output(t1,"\"Maybe I should try to find some pants or something\nbefore I get out of these woods ",0.0,4000*speed,true);
                           break;
              case "East": o.output(t1,"",0.0,0.0,true);
                           break;
