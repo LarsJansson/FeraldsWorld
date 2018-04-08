@@ -15,7 +15,7 @@ public class Quest1 extends TheGame{
         while(quest1runs){
             Picker picker = new Picker();
             String[] options = {"North", "South", "East", "West"};
-            String[] hints = {"Thick Forest", "Opening", "Small cabin?", "Small path"};
+            String[] hints = {"Forest", "Opening", "Small cabin?", "Small path"};
             pickerPosition = 0;
             while(model.getInput().equals("")){
                 Thread.sleep(50);
@@ -31,20 +31,29 @@ public class Quest1 extends TheGame{
             
             switch(choice){
                 case "North": if(hero.getXp() < 50){
-                                  o.output(t1,"The forest looks pretty creepy for a "+hero.getGenderL()+" "+hero.getRaceL()+".\nYou need at least 50 XP!",0.0,3000*speed,true);
+                                  o.outputSlowQuote(t1,"I have a bad feeling about this...",0.0,3000*speed,100*speed,true);
+                                  o.output(t1,"The dark forest looks pretty creepy for a "+hero.getGenderL()+" "+hero.getRaceL()+".\nYou need at least 50 XP!",0.0,3000*speed,true);
                               }
                               else{
-                                  o.output(t1,"Woodquest! Yeah baby!",0.0,3000*speed,true);       
+                                  o.output(t1,"WOOD-QUEST --> ?+XP",0.0,3000*speed,true);       
                               }
                               break;
-                case "South": if(inv.search(t2,"Pants"))
-                                o.output(t1,"Pants",0.0,3000*speed,true);
+                case "South": if(inv.search(t2,"Pants")){
+                                  o.output(t1,"Pants",0.0,3000*speed,true);
+                              }
                               else
-                                  o.output(t1,"\"Maybe I should find me a pair of pants before I get out of these woods.",0.0,4000*speed,true);
+                                  o.outputSlowQuote(t1,"Maybe I should find me a pair of pants before I get out of these woods.",0.0,4000*speed,100*speed,true);
                               break;
                  case "East": o.output(t1,"",0.0,0.0,true);
                               break;
-                 case "West": o.output(t1,"",0.0,0.0,true);
+                 case "West": if(inv.search(t2,"Shoes")){
+                                  o.output(t1,"PATH_QUEST --> PANTS+XP",0.0,2000*speed,true);
+                              }
+                              else{
+                                  o.output(t1,"\"Ouch!\"",0.0,2000*speed,true);
+                                  o.output(t1,"The rocky floor of the path hurt against your naked feet.",0.0,3000*speed,true);
+                                  o.outputSlowQuote(t1,"I'm not taking one more step until I find some shoes...",0.0,4000*speed,100*speed,true);
+                              }
                               break;
                      default: break;
             }
