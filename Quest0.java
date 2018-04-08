@@ -12,6 +12,17 @@ public class Quest0 extends TheGame{
         while(restart){
             o.clearGUI(t1);
             inv.clear(t2);
+
+            /////////// test area
+            //
+            //
+            //inv.addItem(t2, "Pants");
+            //System.out.println(inv.search(t2, "Pants"));
+            //
+            //
+            //////////////////////////////
+
+
             o.output(t1,"Press START (or enter \"1\" if playing on a computer) to begin\n",0.0,0.0,false);
             
             inputPanel.setText("");
