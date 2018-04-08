@@ -9,6 +9,7 @@ public class Quest1cabin extends TheGame{
         inputPanel.addKeyListener(kl);
         bill.build(frame, inputPanel, textPanel, t1, t2, t3);
         inputPanel.grabFocus();
+        stats.updateStats(t3, hero);
 
         o.output(model, t1, "As you get closer the dark contours emerges to the shape of a small cabin.",0.0, true);
         o.outputSlowQuote(model, t1, "Maybe I can find some clothes here...", 0.0, 100*speed, true);

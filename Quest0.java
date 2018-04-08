@@ -194,13 +194,13 @@ public class Quest0 extends TheGame{
                 else
                     g = "He/she";
                
-                o.outputSlow(model, t1,g + " is waking up.",0.0,100*speed,true);
+                o.output(model, t1,g + " is waking up.",0.0,true);
                 o.outputSlowQuote(model, t1,"What?",0.0,100*speed,true);
                 o.outputSlowQuote(model, t1," Where am I?",0.0,100*speed,false);
-                o.outputSlow(model, t1,"As I tried to rise, it felt like the cold hard ground rose up around my body.",0.0,70*speed,true);
-                o.outputSlow(model, t1,"Even though the sun was already halfway up, I was still too disoriented\nto rely on any other sense than touch.",0.0,70*speed,true);
-                o.outputSlow(model, t1,"The giant twig that had found its home in my butt told me I was in a forest.",0.0,70*speed,true);
-                o.outputSlow(model, t1,"\nAnd I had no clothes...",0.0,70*speed,false);
+                o.output(model, t1,"As I tried to rise, it felt like the cold hard ground rose up around my body.",0.0,true);
+                o.output(model, t1,"Even though the sun was already halfway up, I was still too disoriented\nto rely on any other sense than touch.",0.0,true);
+                o.output(model, t1,"The giant twig that had found its home in my butt told me I was in a forest.",0.0,true);
+                o.output(model, t1,"\nAnd I had no clothes...",0.0,false);
 
                 o.output(model,t1,"As your other senses starts to return, you finally\nmanage to get up on your feet.",0.0,true);
                 o.output(model,t1,"After removing the twig from your butt you take a look around.",0.0,true);
