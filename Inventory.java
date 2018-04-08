@@ -29,7 +29,7 @@ public class Inventory{
         tp.setText("INVENTORY");
     }
 
-    public void addItem(JTextPane tp, String s) throws Exception{
+    public void add(JTextPane tp, String s) throws Exception{
         StyledDocument doc = tp.getStyledDocument();
         Style style = tp.addStyle("", null);
         StyleConstants.setForeground(style, Color.WHITE);
@@ -39,6 +39,12 @@ public class Inventory{
             doc.insertString(doc.getLength(), s, style);
             }
         catch (BadLocationException e){}
+    }
+
+    public boolean search(JTextPane tp, String s) throws Exception{
+        StyledDocument doc = tp.getStyledDocument();
+        String inv = doc.getText(0, doc.getLength());
+        return inv.contains(s);
     }
 
    public void addItem(JTextPane tp, String s, Color c) throws Exception{
