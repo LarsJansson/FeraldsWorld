@@ -14,7 +14,7 @@ public class Output{
         StyleConstants.setFontSize(att, 14);
         StyleConstants.setFontFamily(att, "Courier New");
     }
-
+    
     public void clearGUI(JTextPane tp){
         tp.setText("");
     }
