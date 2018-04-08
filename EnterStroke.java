@@ -34,5 +34,6 @@ public class EnterStroke implements ActionListener{
             str = inputPanel.getText();
             inputPanel.setText("");
             dataModel.setInput(str);
+            dataModel.setEnterPressed(true);
         }
 }

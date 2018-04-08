@@ -11,14 +11,17 @@ public class Quest1cabin extends TheGame{
         inputPanel.grabFocus();
 
         if(hero.isMale()){
+            SmallShoes ss = new SmallShoes();
             o.output(t1, "Nice! A pair of tiny shoes!\n", 0.0, 500, false);
-            inv.add(t2, "Too small Shoes");
+            inv.add(t2, ss);
         }else if(hero.isFemale()){
+            LargeShoes ls = new LargeShoes();
             o.output(t1, "Nice! A pair of huge shoes!\n", 0.0, 500, false);
-            inv.add(t2, "Too big shoes");
+            inv.add(t2, ls);
         }else{
+            NormieShoes ns = new NormieShoes();
             o.output(t1, "Nice! Although not fit for a tranny, I will keep these non glittery shoes\n", 0.0, 500, false);
-            inv.add(t2, "Normal people shoes");
+            inv.add(t2, ns);
         }   
         o.output(t1, "Added Shoes to the inventory!\n", 0.0, 500, false);
         hero.xpInc(50);

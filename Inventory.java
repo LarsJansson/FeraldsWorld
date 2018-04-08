@@ -2,11 +2,13 @@ import java.util.concurrent.TimeUnit;
 import javax.swing.*;
 import javax.swing.text.*;
 import java.awt.*;
+import java.util.*;
 
 public class Inventory{
 
     private SimpleAttributeSet att;
     private String Inventory;
+    private ArrayList<Item> items;
 
     public void Format(){
         StyleConstants.setAlignment(att, StyleConstants.ALIGN_RIGHT);
@@ -25,6 +27,7 @@ public class Inventory{
         tp.setParagraphAttributes(att, true);
         tp.setText("INVENTORY");
         Inventory = tp.getText();
+        items = new ArrayList<Item>();
     }
 
     public void clear(JTextPane tp){
@@ -32,17 +35,17 @@ public class Inventory{
         Inventory = tp.getText();
     }
 
-    public void add(JTextPane tp, String s) throws Exception{
+    public void add(JTextPane tp, Item i) throws Exception{
         StyledDocument doc = tp.getStyledDocument();
         Style style = tp.addStyle("", null);
         StyleConstants.setForeground(style, Color.WHITE);
-        
         try {
             doc.insertString(doc.getLength(), "\n", style);
-            doc.insertString(doc.getLength(), s, style);
+            doc.insertString(doc.getLength(), i.getName(), style);
             }
         catch (BadLocationException e){}
         Inventory = tp.getText();
+        items.add(i);
     }
 
     public boolean search(JTextPane tp, String s) throws Exception{
@@ -51,21 +54,18 @@ public class Inventory{
         return inv.toLowerCase().contains(s.toLowerCase());
     }
 
-   public void addItem(JTextPane tp, String s, Color c) throws Exception{
+    public void update(JTextPane tp){
+        tp.setText("Inventory");
         StyledDocument doc = tp.getStyledDocument();
         Style style = tp.addStyle("", null);
-        StyleConstants.setForeground(style, c);
-        tp.setCharacterAttributes(style, true);
-        
+        StyleConstants.setForeground(style, Color.WHITE);
         try {
-            doc.insertString(doc.getLength(), "\n", style);
-            doc.insertString(doc.getLength(), s, style);
+            for(Item i : items){
+                doc.insertString(doc.getLength(), "\n", style);
+                doc.insertString(doc.getLength(), i.getName(), style);
+            }
         }
         catch (BadLocationException e){}
         Inventory = tp.getText();
-   }
-   public void update(JTextPane tp){
-       tp.setText(Inventory);
-   }
-
+    }
 }

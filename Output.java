@@ -31,6 +31,23 @@ public class Output{
         TimeUnit.MILLISECONDS.sleep((long) ad);
     }
 
+        public void outputW(DataModel model, JTextPane tp, String s, double bd, double ad, boolean remove) throws Exception{
+        String oldText = "";
+        if (remove){
+            oldText = "";
+        }else{
+            oldText = tp.getText();
+        }
+        TimeUnit.MILLISECONDS.sleep((long) bd);
+        tp.setText(oldText + s);
+        TimeUnit.MILLISECONDS.sleep((long) ad);
+        model.setEnterPressed(false);
+        while(!model.getEnterPressed()){
+            Thread.sleep(100);
+        }
+        model.setEnterPressed(false);
+    }
+
     public void outputColor(JTextPane tp, String s, double bd, double ad, boolean remove, Color c) throws Exception{
         StyledDocument doc = tp.getStyledDocument();
         AttributeSet set = doc.getCharacterElement(0).getAttributes();

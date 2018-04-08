@@ -20,6 +20,10 @@ public class Quest0 extends TheGame{
             //System.out.println(inv.search(t2, "Pants"));
             //
             o.outputHuge(t1, "Starting\n", 1000);
+            
+            Pants pants = new Pants();
+            System.out.println(pants.getDescription());
+            inv.add(t2, pants);
             //
             //////////////////////////////
 
@@ -34,7 +38,7 @@ public class Quest0 extends TheGame{
             if(model.getInput().equals("1"))          
             {
                 o.clearGUI(t1);
-                o.output(t1,"Welcome to FERALDS'S WORLD!",0.0,3000*speed,true);
+                o.outputW(model, t1,"Welcome to FERALDS'S WORLD!",0.0,3000*speed,true);
                 o.output(t1,"Before the adventure can begin you must choose a hero!",0.0,3000*speed,true);
                 o.output(t1,"First, pick a RACE.",0.0,3000*speed,true);
                 o.output(t1,"Human?",0.0,2000*speed,true);
