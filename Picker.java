@@ -9,9 +9,9 @@ public class Picker{
         String newText = q+"\n";
         for (int o = 0; o<options.length; o++){
             if (p == o){
-                newText = newText.concat(">"+options[o]+": " + hints[o] + "\n");
+                newText = newText.concat(">"+options[o]+" ("+hints[o]+")\n");
             }else{
-                newText = newText.concat(" "+options[o]+": " + hints[o] + "\n");
+                newText = newText.concat(" "+options[o]+" ("+hints[o]+")\n");
             }
         }
         tp.setText(""+newText);
