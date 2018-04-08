@@ -33,6 +33,11 @@ public class Inventory{
     public void clear(JTextPane tp){
         tp.setText("INVENTORY");
         Inventory = tp.getText();
+        int length = items.size();
+        for(int j = 0; j<length; j++){
+            items.remove(0);
+        }
+            
     }
 
     public void add(JTextPane tp, Item i) throws Exception{
