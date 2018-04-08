@@ -202,7 +202,7 @@ public class Quest0 extends TheGame{
                 o.outputSlow(model, t1,"The giant twig that had found its home in my butt told me I was in a forest.",0.0,75*speed,true);
                 o.outputSlow(model, t1,"\nAnd I had no clothes...",0.0,75*speed,false);
 
-                o.output(model,t1,"As your other sences starts to return, you finally\nmanage to get up on your feet.",0.0,true);
+                o.output(model,t1,"As your other senses starts to return, you finally\nmanage to get up on your feet.",0.0,true);
                 o.output(model,t1,"After removing the twig from your butt you take a look around.",0.0,true);
                 o.output(model,t1,"To the north the forest only seem to be thickening.",0.0,true);
                 o.output(model,t1,"Turning around, looking south, the forest seem to open up a bit.",0.0,true);
