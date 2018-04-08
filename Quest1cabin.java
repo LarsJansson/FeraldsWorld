@@ -10,6 +10,9 @@ public class Quest1cabin extends TheGame{
         bill.build(frame, inputPanel, textPanel, t1, t2, t3);
         inputPanel.grabFocus();
 
+        o.output(model, t1, "As you get closer the dark contours emerges to the shape of a small cabin.",0.0, true);
+        o.outputSlowQuote(model, t1, "Maybe I can find some clothes here...", 0.0, 100*speed, true);
+
         if(hero.isMale()){
             SmallShoes ss = new SmallShoes();
             o.output(model, t1, "Nice! A pair of tiny shoes!\n", 0.0, false);

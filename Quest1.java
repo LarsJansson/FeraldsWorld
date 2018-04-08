@@ -15,7 +15,7 @@ public class Quest1 extends TheGame{
         while(quest1runs){
             Picker picker = new Picker();
             String[] options = {"North", "South", "East", "West"};
-            String[] hints = {"Woods", "Opening", "Small cabin?", "Narrow path"};
+            String[] hints = {"Darkness", "Leave forest", "Forest cabin", "Follow path"};
             pickerPosition = 0;
             while(model.getInput().equals("")){
                 Thread.sleep(50);
@@ -31,7 +31,7 @@ public class Quest1 extends TheGame{
             
             switch(choice){
                 case "North": if(hero.getXp() < 50){
-                                  o.outputSlowQuote(model, t1,"I have a bad feeling about this...",0.0,100*speed,true);
+                                  o.output(model, t1,"\"I have a bad feeling about this...\"",0.0,true);
                                   o.output(model, t1,"The dark forest looks pretty creepy for a "+hero.getGenderL()+" "+hero.getRaceL()+".\nYou need at least 50 XP!",0.0,true);
                               }
                               else{
@@ -42,7 +42,7 @@ public class Quest1 extends TheGame{
                                   o.output(model, t1,"OPENING_QUEST",0.0,true);
                               }
                               else
-                                  o.outputSlowQuote(model, t1,"Maybe I should find me a pair of pants before I get out of these woods.",0.0,100*speed,true);
+                                  o.output(model, t1,"\"Maybe I should find me a pair of pants before I get out of these woods.\"",0.0,true);
                               break;
                  case "East": if(inv.search(t2,"Shoes")){
                                   o.output(model, t1,"WELCOME BACK!",0.0,true);
@@ -61,8 +61,8 @@ public class Quest1 extends TheGame{
                               }
                               else{
                                   o.output(model, t1,"\"Ouch!\"",0.0,true);
-                                  o.output(model, t1,"The rocky floor of the path hurt against your naked feet.",0.0,true);
-                                  o.outputSlowQuote(model, t1,"I'm not taking one more step until I find some shoes...",0.0,100*speed,true);
+                                  o.output(model, t1,"The stoney soil hurt against your naked feet.",0.0,true);
+                                  o.output(model, t1,"I'm not taking one more step until I find some shoes...",0.0,true);
                               }
                               break;
                      default: break;

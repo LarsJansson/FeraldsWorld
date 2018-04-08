@@ -72,7 +72,7 @@ public class Quest0 extends TheGame{
                         if(!model.getInput().equals(""))
                         {
                             o.clearGUI(t1);
-                            o.output(model,t1,"Ok, this won't do...",3000*speed,false);
+                            o.output(model,t1,"Ok, this won't do...",2000*speed,false);
                             o.output(model,t1,"Please choose either male (\"1\"), female (\"2\") or transgender (\"3\")!\n",0.0,true,false);
                             inputPanel.setText("");model.setInput("");
                             input = model.getInput();
@@ -146,7 +146,7 @@ public class Quest0 extends TheGame{
     
                         o.clearGUI(t1);
                         o.output(model,t1,"Maybe this is a stupid question...",0.0,true);
-                        o.output(model,t1,"\nDo dwarfs have genders?",3000*speed,false);
+                        o.output(model,t1,"\nDo dwarfs have genders?",2000*speed,false);
                         o.output(model,t1,"\nIf you do, enter (\"1\") for male,(\"2\") for female or (\"3\") for transgender.",2000*speed,false,false);
                         inputPanel.setText("");model.setInput("");
                         input = model.getInput();
@@ -168,7 +168,7 @@ public class Quest0 extends TheGame{
                 }
                 
                 o.clearGUI(t1);
-                o.output(model,t1,"Ok. Now the game can finally begin!",3000*speed,false);
+                o.output(model,t1,"Ok. Now the game can finally begin!",2000*speed,false);
                 o.output(model,t1,"Wait!",0.0,true);
                 o.output(model,t1,"Whats your name?",0.0,true,false);
                         
@@ -180,11 +180,11 @@ public class Quest0 extends TheGame{
                 
                 hero.setName(model.getInput());
                 o.clearGUI(t1);
-                o.output(model,t1,String.format("You have choosen to play as %s, the %s %s",hero.getNameU(),hero.getGenderU(),hero.getRaceU()),3000*speed,true);
+                o.output(model,t1,String.format("You have choosen to play as %s, the %s %s",hero.getNameU(),hero.getGenderU(),hero.getRaceU()),2000*speed,true);
                 stats.updateStats(t3,hero);
                 o.outputSlowQuote(model, t1,"Zzzz......",0.0,150*speed,true);
                 o.outputSlowQuote(model, t1,"Zzzzzzzz...",0.0,150*speed,true);
-                o.outputSlowQuote(model, t1,"Hrmph...",0.0,50*speed,true);
+                o.outputSlowQuote(model, t1,"Hrmph...",0.0,30*speed,true);
                 String g;
                 
                 if(hero.getGender() == "Male")
@@ -194,21 +194,21 @@ public class Quest0 extends TheGame{
                 else
                     g = "He/she";
                
-                o.outputSlow(model, t1,g + " is waking up.",0.0,150*speed,true);
+                o.outputSlow(model, t1,g + " is waking up.",0.0,100*speed,true);
                 o.outputSlowQuote(model, t1,"What?",0.0,100*speed,true);
                 o.outputSlowQuote(model, t1," Where am I?",0.0,100*speed,false);
-                o.outputSlow(model, t1,"As I tried to rise, it felt like the cold hard ground rose up around my body.",0.0,75*speed,true);
-                o.outputSlow(model, t1,"Even though the sun was already halfway up, I was still too disoriented\nto rely on any other sense than touch.",0.0,75*speed,true);
-                o.outputSlow(model, t1,"The giant twig that had found its home in my butt told me I was in a forest.",0.0,75*speed,true);
-                o.outputSlow(model, t1,"\nAnd I had no clothes...",0.0,75*speed,false);
+                o.outputSlow(model, t1,"As I tried to rise, it felt like the cold hard ground rose up around my body.",0.0,70*speed,true);
+                o.outputSlow(model, t1,"Even though the sun was already halfway up, I was still too disoriented\nto rely on any other sense than touch.",0.0,70*speed,true);
+                o.outputSlow(model, t1,"The giant twig that had found its home in my butt told me I was in a forest.",0.0,70*speed,true);
+                o.outputSlow(model, t1,"\nAnd I had no clothes...",0.0,70*speed,false);
 
                 o.output(model,t1,"As your other senses starts to return, you finally\nmanage to get up on your feet.",0.0,true);
                 o.output(model,t1,"After removing the twig from your butt you take a look around.",0.0,true);
-                o.output(model,t1,"To the north the forest only seem to be thickening.",0.0,true);
-                o.output(model,t1,"Turning around, looking south, the forest seem to open up a bit.",0.0,true);
-                o.output(model,t1,"When you look to the east, you see something between the trees.",0.0,true);
-                o.output(model,t1,"\nIt looks like the contours of a small cabin or something!",0.0,false);
-                o.output(model,t1,"In the other direction there is a narrow path leading further into the woods.",0.0,true);
+                o.output(model,t1,"To the north the forest only seem to thicken and grow darker.",0.0,true);
+                o.output(model,t1,"When you turn around the forest seem to open up a bit however!",0.0,true);
+                o.output(model,t1,"Turning east, you see something between the trees.",0.0,true);
+                o.output(model,t1,"It looks like the contours of a house of some kind!\nA small path on the forest floor seem to lead towards it.",0.0,true);
+                o.output(model,t1,"In the opposite direction the path dissapears into the woods...",0.0,true);
 
                 restart = false;
                 frame.dispose();
