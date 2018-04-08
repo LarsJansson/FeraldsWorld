@@ -12,20 +12,20 @@ public class Quest1cabin extends TheGame{
 
         if(hero.isMale()){
             SmallShoes ss = new SmallShoes();
-            o.output(t1, "Nice! A pair of tiny shoes!\n", 0.0, 500, false);
+            o.output(model, t1, "Nice! A pair of tiny shoes!\n", 0.0, false);
             inv.add(t2, ss);
         }else if(hero.isFemale()){
             LargeShoes ls = new LargeShoes();
-            o.output(t1, "Nice! A pair of huge shoes!\n", 0.0, 500, false);
+            o.output(model, t1, "Nice! A pair of huge shoes!\n", 0.0, false);
             inv.add(t2, ls);
         }else{
             NormieShoes ns = new NormieShoes();
-            o.output(t1, "Nice! Although not fit for a tranny, I will keep these non glittery shoes\n", 0.0, 500, false);
+            o.output(model, t1, "Nice! Although not fit for a tranny, I will keep these non glittery shoes\n", 0.0, false);
             inv.add(t2, ns);
         }   
-        o.output(t1, "Added Shoes to the inventory!\n", 0.0, 500, false);
+        o.output(model, t1, "Added Shoes to the inventory!\n", 0.0, false);
         hero.xpInc(50);
-        o.output(t1, "Gained 50 xp!\n", 0.0, 3000, false);
+        o.output(model, t1, "Gained 50 xp!\n", 0.0, false);
         
         stats.updateStats(t3, hero);
         super.hero = hero;

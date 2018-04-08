@@ -18,27 +18,14 @@ public class Output{
     public void clearGUI(JTextPane tp){
         tp.setText("");
     }
-    
-    public void output(JTextPane tp, String s, double bd, double ad, boolean remove) throws Exception{
-        String oldText = "";
-        if (remove){
-            oldText = "";
-        }else{
-            oldText = tp.getText();
-        }
-        TimeUnit.MILLISECONDS.sleep((long) bd);
-        tp.setText(oldText + s);
-        TimeUnit.MILLISECONDS.sleep((long) ad);
-    }
 
-        public void outputW(DataModel model, JTextPane tp, String s, double bd, double ad, boolean remove) throws Exception{
+    public void output(DataModel model, JTextPane tp, String s, double ad, boolean remove) throws Exception{
         String oldText = "";
         if (remove){
             oldText = "";
         }else{
             oldText = tp.getText();
         }
-        TimeUnit.MILLISECONDS.sleep((long) bd);
         tp.setText(oldText + s);
         TimeUnit.MILLISECONDS.sleep((long) ad);
         model.setEnterPressed(false);

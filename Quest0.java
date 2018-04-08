@@ -19,16 +19,15 @@ public class Quest0 extends TheGame{
             //inv.addItem(t2, "Pants");
             //System.out.println(inv.search(t2, "Pants"));
             //
-            o.outputHuge(t1, "Starting\n", 1000);
             
-            Pants pants = new Pants();
-            System.out.println(pants.getDescription());
-            inv.add(t2, pants);
+            //Pants pants = new Pants();
+            //System.out.println(pants.getDescription());
+            //inv.add(t2, pants);
             //
             //////////////////////////////
 
 
-            o.output(t1,"Press START (or enter \"1\" if playing on a computer) to begin\n",0.0,0.0,true);
+            o.output(model,t1,"Press START (or enter \"1\" if playing on a computer) to begin\n",0.0,true);
             
             inputPanel.setText("");
             input = model.getInput();
@@ -38,21 +37,22 @@ public class Quest0 extends TheGame{
             if(model.getInput().equals("1"))          
             {
                 o.clearGUI(t1);
-                o.outputW(model, t1,"Welcome to FERALDS'S WORLD!",0.0,3000*speed,true);
-                o.output(t1,"Before the adventure can begin you must choose a hero!",0.0,3000*speed,true);
-                o.output(t1,"First, pick a RACE.",0.0,3000*speed,true);
-                o.output(t1,"Human?",0.0,2000*speed,true);
-                o.output(t1,"Orch?",0.0,2000*speed,true);
-                o.output(t1,"Elf?",0.0,2000*speed,true);
-                o.output(t1,"Oooor...",0.0,2000*speed,true);
-                o.output(t1,"Dwarf?",0.0,2000*speed,true);
+                o.outputHuge(t1,"Welcome to\nFERALD'S WORLD!\n",1000);
+                o.output(model,t1,"Welcome to FERALDS'S WORLD!",0.0,true);
+                o.output(model,t1,"Before the adventure can begin you must choose a hero!",0.0,true);
+                o.output(model,t1,"First, pick a RACE.",0.0,true);
+                o.output(model,t1,"Human?",0.0,true);
+                o.output(model,t1,"Orch?",0.0,true);
+                o.output(model,t1,"Elf?",0.0,true);
+                o.output(model,t1,"Oooor...",0.0,true);
+                o.output(model,t1,"Dwarf?",0.0,true);
                 
                 inputPanel.setText("");
                 model.setInput("");
                 input = model.getInput();
                 while(!model.getInput().equals("1") && !model.getInput().equals("2") && !model.getInput().equals("3") && !model.getInput().equals("4"))
                 {
-                    o.output(t1,"Since you're playing on a computer, choose a RACE by\nentering \"1\" (Human), \"2\" (Orch), \"3\" (Elf) or \"4\" (Dwarf):",0.0,0.0,true);
+                    o.output(model,t1,"Since you're playing on a computer, choose a RACE by\nentering \"1\" (Human), \"2\" (Orch), \"3\" (Elf) or \"4\" (Dwarf):",0.0,true);
                     model.setInput("");
                     inputPanel.setText("");
                     input = model.getInput();
@@ -63,7 +63,7 @@ public class Quest0 extends TheGame{
                     {
                         hero.setRace("Human");
                         o.clearGUI(t1);
-                        o.output(t1,"Oh... A fancy human again. Oh well, to choose gender,\nenter a number between 1 and 10:",2000*speed,0.0,true);
+                        o.output(model,t1,"Oh... A fancy human again. Oh well, to choose gender,\nenter a number between 1 and 10:",2000*speed,true);
                         inputPanel.setText("");model.setInput("");
                         input = model.getInput();
                         
@@ -73,8 +73,8 @@ public class Quest0 extends TheGame{
                         if(!model.getInput().equals(""))
                         {
                             o.clearGUI(t1);
-                            o.output(t1,"Ok, this won't do...",3000*speed,2000*speed,false);
-                            o.output(t1,"Please choose either male (\"1\"), female (\"2\") or transgender (\"3\")!\n",0.0,0.0,true);
+                            o.output(model,t1,"Ok, this won't do...",3000*speed,false);
+                            o.output(model,t1,"Please choose either male (\"1\"), female (\"2\") or transgender (\"3\")!\n",0.0,true);
                             inputPanel.setText("");model.setInput("");
                             input = model.getInput();
                         
@@ -94,12 +94,12 @@ public class Quest0 extends TheGame{
                     {
                         hero.setRace("Orch");
                         o.clearGUI(t1);
-                        o.output(t1,"A filthy orch? Really? Oh well, it's your choice!",2000*speed,3000*speed,true);
+                        o.output(model,t1,"A filthy orch? Really? Oh well, it's your choice!",2000*speed,true);
                         inputPanel.setText("");model.setInput("");
                         input = model.getInput();
     
                         o.clearGUI(t1);
-                        o.output(t1,"Now, choose your gender. Enter (\"1\") for male,(\"2\") for female or (\"3\") for transgender.",0.0,0.0,true);
+                        o.output(model,t1,"Now, choose your gender. Enter (\"1\") for male,(\"2\") for female or (\"3\") for transgender.",0.0,true);
                         inputPanel.setText("");model.setInput("");
                         input = model.getInput();
  
@@ -117,13 +117,13 @@ public class Quest0 extends TheGame{
                     {
                         hero.setRace("Elf");
                         o.clearGUI(t1);
-                        o.output(t1,"Excellent choice! Elfs are famous for their wisdom!",2000*speed,3000*speed,true);
-                        o.output(t1,"\nAnd their ears...",0.0,3000*speed,false);
+                        o.output(model,t1,"Excellent choice! Elfs are famous for their wisdom!",2000*speed,true);
+                        o.output(model,t1,"\nAnd their ears...",0.0,false);
                         inputPanel.setText("");model.setInput("");
                         input = model.getInput();
     
                         o.clearGUI(t1);
-                        o.output(t1,"Now, pick your gender! Enter (\"1\") for male,(\"2\") for female or (\"3\") for transgender.",0.0,0.0,true);
+                        o.output(model,t1,"Now, pick your gender! Enter (\"1\") for male,(\"2\") for female or (\"3\") for transgender.",0.0,true);
                         inputPanel.setText("");model.setInput("");
                         input = model.getInput();
  
@@ -141,14 +141,14 @@ public class Quest0 extends TheGame{
                     {
                         hero.setRace("Dwarf");
                         o.clearGUI(t1);
-                        o.output(t1,"Oh hello! Didn't see you there! A true dwarf it is!",2000*speed,3000*speed,true);
+                        o.output(model,t1,"Oh hello! Didn't see you there! A true dwarf it is!",2000*speed,true);
                         inputPanel.setText("");model.setInput("");
                         input = model.getInput();
     
                         o.clearGUI(t1);
-                        o.output(t1,"Maybe this is a stupid question...",0.0,0.0,true);
-                        o.output(t1,"\nDo dwarfs have genders?",3000*speed,2000*speed,false);
-                        o.output(t1,"\nIf you do, enter (\"1\") for male,(\"2\") for female or (\"3\") for transgender.",2000*speed,0.0,false);
+                        o.output(model,t1,"Maybe this is a stupid question...",0.0,true);
+                        o.output(model,t1,"\nDo dwarfs have genders?",3000*speed,false);
+                        o.output(model,t1,"\nIf you do, enter (\"1\") for male,(\"2\") for female or (\"3\") for transgender.",2000*speed,false);
                         inputPanel.setText("");model.setInput("");
                         input = model.getInput();
  
@@ -164,14 +164,14 @@ public class Quest0 extends TheGame{
                     }
                     else
                     {
-                        o.output(t1,"That was not an option!",0.0,2000*speed,true);
+                        o.output(model,t1,"That was not an option!",0.0,true);
                     }
                 }
                 
                 o.clearGUI(t1);
-                o.output(t1,"Ok. Now the game can finally begin!",3000*speed,3000*speed,false);
-                o.output(t1,"Wait!",0.0,2000*speed,true);
-                o.output(t1,"Whats your name?",0.0,0.0,true);
+                o.output(model,t1,"Ok. Now the game can finally begin!",3000*speed,false);
+                o.output(model,t1,"Wait!",0.0,true);
+                o.output(model,t1,"Whats your name?",0.0,true);
                         
                 inputPanel.setText("");model.setInput("");
                 input = model.getInput();
@@ -181,7 +181,7 @@ public class Quest0 extends TheGame{
                 
                 hero.setName(model.getInput());
                 o.clearGUI(t1);
-                o.output(t1,String.format("You have choosen to play as %s, the %s %s",hero.getNameU(),hero.getGenderU(),hero.getRaceU()),3000*speed,4000*speed,true);
+                o.output(model,t1,String.format("You have choosen to play as %s, the %s %s",hero.getNameU(),hero.getGenderU(),hero.getRaceU()),3000*speed,true);
                 stats.updateStats(t3,hero);
                 o.outputSlowQuote(t1,"Zzzz......",0.0,3000*speed,150*speed,true);
                 o.outputSlowQuote(t1,"Zzzzzzzz...",0.0,2000*speed,150*speed,true);
@@ -203,13 +203,13 @@ public class Quest0 extends TheGame{
                 o.outputSlow(t1,"The giant twig that had found its home in my butt told me I was in a forest.",0.0,3000*speed,75*speed,true);
                 o.outputSlow(t1,"\nAnd I had no clothes...",0.0,4000*speed,75*speed,false);
 
-                o.output(t1,"As your other sences starts to return, you finally\nmanage to get up on your feet",0.0,4000*speed,true);
-                o.output(t1,"After removing the twig from your butt you take a look around.",0.0,4000*speed,true);
-                o.output(t1,"To the north the forest only seem to be thickening.",0.0,4000*speed,true);
-                o.output(t1,"Turning around, looking south, the forest seem to open up a bit.",0.0,4000*speed,true);
-                o.output(t1,"When you look to the east, you see something between the trees.",0.0,4000*speed,true);
-                o.output(t1,"\nIt looks like the contours of a small cabin or something!",0.0,4000*speed,false);
-                o.output(t1,"In the other direction there is a narrow path leading further into the woods.",0.0,4000*speed,true);
+                o.output(model,t1,"As your other sences starts to return, you finally\nmanage to get up on your feet",0.0,true);
+                o.output(model,t1,"After removing the twig from your butt you take a look around.",0.0,true);
+                o.output(model,t1,"To the north the forest only seem to be thickening.",0.0,true);
+                o.output(model,t1,"Turning around, looking south, the forest seem to open up a bit.",0.0,true);
+                o.output(model,t1,"When you look to the east, you see something between the trees.",0.0,true);
+                o.output(model,t1,"\nIt looks like the contours of a small cabin or something!",0.0,false);
+                o.output(model,t1,"In the other direction there is a narrow path leading further into the woods.",0.0,true);
 
                 restart = false;
                 frame.dispose();
