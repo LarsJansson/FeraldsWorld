@@ -198,7 +198,7 @@ public class Quest0 extends TheGame{
                 o.outputSlowQuote(model, t1,"What?",0.0,100*speed,true);
                 o.outputSlowQuote(model, t1," Where am I?",0.0,100*speed,false);
                 o.outputSlow(model, t1,"As I tried to rise, it felt like the cold hard ground rose up around my body.",0.0,75*speed,true);
-                o.outputSlow(model, t1,"Even though the sun was already halfway up, I was still too disoriented\nto rely on any other sence than touch.",0.0,75*speed,true);
+                o.outputSlow(model, t1,"Even though the sun was already halfway up, I was still too disoriented\nto rely on any other sense than touch.",0.0,75*speed,true);
                 o.outputSlow(model, t1,"The giant twig that had found its home in my butt told me I was in a forest.",0.0,75*speed,true);
                 o.outputSlow(model, t1,"\nAnd I had no clothes...",0.0,75*speed,false);
 

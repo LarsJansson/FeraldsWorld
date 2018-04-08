@@ -19,7 +19,8 @@ public class Output{
         tp.setText("");
     }
 
-    public void output(DataModel model, JTextPane tp, String s, double ad, boolean remove) throws Exception{
+    public void output(DataModel model, JTextPane tp, String s, double bd, boolean remove) throws Exception{
+        TimeUnit.MILLISECONDS.sleep((long) bd);
         String oldText = "";
         if (remove){
             oldText = "";
@@ -27,7 +28,6 @@ public class Output{
             oldText = tp.getText();
         }
         tp.setText(oldText + s);
-        TimeUnit.MILLISECONDS.sleep((long) ad);
         model.setEnterPressed(false);
         while(!model.getEnterPressed()){
             Thread.sleep(100);
@@ -35,7 +35,8 @@ public class Output{
         model.setEnterPressed(false);
     }
 
-    public void output(DataModel model, JTextPane tp, String s, double ad, boolean remove, boolean WaitForEnter) throws Exception{
+    public void output(DataModel model, JTextPane tp, String s, double bd, boolean remove, boolean WaitForEnter) throws Exception{
+        TimeUnit.MILLISECONDS.sleep((long) bd);
         String oldText = "";
         if (remove){
             oldText = "";
@@ -43,7 +44,6 @@ public class Output{
             oldText = tp.getText();
         }
         tp.setText(oldText + s);
-        TimeUnit.MILLISECONDS.sleep((long) ad);
         model.setEnterPressed(false);
         if(WaitForEnter){
             while(!model.getEnterPressed()){
