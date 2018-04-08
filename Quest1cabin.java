@@ -11,22 +11,23 @@ public class Quest1cabin extends TheGame{
         inputPanel.grabFocus();
 
         if(hero.isMale()){
-            o.output(t1, "Nice! A pair of tiny shoes!", 0.0, 500, false);
+            o.output(t1, "Nice! A pair of tiny shoes!\n", 0.0, 500, false);
             inv.add(t2, "Too small Shoes");
         }else if(hero.isFemale()){
-            o.output(t1, "Nice! A pair of huge shoes!", 0.0, 500, false);
+            o.output(t1, "Nice! A pair of huge shoes!\n", 0.0, 500, false);
             inv.add(t2, "Too big shoes");
         }else{
-            o.output(t1, "Nice! Although not fit for a tranny, I will keep these non glittery shoes", 0.0, 500, false);
+            o.output(t1, "Nice! Although not fit for a tranny, I will keep these non glittery shoes\n", 0.0, 500, false);
             inv.add(t2, "Normal people shoes");
         }   
-        o.output(t1, "Added Shoes to the inventory!", 0.0, 500, false);
+        o.output(t1, "Added Shoes to the inventory!\n", 0.0, 500, false);
         hero.xpInc(50);
-        o.output(t1, "Gained 50 xp!", 0.0, 500, false);
+        o.output(t1, "Gained 50 xp!\n", 0.0, 3000, false);
         
         stats.updateStats(t3, hero);
         super.hero = hero;
         super.inv = inv;
         super.stats = stats;
+        frame.dispose();
     }
 }

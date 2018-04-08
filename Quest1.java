@@ -48,9 +48,12 @@ public class Quest1 extends TheGame{
                                   o.output(t1,"WELCOME BACK!",0.0,0.0,true);
                               }
                               else{
+                                  frame.setVisible(false);
                                   Quest1cabin q1c = new Quest1cabin();
                                   q1c.run(inv,stats,hero);
                                   stats.updateStats(t3,hero);
+                                  inv.update(t2);
+                                  frame.setVisible(true);
                               }
                               break;
                  case "West": if(inv.search(t2,"Shoes")){

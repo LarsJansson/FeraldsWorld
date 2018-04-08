@@ -6,6 +6,7 @@ import java.awt.*;
 public class Inventory{
 
     private SimpleAttributeSet att;
+    private String Inventory;
 
     public void Format(){
         StyleConstants.setAlignment(att, StyleConstants.ALIGN_RIGHT);
@@ -23,10 +24,12 @@ public class Inventory{
         tp.setCharacterAttributes(att, true);
         tp.setParagraphAttributes(att, true);
         tp.setText("INVENTORY");
+        Inventory = tp.getText();
     }
 
     public void clear(JTextPane tp){
         tp.setText("INVENTORY");
+        Inventory = tp.getText();
     }
 
     public void add(JTextPane tp, String s) throws Exception{
@@ -39,12 +42,13 @@ public class Inventory{
             doc.insertString(doc.getLength(), s, style);
             }
         catch (BadLocationException e){}
+        Inventory = tp.getText();
     }
 
     public boolean search(JTextPane tp, String s) throws Exception{
         StyledDocument doc = tp.getStyledDocument();
         String inv = doc.getText(0, doc.getLength());
-        return inv.contains(s);
+        return inv.toLowerCase().contains(s.toLowerCase());
     }
 
    public void addItem(JTextPane tp, String s, Color c) throws Exception{
@@ -58,6 +62,10 @@ public class Inventory{
             doc.insertString(doc.getLength(), s, style);
         }
         catch (BadLocationException e){}
-    }
+        Inventory = tp.getText();
+   }
+   public void update(JTextPane tp){
+       tp.setText(Inventory);
+   }
 
 }
