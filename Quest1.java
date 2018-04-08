@@ -15,7 +15,7 @@ public class Quest1 extends TheGame{
         while(quest1runs){
             Picker picker = new Picker();
             String[] options = {"North", "South", "East", "West"};
-            String[] hints = {"Forest", "Opening", "Small cabin?", "Small path"};
+            String[] hints = {"Woods", "Opening", "Small cabin?", "Narrow path"};
             pickerPosition = 0;
             while(model.getInput().equals("")){
                 Thread.sleep(50);
@@ -39,15 +39,22 @@ public class Quest1 extends TheGame{
                               }
                               break;
                 case "South": if(inv.search(t2,"Pants")){
-                                  o.output(t1,"Pants",0.0,3000*speed,true);
+                                  o.output(t1,"OPENING_QUEST",0.0,3000*speed,true);
                               }
                               else
                                   o.outputSlowQuote(t1,"Maybe I should find me a pair of pants before I get out of these woods.",0.0,4000*speed,100*speed,true);
                               break;
-                 case "East": o.output(t1,"",0.0,0.0,true);
+                 case "East": if(inv.search(t2,"Shoes")){
+                                  o.output(t1,"WELCOME BACK!",0.0,0.0,true);
+                              }
+                              else{
+                                  Quest1cabin q1c = new Quest1cabin();
+                                  q1c.run(inv,stats,hero);
+                                  stats.updateStats(t3,hero);
+                              }
                               break;
                  case "West": if(inv.search(t2,"Shoes")){
-                                  o.output(t1,"PATH_QUEST --> PANTS+XP",0.0,2000*speed,true);
+                                  o.output(t1,"PATH-QUEST --> PANTS+XP",0.0,2000*speed,true);
                               }
                               else{
                                   o.output(t1,"\"Ouch!\"",0.0,2000*speed,true);
