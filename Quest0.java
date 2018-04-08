@@ -5,6 +5,8 @@ import javax.swing.text.*;
 import java.awt.event.*;
 
 public class Quest0 extends TheGame{
+
+
     public void run(Inventory inv, Stats stats, Hero hero) throws Exception {
         inputPanel.addActionListener(al);
         bill.build(frame, inputPanel, textPanel, t1, t2, t3);
@@ -37,7 +39,7 @@ public class Quest0 extends TheGame{
             if(model.getInput().equals("1"))          
             {
                 o.clearGUI(t1);
-                o.outputHuge(t1,"Welcome to\nFERALD'S WORLD!\n",1000);
+                o.outputHuge(model, t1,"Welcome to\nFERALD'S WORLD!\n",1000);
                 o.output(model,t1,"Before the adventure can begin you must choose a hero!",0.0,true);
                 o.output(model,t1,"First, pick a RACE.",0.0,true);
                 o.output(model,t1,"Human?",0.0,true);
