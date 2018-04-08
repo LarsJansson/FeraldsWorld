@@ -4,69 +4,20 @@ import java.awt.*;
 import javax.swing.text.*;
 
 public class Output{
-    public static final String RESET    = "\u001B[0m";
-    public static final String RED      = "\u001B[31m";     //1
-    public static final String GREEN    = "\u001B[32m";     //2
-    public static final String YELLOW   = "\u001B[33m";     //3
-    public static final String BLUE     = "\u001B[34m";     //4
-    public static final String PURPLE   = "\u001B[35m";     //5
-    public static final String CYAN     = "\u001B[36m";     //6
-    public static final String WHITE    = "\u001B[37m";     //7
 
+    private SimpleAttributeSet att;
 
-    //public void output(){
-    //    System.out.println("Output> No string provided");
-    //}
-    //public void output(String str) throws Exception{
-    //    System.out.println(str);
-    //}
-    //public void output(String str, double bd, double ad, boolean remove) throws Exception{
-    //    TimeUnit.SECONDS.sleep((long) bd);
-    //    if(remove){
-    //        System.out.print("\r                                                             ");
-    //        System.out.print("\r"+str);
-    //    }else{
-    //        System.out.print(str);
-    //    }
-    //    TimeUnit.SECONDS.sleep((long) ad);
-    //}
-    
-    public void clear(){
-        System.out.print("\033[H\033[2J");
-        System.out.flush();
+    public void Format(){
+        StyleConstants.setAlignment(att, StyleConstants.ALIGN_LEFT);
+        StyleConstants.setForeground(att, Color.WHITE);
+        StyleConstants.setBackground(att, Color.BLACK);
+        StyleConstants.setFontSize(att, 14);
+        StyleConstants.setFontFamily(att, "Courier New");
     }
 
     public void clearGUI(JTextPane tp){
         tp.setText("");
     }
-
-    //public void outputC(String str, double bd, double ad, boolean remove, int color) throws Exception{
-    //    String pickedColor = "";
-    //    if(color == 1)
-    //        pickedColor = RED;
-    //    else if(color == 2)
-    //        pickedColor = GREEN;
-    //    else if(color == 3)
-    //        pickedColor = YELLOW;
-    //    else if(color == 4)
-    //        pickedColor = BLUE;
-    //    else if(color == 5)
-    //        pickedColor = PURPLE;
-    //    else if(color == 6)
-    //        pickedColor = CYAN;
-    //    else if(color == 7)
-    //        pickedColor = WHITE;
-    //    else
-    //        pickedColor = "";
-    //    TimeUnit.SECONDS.sleep((long) bd);
-    //    if(remove){
-    //        System.out.print("\r                                                             ");
-    //        System.out.print("\r"+pickedColor+str+RESET);
-    //    }else{
-    //        System.out.print(pickedColor+str+RESET);
-    //    }
-    //    TimeUnit.SECONDS.sleep((long) ad);
-    //}
     
     public void output(JTextPane tp, String s, double bd, double ad, boolean remove) throws Exception{
         String oldText = "";
@@ -80,7 +31,7 @@ public class Output{
         TimeUnit.MILLISECONDS.sleep((long) ad);
     }
 
-    public void outputGUIC(JTextPane tp, String s, double bd, double ad, boolean remove, Color c) throws Exception{
+    public void outputColor(JTextPane tp, String s, double bd, double ad, boolean remove, Color c) throws Exception{
         StyledDocument doc = tp.getStyledDocument();
         AttributeSet set = doc.getCharacterElement(0).getAttributes();
         Style style = tp.addStyle("", null);
@@ -97,11 +48,10 @@ public class Output{
         catch (BadLocationException e){}
     }
     
-    public void outputGUIH(JTextPane tp, String s, double bd, double ad, boolean remove, Color c) throws Exception{
+    public void outputHuge(JTextPane tp, String s, double d) throws Exception{
         StyledDocument doc = tp.getStyledDocument();
-        AttributeSet set = doc.getCharacterElement(0).getAttributes();
+        att = new SimpleAttributeSet();
         Style style = tp.addStyle("", null);
-        StyleConstants.setForeground(style, c);
         StyleConstants.setFontFamily(style, "Courier New");
         StyleConstants.setFontSize(style, 34);
         tp.setCharacterAttributes(style, true);
@@ -117,6 +67,10 @@ public class Output{
             }
         }
         catch (BadLocationException e){}
+        Format();
+        tp.setCharacterAttributes(att, true);
+        tp.setParagraphAttributes(att, true);
+        Thread.sleep((long) d);
     }
 
     public void outputSlow(JTextPane tp, String s, double bd, double ad, double sp, boolean remove) throws Exception{

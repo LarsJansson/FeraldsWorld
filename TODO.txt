@@ -1,2 +1,3 @@
 add inv.remove()
 update KeyListener such that it does not create TheGame$1.class (make separate class)
+catch ArrayIndexOutOfBoundsException from prolonged scrolling in Picker

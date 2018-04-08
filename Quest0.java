@@ -19,11 +19,12 @@ public class Quest0 extends TheGame{
             //inv.addItem(t2, "Pants");
             //System.out.println(inv.search(t2, "Pants"));
             //
+            o.outputHuge(t1, "Starting\n", 1000);
             //
             //////////////////////////////
 
 
-            o.output(t1,"Press START (or enter \"1\" if playing on a computer) to begin\n",0.0,0.0,false);
+            o.output(t1,"Press START (or enter \"1\" if playing on a computer) to begin\n",0.0,0.0,true);
             
             inputPanel.setText("");
             input = model.getInput();
