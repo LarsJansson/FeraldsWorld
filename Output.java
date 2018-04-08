@@ -35,6 +35,26 @@ public class Output{
         model.setEnterPressed(false);
     }
 
+    public void output(DataModel model, JTextPane tp, String s, double ad, boolean remove, boolean WaitForEnter) throws Exception{
+        String oldText = "";
+        if (remove){
+            oldText = "";
+        }else{
+            oldText = tp.getText();
+        }
+        tp.setText(oldText + s);
+        TimeUnit.MILLISECONDS.sleep((long) ad);
+        model.setEnterPressed(false);
+        if(WaitForEnter){
+            while(!model.getEnterPressed()){
+                Thread.sleep(100);
+            }
+        }
+        model.setEnterPressed(false);
+    }
+
+
+
     public void outputColor(JTextPane tp, String s, double bd, double ad, boolean remove, Color c) throws Exception{
         StyledDocument doc = tp.getStyledDocument();
         AttributeSet set = doc.getCharacterElement(0).getAttributes();
@@ -77,7 +97,7 @@ public class Output{
         Thread.sleep((long) d);
     }
 
-    public void outputSlow(JTextPane tp, String s, double bd, double ad, double sp, boolean remove) throws Exception{
+    public void outputSlow(DataModel model, JTextPane tp, String s, double bd, double sp, boolean remove) throws Exception{
         if(remove == true)
             tp.setText("");
         String[] splitString = s.split("");
@@ -87,9 +107,14 @@ public class Output{
             TimeUnit.MILLISECONDS.sleep((long)sp);
             tp.setText(tp.getText() + splitString[i]);
         }
-        TimeUnit.MILLISECONDS.sleep((long)ad);
+        model.setEnterPressed(false);
+        while(!model.getEnterPressed()){
+            Thread.sleep(100);
+        }
+        model.setEnterPressed(false);
+
     }
-    public void outputSlowQuote(JTextPane tp, String s, double bd, double ad, double sp, boolean remove) throws Exception{
+    public void outputSlowQuote(DataModel model, JTextPane tp, String s, double bd, double sp, boolean remove) throws Exception{
         if(remove == true)
             tp.setText("");
         String[] splitString = s.split("");
@@ -99,6 +124,12 @@ public class Output{
             TimeUnit.MILLISECONDS.sleep((long)sp);
             tp.setText("\"" + tp.getText().replaceAll("\"","") + splitString[i] + "\"");
         }
-        TimeUnit.MILLISECONDS.sleep((long)ad);
+        model.setEnterPressed(false);
+        while(!model.getEnterPressed()){
+            Thread.sleep(100);
+        }
+        model.setEnterPressed(false);
+
+    
     }
 }
