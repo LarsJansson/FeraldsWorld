@@ -72,7 +72,7 @@ public class Output{
         catch (BadLocationException e){}
     }
     
-    public void outputHuge(JTextPane tp, String s, double d) throws Exception{
+    public void outputHuge(DataModel model, JTextPane tp, String s, double d) throws Exception{
         StyledDocument doc = tp.getStyledDocument();
         att = new SimpleAttributeSet();
         Style style = tp.addStyle("", null);
@@ -101,10 +101,15 @@ public class Output{
         if(remove == true)
             tp.setText("");
         String[] splitString = s.split("");
+        model.setEnterPressed(false);
         TimeUnit.MILLISECONDS.sleep((long)bd);
         int i;
         for (i = 0; i < splitString.length; i++){
-            TimeUnit.MILLISECONDS.sleep((long)sp);
+            if(!model.getEnterPressed()){
+                TimeUnit.MILLISECONDS.sleep((long)sp);
+            }else{
+                TimeUnit.MILLISECONDS.sleep(0);
+            }
             tp.setText(tp.getText() + splitString[i]);
         }
         model.setEnterPressed(false);
@@ -118,10 +123,15 @@ public class Output{
         if(remove == true)
             tp.setText("");
         String[] splitString = s.split("");
+        model.setEnterPressed(false);
         TimeUnit.MILLISECONDS.sleep((long)bd);
         int i;
         for (i = 0; i < splitString.length; i++){
-            TimeUnit.MILLISECONDS.sleep((long)sp);
+            if(!model.getEnterPressed()){
+                TimeUnit.MILLISECONDS.sleep((long)sp);
+            }else{
+                TimeUnit.MILLISECONDS.sleep(0);
+            }
             tp.setText("\"" + tp.getText().replaceAll("\"","") + splitString[i] + "\"");
         }
         model.setEnterPressed(false);
