@@ -12,7 +12,6 @@ public class TheGame
     String input = "";
     
     final DataModel model = new DataModel();
-
     JFrame frame = new Frame("FERALD'S WORLD");
     Output o = new Output();
     Hero hero = new Hero();
