@@ -30,6 +30,26 @@ public class Quest1cabin extends TheGame{
         inputPanel.setText("");model.setInput("");
         String choice = options[pickerPosition];
 
+        if(choice == "Go sneaky peeky"){
+            o.output(model, t1, "As you move in closer you try to use the trees as cover.", 0.0, true);
+            o.output(model, t1, "Almost there, you crouch down behind a bush to take a closer look.\nYou don't see any lights in any of the windows.", 0.0, true);
+            o.outputSlowQuote(model, t1, "Maybe there's no one home...", 0.0, 70*speed, true);
+            o.output(model, t1, "You leave your cover and sneak up to one of the windows.", 0.0, true);
+            o.output(model, t1, "As you look inside, a light is turned on!", 0.0, true);
+            o.output(model, t1, "Quickly you crouch down under the window!", 0.0, true);
+            o.output(model, t1, "You now hear someone walking inside.", 0.0, true);
+            o.outputSlowQuote(model, t1, "Hello?", 0.0, 70*speed, true);
+            o.outputSlowQuote(model, t1, "Is there someone out there?", 0.0, 70*speed, true);
+            o.output(model, t1, "What ", 0.0, true);
+        }
+        else if(choice == "Rush forward"){
+            o.output(model, t1, "\"Ouch!\"", 0.0, true);
+            o.output(model, t1, "", 0.0, true);
+        }
+        else{
+            o.output(model, t1, "\"I'll come back later\"", 0.0, true);
+        }
+
         if(hero.isMale()){
             SmallShoes ss = new SmallShoes();
             o.output(model, t1, "Nice! A pair of tiny shoes!\n", 0.0, false);

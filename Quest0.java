@@ -148,8 +148,8 @@ public class Quest0 extends TheGame{
     
                         o.clearGUI(t1);
                         o.output(model,t1,"Maybe this is a stupid question...",0.0,true);
-                        o.output(model,t1,"\nDo dwarfs have genders?",2000*speed,false);
-                        o.output(model,t1,"\nIf you do, enter (\"1\") for male,(\"2\") for female or (\"3\") for transgender.",2000*speed,false,false);
+                        o.output(model,t1,"\nDo dwarfs have genders?",0.0,false);
+                        o.output(model,t1,"\nIf you do, enter (\"1\") for male,(\"2\") for female or (\"3\") for transgender.",0.0,false,false);
                         inputPanel.setText("");model.setInput("");
                         input = model.getInput();
  
