@@ -13,6 +13,22 @@ public class Quest1cabin extends TheGame{
 
         o.output(model, t1, "As you get closer the dark contours emerges to the shape of a small cabin.",0.0, true);
         o.outputSlowQuote(model, t1, "Maybe I can find some clothes here...", 0.0, 100*speed, true);
+        
+        Picker picker = new Picker();
+        String[] options = {"Go sneaky peeky", "Rush forward", "Turn back"};
+        String[] hints = {"", "", ""};
+        pickerPosition = 0;
+        while(model.getInput().equals("")){
+            Thread.sleep(50);
+            if(pickerPosition > options.length - 1)
+                pickerPosition = 0;
+            if(pickerPosition < 0)
+                pickerPosition = options.length - 1;
+            picker.pickOption(t1, options, hints, pickerPosition, "How do you wish to approach?\n");
+            inputPanel.setText(options[pickerPosition]);
+        }
+        inputPanel.setText("");model.setInput("");
+        String choice = options[pickerPosition];
 
         if(hero.isMale()){
             SmallShoes ss = new SmallShoes();

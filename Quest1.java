@@ -15,7 +15,7 @@ public class Quest1 extends TheGame{
         while(quest1runs){
             Picker picker = new Picker();
             String[] options = {"North", "South", "East", "West"};
-            String[] hints = {"Darkness", "Leave forest", "Forest cabin", "Follow path"};
+            String[] hints = {"(Darkness)", "(Leave forest)", "(Forest cabin)", "(Follow path)"};
             pickerPosition = 0;
             while(model.getInput().equals("")){
                 Thread.sleep(50);
