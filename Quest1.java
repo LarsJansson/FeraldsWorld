@@ -10,14 +10,6 @@ public class Quest1 extends TheGame{
         bill.build(frame, inputPanel, textPanel, t1, t2, t3);
         inputPanel.grabFocus(); 
         stats.updateStats(t3, hero);
-        //o.outputGUIH(t1,"Quest 1 begins...", 0.0, 0.0, true, Color.RED);
-        o.output(t1,"As your other sences starts to return, you finally\nmanage to get up on your feet",0.0,3000*speed,true);
-        o.output(t1,"After removing the twig from your butt you take a look around.",0.0,3000*speed,true);
-        o.output(t1,"To the north the forest only seem to be thickening.",0.0,3000*speed,true);
-        o.output(t1,"Turning around, looking south, the forest seem to open up a bit.",0.0,3000*speed,true);
-        o.output(t1,"When you look to the east, you see something between the trees.",0.0,3000*speed,true);
-        o.output(t1,"\nIt looks like the contours of small cabin or something!",0.0,3000*speed,false);
-        o.output(t1,"In the other direction there is a small path leading further into the woods.",0.0,3000*speed,true);
         o.output(t1,"Where do you want do go?",0.0,0.0,true);
         
         //hero.xpInc(1000);
@@ -41,7 +33,7 @@ public class Quest1 extends TheGame{
         
         switch(choice){
             case "North": if(hero.getXp() < 50){
-                              o.output(t1,"The forest looks pretty creepy for a "+hero.getGenderL()+" "+hero.getRaceL()+".\nYou need at least 50 XP",3000*speed,3000*speed,true);
+                              o.output(t1,"The forest looks pretty creepy for a "+hero.getGenderL()+" "+hero.getRaceL()+".\nYou need at least 50 XP!",3000*speed,3000*speed,true);
                           }
                           else{
                               o.output(t1,"Woodquest! Yeah baby!",0.0,3000*speed,true);       
@@ -50,7 +42,7 @@ public class Quest1 extends TheGame{
             case "South": //if(inv.getInventory() == pants)
                           o.output(t1,"Pants",0.0,0.0,true);
                           //else
-                              //o.output(t1,"\"Maybe I should try to find some pants or something\nbefore I get out of these woods ",0.0,4000*speed,true);
+                              //o.output(t1,"\"Maybe I should find me a pair of pants before I get out of these woods.",0.0,4000*speed,true);
                           break;
              case "East": o.output(t1,"",0.0,0.0,true);
                           break;

@@ -187,6 +187,14 @@ public class Quest0 extends TheGame{
                 o.outputSlow(t1,"The giant twig that had found its home in my butt told me I was in a forest.",0.0,3000*speed,75*speed,true);
                 o.outputSlow(t1,"\nAnd I had no clothes...",0.0,4000*speed,75*speed,false);
 
+                o.output(t1,"As your other sences starts to return, you finally\nmanage to get up on your feet",0.0,4000*speed,true);
+                o.output(t1,"After removing the twig from your butt you take a look around.",0.0,4000*speed,true);
+                o.output(t1,"To the north the forest only seem to be thickening.",0.0,4000*speed,true);
+                o.output(t1,"Turning around, looking south, the forest seem to open up a bit.",0.0,4000*speed,true);
+                o.output(t1,"When you look to the east, you see something between the trees.",0.0,4000*speed,true);
+                o.output(t1,"\nIt looks like the contours of small cabin or something!",0.0,4000*speed,false);
+                o.output(t1,"In the other direction there is a small path leading further into the woods.",0.0,4000*speed,true);
+
                 restart = false;
                 frame.dispose();
             }

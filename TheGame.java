@@ -6,7 +6,7 @@ import java.awt.event.*;
 
 public class TheGame
 {
-    double speed = 1;
+    double speed = 0.25;
     boolean restart = true;
     int pickerPosition = 1;
     String input = "";
