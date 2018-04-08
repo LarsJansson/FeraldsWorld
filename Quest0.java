@@ -204,8 +204,8 @@ public class Quest0 extends TheGame{
                 o.output(t1,"To the north the forest only seem to be thickening.",0.0,4000*speed,true);
                 o.output(t1,"Turning around, looking south, the forest seem to open up a bit.",0.0,4000*speed,true);
                 o.output(t1,"When you look to the east, you see something between the trees.",0.0,4000*speed,true);
-                o.output(t1,"\nIt looks like the contours of small cabin or something!",0.0,4000*speed,false);
-                o.output(t1,"In the other direction there is a small path leading further into the woods.",0.0,4000*speed,true);
+                o.output(t1,"\nIt looks like the contours of a small cabin or something!",0.0,4000*speed,false);
+                o.output(t1,"In the other direction there is a narrow path leading further into the woods.",0.0,4000*speed,true);
 
                 restart = false;
                 frame.dispose();
