@@ -181,7 +181,7 @@ public class Quest0 extends TheGame{
                 stats.updateStats(t3,hero);
                 o.outputSlowQuote(t1,"Zzzz......",0.0,3000*speed,150*speed,true);
                 o.outputSlowQuote(t1,"Zzzzzzzz...",0.0,2000*speed,150*speed,true);
-                o.outputSlowQuote(t1,"Hrmph...",0.0,3000*speed,75*speed,true);
+                o.outputSlowQuote(t1,"Hrmph...",0.0,3000*speed,50*speed,true);
                 String g;
                 
                 if(hero.getGender() == "Male")
