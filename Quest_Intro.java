@@ -3,12 +3,23 @@ import javax.swing.*;
 import java.awt.*;
 import javax.swing.text.*;
 import java.awt.event.*;
+import java.io.*;
+
 
 public class Quest_Intro extends TheGame{
+    private final Frame frame;
+    public Quest_Intro(final Frame frame){
+        this.frame = frame;
+        inputPanel.addActionListener(al);
+        JPanel panel = new JPanel();
+        panel.setLayout(new GridBagLayout());
+        bill.build(panel, inputPanel, textPanel, t1, t2, t3);
+        frame.add(panel);
+        frame.setContentPane(panel);
+        frame.setVisible(true);
+    }
 
     public void run(Inventory inv, Stats stats, Hero hero) throws Exception{
-        inputPanel.addActionListener(al);
-        bill.build(frame, inputPanel, textPanel, t1, t2, t3);
         inputPanel.grabFocus(); 
         boolean q_iruns = true;
 
@@ -24,7 +35,19 @@ public class Quest_Intro extends TheGame{
             
             if(model.getInput().equals("1")){
                 o.clearGUI(t1);
-                o.outputHuge(model, t1, "Welcome to\nFERALD'S WORLD!\n", 1000);
+                
+                BufferedReader in = new BufferedReader(new FileReader("Logo.txt"));
+                String splashLine;
+                while((splashLine = in.readLine()) != null){
+                    o.output(model, t1, splashLine+"\n", 0.0, false, false);
+                }
+                in.close();
+
+                while(!model.getEnterPressed())
+                    Thread.sleep(100);
+                model.setEnterPressed(false);
+ 
+                
                 o.output(model, t1, "Before the adventure can begin you must choose a hero!", 0.0, true);
                 o.output(model, t1, "First, pick a RACE.", 0.0, true);
                 o.output(model, t1, "Human?", 0.0, true);
@@ -36,14 +59,14 @@ public class Quest_Intro extends TheGame{
                 racePick(model, t1, hero);
 
                 if(hero.isHuman()){
-                    o.output(model, t1, "Oh... A fancy human again. Oh well, to choose gender,\nenter a number between 1 and 10:", 2000*speed, true);
+                    o.output(model, t1, "Oh... A fancy human again. Oh well, to choose gender,\nenter a number between 1 and 10:", 2000*speed, true, false);
                     inputPanel.setText("");
                     model.setInput("");
                     input = model.getInput();
                     
                     while(model.getInput().equals(""))
                         Thread.sleep(100);
-
+                    o.clearGUI(t1);
                     o.output(model, t1, "Ok, this won't do...", 2000*speed, true);
                     genderPick(model, t1, hero);
                 }
@@ -67,7 +90,7 @@ public class Quest_Intro extends TheGame{
 
                 o.output(model, t1, "Ok. Now the game can finally begin!", 2000*speed, true);
                 o.output(model, t1, "Wait!", 0.0, true);
-                o.output(model, t1, "Whats your name?", 0.0, true);   
+                o.output(model, t1, "Whats your name?", 0.0, true, false);   
                 namePick(model, t1, hero);
 
                 o.output(model, t1, String.format("You have choosen to play as %s, the %s %s", hero.getNameU(), hero.getGenderU(), hero.getRaceU()), 2000*speed, true);
@@ -102,7 +125,6 @@ public class Quest_Intro extends TheGame{
                 o.output(model, t1, "In the opposite direction the path dissapears into the woods...", 0.0, true);
 
                 q_iruns = false;
-                frame.dispose();
             }
         }
         super.hero = hero;
@@ -120,6 +142,7 @@ public class Quest_Intro extends TheGame{
         while(model.getInput().equals(""))
             Thread.sleep(100);
                 
+        o.clearGUI(t1);
         if(model.getInput().equals("1"))
             hero.setRace("Human");
         else if(model.getInput().equals("2"))
@@ -133,15 +156,15 @@ public class Quest_Intro extends TheGame{
     }
 
     public void genderPick(DataModel model, JTextPane t1, Hero hero) throws Exception{
-        o.output(model, t1, "Please enter (\"1\") for male,(\"2\") for female or (\"3\") for transgender.", 0.0, true);
+        o.output(model, t1, "Please enter (\"1\") for male,(\"2\") for female or (\"3\") for transgender.", 0.0, true, false);
         
         inputPanel.setText("");
         model.setInput("");
         input = model.getInput();
-                 
+        
         while(model.getInput().equals(""))
             Thread.sleep(100);
-                
+        o.clearGUI(t1);        
         if(model.getInput().equals("1"))
             hero.setGender("Male");
         else if(model.getInput().equals("2"))
@@ -157,7 +180,7 @@ public class Quest_Intro extends TheGame{
                     
         while(model.getInput().equals(""))
             Thread.sleep(100);
-                                                        
+        o.clearGUI(t1);                                                
         hero.setName(model.getInput());
     }
 

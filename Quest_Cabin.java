@@ -4,11 +4,23 @@ import javax.swing.text.*;
 import java.awt.*;
 
 public class Quest_Cabin extends TheGame{
-    
-    public void run(Inventory inv, Stats stats, Hero hero) throws Exception{
+    private final Frame frame;
+    public Quest_Cabin(final Frame frame){
+        this.frame = frame;
         inputPanel.addActionListener(al);
         inputPanel.addKeyListener(kl);
-        bill.build(frame, inputPanel, textPanel, t1, t2, t3);
+        JPanel panel = new JPanel();
+        panel.setLayout(new GridBagLayout());
+        bill.build(panel, inputPanel, textPanel, t1, t2, t3);
+        frame.add(panel);
+        frame.setContentPane(panel);
+        frame.setVisible(true);
+    }
+
+
+
+
+    public void run(Inventory inv, Stats stats, Hero hero) throws Exception{
         inputPanel.grabFocus();
         stats.updateStats(t3, hero);
         boolean q_cruns = true;
@@ -105,10 +117,6 @@ public class Quest_Cabin extends TheGame{
                     q_cruns = false;
                     hero.xpInc(1);
                     stats.updateStats(t3, hero);
-                    super.hero = hero;
-                    super.inv = inv;
-                    super.stats = stats;
-                    frame.dispose();
                 }
                 else if(choice == "Rush forward"){
                     o.output(model, t1, "\"Ouch!\"", 0.0, true);
@@ -123,6 +131,5 @@ public class Quest_Cabin extends TheGame{
         super.hero = hero;
         super.inv = inv;
         super.stats = stats;
-        frame.dispose();
     }
 }

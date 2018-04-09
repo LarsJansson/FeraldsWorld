@@ -4,8 +4,18 @@
 #       XXX  XXX  XX   XXX  X    XX   XXX     X   X  XXX  XX   X    XX        #
         X    X    X X  X X  X    X X  X       X   X  X X  X X  X    X X
         XX   XX   XX   XXX  X    X X  XXX     X   X  X X  XX   X    X X
-        X    X    X X  X X  X    X X    X     X X X  X X  X X  X    X X         
+        X    X    X X  X X  X    X X    X     X X X  X X  X X  X    X X
 #       X    XXX  X X  X X  XXX  XX   XXX     XXXXx  XXX  X X  XXX  XX        #
 ###                                                                         ###
 ###############################################################################
-##############################################################################:#
+###############################################################################
+
+
+        A text based rpg monster-fighter/puzzle-solving/poetic shut-em'-up
+
+        Written solely in java by:
+        Ferald the Lelle.
+
+>press Enter to continue.
+
+(and keep pressing it)

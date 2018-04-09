@@ -4,11 +4,21 @@ import javax.swing.text.*;
 import java.awt.*;
 
 public class Quest_Beginning extends TheGame{
-    
-    public void run(Inventory inv, Stats stats, Hero hero) throws Exception{
+    private final Frame frame;
+    private JPanel panel;
+    public Quest_Beginning(final Frame frame){
+        this.frame = frame;
         inputPanel.addActionListener(al);
         inputPanel.addKeyListener(kl);
-        bill.build(frame, inputPanel, textPanel, t1, t2, t3);
+        panel = new JPanel();
+        panel.setLayout(new GridBagLayout());
+        bill.build(panel, inputPanel, textPanel, t1, t2, t3);
+        frame.add(panel);
+        frame.setContentPane(panel);
+        frame.setVisible(true);
+    }
+
+    public void run(Inventory inv, Stats stats, Hero hero) throws Exception{
         inputPanel.grabFocus(); 
         stats.updateStats(t3, hero);
         boolean q_bruns = true;
@@ -55,22 +65,22 @@ public class Quest_Beginning extends TheGame{
                 else if(inv.search(t2, "Shoes") && hero.getXp() < 50)
                     o.output(model, t1, "\"I shouldn't bother that nice old lady any more tonight...\"", 0.0, true);
                 else{
-                    frame.setVisible(false);
-                    Quest_Cabin q_c = new Quest_Cabin();
+                    Quest_Cabin q_c = new Quest_Cabin(frame);
                     q_c.run(inv,stats,hero);
+                    frame.setContentPane(panel);
+                    inputPanel.grabFocus(); 
                     stats.updateStats(t3,hero);
                     inv.update(t2);
-                    frame.setVisible(true);
                 }
             }
             else if(choice == "West"){
                 if(inv.search(t2,"Shoes")){
-                    frame.setVisible(false);
-                    Quest_Path q_p = new Quest_Path();
+                    Quest_Path q_p = new Quest_Path(frame);
                     q_p.run(inv,stats,hero);
+                    frame.setContentPane(panel);
+                    inputPanel.grabFocus(); 
                     stats.updateStats(t3,hero);
                     inv.update(t2);
-                    frame.setVisible(true);
                 }
                 else{
                     o.output(model, t1, "\"Ouch!\"", 0.0, true);

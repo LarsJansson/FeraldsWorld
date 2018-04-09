@@ -11,7 +11,7 @@ public class TheGame{
     String input = "";
     
     final DataModel model = new DataModel();
-    JFrame frame = new Frame("FERALD'S WORLD");
+    private final Frame frame = new Frame("FERALD'S WORLD");
     Output o = new Output();
     Hero hero = new Hero();
     JPanel textPanel = new JPanel();
@@ -43,7 +43,7 @@ public class TheGame{
     public TheGame(){
         frame.setBackground(Color.BLACK);
         frame.setLayout(new GridBagLayout());
-        frame.setVisible(true);
+        //frame.setVisible(true);
     }
         public void setInput(String str){
          input = str;
@@ -57,18 +57,17 @@ public class TheGame{
     }
 
     public void run() throws Exception{
-        frame.dispose();
         if(true){
-            Quest_Intro q_i = new Quest_Intro();
+            Quest_Intro q_i = new Quest_Intro(frame);
             q_i.run(inv, stats, hero);
         }
         
         //hero.setGender("Male");
         //hero.setRace("Orch");
-        //hero.setName("Ferulv");
+        //hero.setName("Feralkohol");
         
         if(true){
-            Quest_Beginning q_i = new Quest_Beginning();
+            Quest_Beginning q_i = new Quest_Beginning(frame);
             q_i.run(inv, stats, hero);
         }
     }

@@ -4,11 +4,20 @@ import javax.swing.text.*;
 import java.awt.*;
 
 public class Quest_Path extends TheGame{
-    
-    public void run(Inventory inv, Stats stats, Hero hero) throws Exception{
+    private final Frame frame;
+    public Quest_Path(final Frame frame){
+        this.frame = frame;
         inputPanel.addActionListener(al);
         inputPanel.addKeyListener(kl);
-        bill.build(frame, inputPanel, textPanel, t1, t2, t3);
+        JPanel panel = new JPanel();
+        panel.setLayout(new GridBagLayout());
+        bill.build(panel, inputPanel, textPanel, t1, t2, t3);
+        frame.add(panel);
+        frame.setContentPane(panel);
+        frame.setVisible(true);
+    }
+
+    public void run(Inventory inv, Stats stats, Hero hero) throws Exception{
         inputPanel.grabFocus();
         stats.updateStats(t3, hero);
         boolean q_pruns = true;
@@ -74,7 +83,6 @@ public class Quest_Path extends TheGame{
             super.hero = hero;
             super.inv = inv;
             super.stats = stats;
-            frame.dispose();
         }
     }
 }
