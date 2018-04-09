@@ -53,19 +53,19 @@ public class Hero{
             return false;
     }
     public boolean isOrch(){
-        if (race.equals("Human"))
+        if (race.equals("Orch"))
             return true;
         else
             return false;
     }
     public boolean isElf(){
-        if (race.equals("Human"))
+        if (race.equals("Elf"))
             return true;
         else
             return false;
     }
     public boolean isDwarf(){
-        if (race.equals("Human"))
+        if (race.equals("Dwarf"))
             return true;
         else
             return false;
