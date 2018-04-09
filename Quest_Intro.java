@@ -24,7 +24,7 @@ public class Quest_Intro extends TheGame{
         boolean q_iruns = true;
 
         while(q_iruns){
-            o.output(model, t1, "Press START (or enter \"1\" if playing on a computer) to begin\n", 0.0, true, false);
+            o.output(model, t1, "Press START (or enter \"1\" if playing on a computer) to begin.\n", 0.0, true, false);
             
             inputPanel.setText("");
             model.setInput("");
@@ -59,7 +59,7 @@ public class Quest_Intro extends TheGame{
                 racePick(model, t1, hero);
 
                 if(hero.isHuman()){
-                    o.output(model, t1, "Oh... A fancy human again. Oh well, to choose gender,\nenter a number between 1 and 10:", 2000*speed, true, false);
+                    o.output(model, t1, "Oh... A fancy human again. Oh well, to choose gender,\nenter a number between 1 and 10.", 2000*speed, true, false);
                     inputPanel.setText("");
                     model.setInput("");
                     input = model.getInput();
@@ -93,7 +93,7 @@ public class Quest_Intro extends TheGame{
                 o.output(model, t1, "Whats your name?", 0.0, true, false);   
                 namePick(model, t1, hero);
 
-                o.output(model, t1, String.format("You have choosen to play as %s, the %s %s", hero.getNameU(), hero.getGenderU(), hero.getRaceU()), 2000*speed, true);
+                o.output(model, t1, String.format("You have choosen to play as %s, the %s %s.", hero.getNameU(), hero.getGenderU(), hero.getRaceU()), 2000*speed, true);
                 
                 stats.updateStats(t3, hero);
 

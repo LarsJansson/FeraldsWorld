@@ -11,11 +11,10 @@
 ###############################################################################
 
 
-        A text based rpg monster-fighter/puzzle-solving/poetic shut-em'-up
+             A text based RPG adventure/fighting/puzzle/shut'em up
 
-        Written solely in java by:
-        Ferald the Lelle.
+             Written solely in java by:
+             Lars och Felix
+        
 
->press Enter to continue.
-
-(and keep pressing it)
+            >press ENTER to continue (and keep pressing it...)
