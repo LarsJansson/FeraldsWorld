@@ -3,20 +3,20 @@ import javax.swing.*;
 import javax.swing.text.*;
 import java.awt.*;
 
-public class Quest1cabin extends TheGame{
+public class Quest_Cabin extends TheGame{
+    
     public void run(Inventory inv, Stats stats, Hero hero) throws Exception{
         inputPanel.addActionListener(al);
         inputPanel.addKeyListener(kl);
         bill.build(frame, inputPanel, textPanel, t1, t2, t3);
         inputPanel.grabFocus();
         stats.updateStats(t3, hero);
+        boolean q_cruns = true;
 
-        o.output(model, t1, "As you get closer the dark contours emerges to the shape of a small cabin.",0.0, true);
-        o.outputSlowQuote(model, t1, "Maybe I can find some clothes here...", 0.0, 100*speed, true);
-        
-        boolean q1cruns = true;
+        o.output(model, t1, "As you get closer the dark contours emerges to the shape of a small cabin.", 0.0, true);
+        o.outputSlowQuote(model, t1, "Maybe I can find some clothes here...", 0.0, 100*speed, true);     
 
-        while(q1cruns){
+        while(q_cruns){
             Picker picker = new Picker();
             String[] options = {"Go sneaky peeky", "Rush forward", "Turn back"};
             String[] hints = {"", "", ""};
@@ -27,10 +27,11 @@ public class Quest1cabin extends TheGame{
                     pickerPosition = 0;
                 if(pickerPosition < 0)
                     pickerPosition = options.length - 1;
-                picker.pickOption(t1, options, hints, pickerPosition, "How do you wish to approach?\n");
+                picker.pickOption(t1, options, hints, pickerPosition, "How do you wish to approach?");
                 inputPanel.setText(options[pickerPosition]);
             }
-            inputPanel.setText("");model.setInput("");
+            inputPanel.setText("");
+            model.setInput("");
             String choice = options[pickerPosition];
 
             if(choice == "Go sneaky peeky"){
@@ -76,7 +77,7 @@ public class Quest1cabin extends TheGame{
                 inputPanel.setText("");model.setInput("");
                 String choice2 = options2[pickerPosition];
                 if(choice2 == "Yes"){
-                    if(inv.search(t2,"SMALL KEY"))
+                    if(inv.search(t2, "SMALL KEY"))
                         o.output(model, t1, "Here's some nice stuff!", 0.0, true);
                     else
                         o.output(model, t1, "You need a SMALL KEY to open this chest.", 0.0, true);
@@ -100,9 +101,9 @@ public class Quest1cabin extends TheGame{
                     inv.add(t2, ns);
                 }   
                     o.outputSlowQuote(model, t1, "I better get going now. Thank you so much for your help!", 0.0, 70*speed, true);
-                    o.output(model, t1, "Gained 10 xp!", 0.0, true);
-                    q1cruns = false;
-                    hero.xpInc(10);
+                    o.output(model, t1, "Gained 1 xp!", 0.0, true);
+                    q_cruns = false;
+                    hero.xpInc(1);
                     stats.updateStats(t3, hero);
                     super.hero = hero;
                     super.inv = inv;
@@ -115,7 +116,7 @@ public class Quest1cabin extends TheGame{
                 }
                 else{
                     o.output(model, t1, "\"I'll come back later.\"", 0.0, true);
-                    q1cruns = false;
+                    q_cruns = false;
                 }
         }
         stats.updateStats(t3, hero);

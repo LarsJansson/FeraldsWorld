@@ -8,7 +8,7 @@ public class Picker{
         try{
             String oldText = tp.getText();
             String newText = q+"\n\n";
-            for (int o = 0; o<options.length; o++){
+            for (int o = 0; o < options.length; o++){
                 if (p == o){
                     newText = newText.concat(">"+options[o]+" "+hints[o]+"\n");
                 }else{
@@ -16,7 +16,8 @@ public class Picker{
                 }
             }
             tp.setText(""+newText);
-        }catch (ArrayIndexOutOfBoundsException e){
+        }
+        catch (ArrayIndexOutOfBoundsException e){
             System.out.println(e);
             p = 1;
         }

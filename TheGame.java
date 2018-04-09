@@ -4,10 +4,9 @@ import java.awt.*;
 import javax.swing.text.*;
 import java.awt.event.*;
 
-public class TheGame
-{
+public class TheGame{
+    
     double speed = 1;
-    boolean restart = true;
     int pickerPosition = 1;
     String input = "";
     
@@ -28,11 +27,10 @@ public class TheGame
     
     KeyListener kl = new KeyListener(){
         public void keyPressed(KeyEvent e){
-            //System.out.println(e.getKeyCode());
-            if (e.getKeyCode() == KeyEvent.VK_LEFT)
-                {}//System.out.println("left");
-            else if (e.getKeyCode() == KeyEvent.VK_RIGHT)
-                {}//System.out.println("right");
+            if(e.getKeyCode() == KeyEvent.VK_LEFT){
+            }
+            else if(e.getKeyCode() == KeyEvent.VK_RIGHT){
+            }
             else if (e.getKeyCode() == KeyEvent.VK_UP)
                 changePosition(-1);
             else if (e.getKeyCode() == KeyEvent.VK_DOWN)
@@ -58,20 +56,20 @@ public class TheGame
         pickerPosition = p;
     }
 
-    public void run() throws Exception {
+    public void run() throws Exception{
         frame.dispose();
-        if(false){
-            Quest0 q0 = new Quest0();
-            q0.run(inv, stats, hero);
+        if(true){
+            Quest_Intro q_i = new Quest_Intro();
+            q_i.run(inv, stats, hero);
         }
         
-        hero.setGender("Male");
-        hero.setRace("Orch");
-        hero.setName("Ferulv");
+        //hero.setGender("Male");
+        //hero.setRace("Orch");
+        //hero.setName("Ferulv");
         
         if(true){
-            Quest1 q1 = new Quest1();
-            q1.run(inv, stats, hero);
+            Quest_Beginning q_i = new Quest_Beginning();
+            q_i.run(inv, stats, hero);
         }
     }
 }

@@ -22,38 +22,32 @@ public class Output{
     public void output(DataModel model, JTextPane tp, String s, double bd, boolean remove) throws Exception{
         TimeUnit.MILLISECONDS.sleep((long) bd);
         String oldText = "";
-        if (remove){
+        if(remove)
             oldText = "";
-        }else{
+        else
             oldText = tp.getText();
-        }
         tp.setText(oldText + s);
         model.setEnterPressed(false);
-        while(!model.getEnterPressed()){
+        while(!model.getEnterPressed())
             Thread.sleep(100);
-        }
         model.setEnterPressed(false);
     }
 
     public void output(DataModel model, JTextPane tp, String s, double bd, boolean remove, boolean WaitForEnter) throws Exception{
         TimeUnit.MILLISECONDS.sleep((long) bd);
         String oldText = "";
-        if (remove){
+        if(remove)
             oldText = "";
-        }else{
+        else
             oldText = tp.getText();
-        }
         tp.setText(oldText + s);
         model.setEnterPressed(false);
         if(WaitForEnter){
-            while(!model.getEnterPressed()){
+            while(!model.getEnterPressed())
                 Thread.sleep(100);
-            }
         }
         model.setEnterPressed(false);
     }
-
-
 
     public void outputColor(JTextPane tp, String s, double bd, double ad, boolean remove, Color c) throws Exception{
         StyledDocument doc = tp.getStyledDocument();
@@ -105,17 +99,15 @@ public class Output{
         TimeUnit.MILLISECONDS.sleep((long)bd);
         int i;
         for (i = 0; i < splitString.length; i++){
-            if(!model.getEnterPressed()){
+            if(!model.getEnterPressed())
                 TimeUnit.MILLISECONDS.sleep((long)sp);
-            }else{
+            else
                 TimeUnit.MILLISECONDS.sleep(0);
-            }
             tp.setText(tp.getText() + splitString[i]);
         }
         model.setEnterPressed(false);
-        while(!model.getEnterPressed()){
+        while(!model.getEnterPressed())
             Thread.sleep(100);
-        }
         model.setEnterPressed(false);
 
     }
@@ -127,19 +119,15 @@ public class Output{
         TimeUnit.MILLISECONDS.sleep((long)bd);
         int i;
         for (i = 0; i < splitString.length; i++){
-            if(!model.getEnterPressed()){
+            if(!model.getEnterPressed())
                 TimeUnit.MILLISECONDS.sleep((long)sp);
-            }else{
+            else
                 TimeUnit.MILLISECONDS.sleep(0);
-            }
             tp.setText("\"" + tp.getText().replaceAll("\"","") + splitString[i] + "\"");
         }
         model.setEnterPressed(false);
-        while(!model.getEnterPressed()){
+        while(!model.getEnterPressed())
             Thread.sleep(100);
-        }
-        model.setEnterPressed(false);
-
-    
+        model.setEnterPressed(false);   
     }
 }

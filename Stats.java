@@ -38,7 +38,7 @@ public class Stats{
         StyleConstants.setForeground(style1, Color.darkGray);
         StyleConstants.setForeground(style2, Color.RED);
         
-        try {
+        try{
             doc.insertString(doc.getLength(), "\n", style1);
             doc.insertString(doc.getLength(), "Name: ", style1);
             doc.insertString(doc.getLength(), hero.getName()+"\t", style2);
@@ -48,8 +48,7 @@ public class Stats{
             doc.insertString(doc.getLength(), hero.getGender()+"\t", style2);
             doc.insertString(doc.getLength(), "XP :", style1);
             doc.insertString(doc.getLength(), Integer.toString(hero.getXp()), style2);
-
-            }
+        }
         catch (BadLocationException e){}
     }
 }
