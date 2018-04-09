@@ -13,6 +13,7 @@ public class Quest1 extends TheGame{
         boolean quest1runs = true;
         
         while(quest1runs){
+            stats.updateStats(t3, hero);
             Picker picker = new Picker();
             String[] options = {"North", "South", "East", "West"};
             String[] hints = {"(Darkness)", "(Leave forest)", "(Forest cabin)", "(Follow path)"};
@@ -44,8 +45,11 @@ public class Quest1 extends TheGame{
                               else
                                   o.output(model, t1,"\"Maybe I should find me a pair of pants before I get out of these woods.\"",0.0,true);
                               break;
-                 case "East": if(inv.search(t2,"Shoes")){
-                                  o.output(model, t1,"WELCOME BACK!",0.0,true);
+                 case "East": if(inv.search(t2,"Shoes") && hero.getXp()>50){
+                                  o.output(model, t1,"Now you have a small key maybe?",0.0,true);
+                              }
+                              else if(inv.search(t2,"Shoes") && hero.getXp()<50){
+                                  o.output(model,t1,"\"I shouldn't bother that nice old lady any more tonight...\"",0.0,true);
                               }
                               else{
                                   frame.setVisible(false);
@@ -57,7 +61,60 @@ public class Quest1 extends TheGame{
                               }
                               break;
                  case "West": if(inv.search(t2,"Shoes")){
-                                  o.output(model, t1,"PATH-QUEST --> PANTS+XP",0.0,true);
+                                  o.output(model,t1,"\"This feels much better! I'm so glad I have these shoes!\"",0.0,true); //getItem(huge...)
+                                  o.output(model,t1,"You start to follow the path into the woods.",0.0,true);
+                                  o.output(model,t1,"To make the forest seem less intimidating you start to sing a bit to yourself.",0.0,true);
+                                  o.outputSlowQuote(model,t1,"I'm walking down on this path.",0.0,70*speed,true);
+                                  o.outputSlowQuote(model,t1,"\nAbsorbed by the woods and its wrath.",0.0,70*speed,false);
+                                  if(hero.isTransgender() && hero.isOrch()){
+                                      o.outputSlowQuote(model,t1,"\nA transgender orc,",0.0,70*speed,false); 
+                                      o.outputSlowQuote(model,t1,"\nmight feel like a dork,",0.0,70*speed,false);    
+                                  }
+                                  else if(hero.isMale() && hero.isOrch()){
+                                      o.outputSlowQuote(model,t1,"\nA masculin orc,",0.0,70*speed,false); 
+                                      o.outputSlowQuote(model,t1,"\nmight feel like a dork,",0.0,70*speed,false);    
+                                  }
+                                  else if(hero.isFemale() && hero.isOrch()){
+                                      o.outputSlowQuote(model,t1,"\nA feminin orc,",0.0,70*speed,false); 
+                                      o.outputSlowQuote(model,t1,"\nmight feel like a dork,",0.0,70*speed,false);    
+                                  } 
+                                  else if(hero.isTransgender() && hero.isHuman()){
+                                      o.outputSlowQuote(model,t1,"\nA transgender being,",0.0,70*speed,false); 
+                                      o.outputSlowQuote(model,t1,"\nwet from self peeing,",0.0,70*speed,false);    
+                                  } 
+                                  else if(hero.isMale() && hero.isHuman()){
+                                      o.outputSlowQuote(model,t1,"\nA masculin guy,",0.0,70*speed,false); 
+                                      o.outputSlowQuote(model,t1,"\nso scared he might die,",0.0,70*speed,false);    
+                                  } 
+                                  else if(hero.isFemale() && hero.isHuman()){
+                                      o.outputSlowQuote(model,t1,"\nA feminin girl,",0.0,70*speed,false); 
+                                      o.outputSlowQuote(model,t1,"\n'bout ready to hurl,",0.0,70*speed,false);    
+                                  } 
+                                  else if(hero.isTransgender() && hero.isElf()){
+                                      o.outputSlowQuote(model,t1,"\nA transgender elf,",0.0,70*speed,false); 
+                                      o.outputSlowQuote(model,t1,"\nwho just peed one self,",0.0,70*speed,false);    
+                                  } 
+                                  else if(hero.isMale() && hero.isElf()){
+                                      o.outputSlowQuote(model,t1,"\nA masculin elf,",0.0,70*speed,false); 
+                                      o.outputSlowQuote(model,t1,"\nwho just peed himself,",0.0,70*speed,false);    
+                                  } 
+                                  else if(hero.isFemale() && hero.isElf()){
+                                      o.outputSlowQuote(model,t1,"\nA feminin elf,",0.0,70*speed,false); 
+                                      o.outputSlowQuote(model,t1,"\nwho just peed herself,",0.0,70*speed,false);    
+                                  } 
+                                  else if(hero.isTransgender() && hero.isDwarf()){
+                                      o.outputSlowQuote(model,t1,"\nA midget transgender,",0.0,70*speed,false); 
+                                      o.outputSlowQuote(model,t1,"\nabout to surrender,",0.0,70*speed,false);    
+                                  } 
+                                  else if(hero.isMale() && hero.isDwarf()){
+                                      o.outputSlowQuote(model,t1,"\nThough bearded and strong",0.0,70*speed,false); 
+                                      o.outputSlowQuote(model,t1,"\nhe's not very long,",0.0,70*speed,false);    
+                                  } 
+                                  else if(hero.isFemale() && hero.isDwarf()){
+                                      o.outputSlowQuote(model,t1,"\nGirly and short,",0.0,70*speed,false); 
+                                      o.outputSlowQuote(model,t1,"\nyou consider abort,",0.0,70*speed,false);    
+                                  } 
+                                  o.outputSlowQuote(model,t1,"\nlonging for home and a bath!",0.0,70*speed,false);
                               }
                               else{
                                   o.output(model, t1,"\"Ouch!\"",0.0,true);

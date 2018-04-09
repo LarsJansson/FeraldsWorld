@@ -82,7 +82,7 @@ public class Hero{
         else
             return false;
     }
-    public boolean inTransgender(){
+    public boolean isTransgender(){
         if (gender.equals("Transgender"))
             return true;
         else

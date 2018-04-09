@@ -102,6 +102,7 @@ public class Quest1cabin extends TheGame{
                     o.outputSlowQuote(model, t1, "I better get going now. Thank you so much for your help!", 0.0, 70*speed, true);
                     o.output(model, t1, "Gained 10 xp!", 0.0, true);
                     q1cruns = false;
+                    hero.xpInc(10);
                     stats.updateStats(t3, hero);
                     super.hero = hero;
                     super.inv = inv;
