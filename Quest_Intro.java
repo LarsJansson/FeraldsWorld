@@ -156,7 +156,7 @@ public class Quest_Intro extends TheGame{
     }
 
     public void genderPick(DataModel model, JTextPane t1, Hero hero) throws Exception{
-        o.output(model, t1, "Please enter \"1\" for MALE,\"2\" for FEMALE or \"3\" for TRANSGENDER.", 0.0, true, false);
+        o.output(model, t1, "Please enter \"1\" for MALE, \"2\" for FEMALE or \"3\" for TRANSGENDER.", 0.0, true, false);
         
         inputPanel.setText("");
         model.setInput("");
