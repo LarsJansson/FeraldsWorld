@@ -128,6 +128,8 @@ public class Quest_Intro extends TheGame{
             hero.setRace("Elf");
         else if(model.getInput().equals("4"))
             hero.setRace("Dwarf");
+        else{
+        }
     }
 
     public void genderPick(DataModel model, JTextPane t1, Hero hero) throws Exception{
