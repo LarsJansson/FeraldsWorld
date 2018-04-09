@@ -60,7 +60,14 @@ public class Quest1 extends TheGame{
                                   frame.setVisible(true);
                               }
                               break;
-                 case "West": if(inv.search(t2,"Shoes")){
+                 case "West": frame.setVisible(false);
+                              Quest1path q1p = new Quest1path();
+                              q1p.run(inv,stats,hero);
+                              stats.updateStats(t3,hero);
+                              inv.update(t2);
+                              frame.setVisible(true);
+
+                              if(inv.search(t2,"Shoes")){
                                   o.output(model,t1,"\"This feels much better! I'm so glad I have these shoes!\"",0.0,true); //getItem(huge...)
                                   o.output(model,t1,"You start to follow the path into the woods.",0.0,true);
                                   o.output(model,t1,"To make the forest seem less intimidating you start to sing a bit to yourself.",0.0,true);

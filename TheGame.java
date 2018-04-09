@@ -60,13 +60,18 @@ public class TheGame
 
     public void run() throws Exception {
         frame.dispose();
-        if(true){
-        Quest0 q0 = new Quest0();
-        q0.run(inv, stats, hero);
+        if(false){
+            Quest0 q0 = new Quest0();
+            q0.run(inv, stats, hero);
         }
+        
+        hero.setGender("Male");
+        hero.setRace("Orch");
+        hero.setName("Ferulv");
+        
         if(true){
-        Quest1 q1 = new Quest1();
-        q1.run(inv, stats, hero);
+            Quest1 q1 = new Quest1();
+            q1.run(inv, stats, hero);
         }
     }
 }
