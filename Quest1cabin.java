@@ -70,7 +70,7 @@ public class Quest1cabin extends TheGame{
                         pickerPosition = 0;
                     if(pickerPosition < 0)
                         pickerPosition = options2.length - 1;
-                    picker.pickOption(t1, options2, hints2, pickerPosition, "Try to open it?\n");
+                    picker.pickOption(t1, options2, hints2, pickerPosition, "Try to open it?");
                     inputPanel.setText(options2[pickerPosition]);
                 }
                 inputPanel.setText("");model.setInput("");

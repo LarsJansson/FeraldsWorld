@@ -49,24 +49,24 @@ class Shoes extends Item{
 }
 class SmallShoes extends Item{
     public SmallShoes(){
-        setName("Small shoes");
-        setDescription("Shoes! They doesn't really fit");
+        setName("Tiny shoes");
+        setDescription("Shoes! They doesn't really fit.");
         setCopies(1);
         setDmg(1);
     }
 }
 class LargeShoes extends Item{
     public LargeShoes(){
-        setName("Large shoes");
-        setDescription("Shoes! They doesn't really fit");
+        setName("Huge shoes");
+        setDescription("Shoes! They doesn't really fit.");
         setCopies(1);
         setDmg(1);
     }
 }
 class NormieShoes extends Item{
     public NormieShoes(){
-        setName("Normie Shoes");
-        setDescription("Shoes! Ugly non-glittery shoes.");
+        setName("Normal shoes");
+        setDescription("Shoes! Ugly non glittery shoes.");
         setCopies(1);
         setDmg(1);
     }
