@@ -63,7 +63,7 @@ public class TheGame{
         }
         
         //hero.setGender("Male");
-        //hero.setRace("Orch");
+        //hero.setRace("Orc");
         //hero.setName("Feralkohol");
         
         if(true){

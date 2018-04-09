@@ -28,15 +28,15 @@ public class Quest_Path extends TheGame{
             o.output(model, t1, "To make the forest seem less intimidating you start to sing a bit to yourself.", 0.0, true);
             o.outputSlowQuote(model, t1, "I'm walking down on this path.", 0.0, 70*speed, true);
             o.outputSlowQuote(model, t1, "\nAbsorbed by the woods and its wrath.", 0.0, 70*speed, false);
-            if(hero.isTransgender() && hero.isOrch()){
+            if(hero.isTransgender() && hero.isOrc()){
                 o.outputSlowQuote(model, t1, "\nA transgender orc,", 0.0, 70*speed, false); 
                 o.outputSlowQuote(model, t1, "\nmight feel like a dork,", 0.0, 70*speed, false);    
             }
-            else if(hero.isMale() && hero.isOrch()){
+            else if(hero.isMale() && hero.isOrc()){
                 o.outputSlowQuote(model, t1, "\nA masculin orc,", 0.0, 70*speed, false); 
                 o.outputSlowQuote(model, t1, "\nmight feel like a dork,", 0.0, 70*speed, false);    
             }
-            else if(hero.isFemale() && hero.isOrch()){
+            else if(hero.isFemale() && hero.isOrc()){
                 o.outputSlowQuote(model, t1, "\nA feminin orc,", 0.0, 70*speed, false); 
                 o.outputSlowQuote(model, t1, "\nmight feel like a dork,", 0.0, 70*speed, false);    
             } 

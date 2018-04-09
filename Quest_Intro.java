@@ -24,7 +24,7 @@ public class Quest_Intro extends TheGame{
         boolean q_iruns = true;
 
         while(q_iruns){
-            o.output(model, t1, "Press START (or enter \"1\" if playing on a computer) to begin.\n", 0.0, true, false);
+            o.output(model, t1, "Press START (or enter \"1\" if playing on a computer) to begin.", 0.0, true, false);
             
             inputPanel.setText("");
             model.setInput("");
@@ -51,7 +51,7 @@ public class Quest_Intro extends TheGame{
                 o.output(model, t1, "Before the adventure can begin you must choose a hero!", 0.0, true);
                 o.output(model, t1, "First, pick a RACE.", 0.0, true);
                 o.output(model, t1, "Human?", 0.0, true);
-                o.output(model, t1, "Orch?", 0.0, true);
+                o.output(model, t1, "Orc?", 0.0, true);
                 o.output(model, t1, "Elf?", 0.0, true);
                 o.output(model, t1, "Oooor...", 0.0, true);
                 o.output(model, t1, "Dwarf?", 0.0, true);
@@ -70,8 +70,8 @@ public class Quest_Intro extends TheGame{
                     o.output(model, t1, "Ok, this won't do...", 2000*speed, true);
                     genderPick(model, t1, hero);
                 }
-                else if(hero.isOrch()){
-                    o.output(model, t1, "A filthy orch? Really? Oh well, it's your choice!", 2000*speed, true);
+                else if(hero.isOrc()){
+                    o.output(model, t1, "A filthy orc? Really? Oh well, it's your choice!", 2000*speed, true);
                     genderPick(model, t1, hero);
                 }
                 else if(hero.isElf()){
@@ -133,7 +133,7 @@ public class Quest_Intro extends TheGame{
     }
 
     public void racePick(DataModel model, JTextPane t1, Hero hero) throws Exception{
-        o.output(model, t1, "Since you're playing on a computer, choose a RACE by\nentering \"1\" (Human), \"2\" (Orch), \"3\" (Elf) or \"4\" (Dwarf):", 0.0, true, false);
+        o.output(model, t1, "Since you're playing on a computer, choose a RACE by entering\n\"1\" for HUMAN, \"2\" for ORC, \"3\" for ELF or \"4\" for DWARF.", 0.0, true, false);
     
         inputPanel.setText("");
         model.setInput("");
@@ -146,7 +146,7 @@ public class Quest_Intro extends TheGame{
         if(model.getInput().equals("1"))
             hero.setRace("Human");
         else if(model.getInput().equals("2"))
-            hero.setRace("Orch");
+            hero.setRace("Orc");
         else if(model.getInput().equals("3"))
             hero.setRace("Elf");
         else if(model.getInput().equals("4"))
@@ -156,7 +156,7 @@ public class Quest_Intro extends TheGame{
     }
 
     public void genderPick(DataModel model, JTextPane t1, Hero hero) throws Exception{
-        o.output(model, t1, "Please enter (\"1\") for male,(\"2\") for female or (\"3\") for transgender.", 0.0, true, false);
+        o.output(model, t1, "Please enter \"1\" for MALE,\"2\" for FEMALE or \"3\" for TRANSGENDER.", 0.0, true, false);
         
         inputPanel.setText("");
         model.setInput("");

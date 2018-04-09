@@ -52,8 +52,8 @@ public class Hero{
         else
             return false;
     }
-    public boolean isOrch(){
-        if (race.equals("Orch"))
+    public boolean isOrc(){
+        if (race.equals("Orc"))
             return true;
         else
             return false;
