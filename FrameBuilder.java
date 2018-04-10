@@ -8,7 +8,7 @@ public class FrameBuilder{
         inputPanel.setBackground(Color.BLACK);
         inputPanel.setForeground(Color.WHITE);
 
-        inputPanel.setFont(new Font("Courier New", Font.PLAIN, 14));
+        inputPanel.setFont(new Font("courR24", Font.PLAIN, 14));
 
         t1.setBackground(Color.BLACK);
         t2.setBackground(Color.BLACK);
@@ -17,14 +17,14 @@ public class FrameBuilder{
         textPanel.add(t1, BorderLayout.WEST);
         textPanel.add(t2, BorderLayout.EAST);
         textPanel.add(t3, BorderLayout.SOUTH);
-           
+
         SimpleAttributeSet att_t1 = new SimpleAttributeSet();
         StyleConstants.setAlignment(att_t1, StyleConstants.ALIGN_LEFT);
         StyleConstants.setForeground(att_t1, Color.WHITE);
         StyleConstants.setBackground(att_t1, Color.BLACK);
         StyleConstants.setFontSize(att_t1, 14);
         StyleConstants.setBold(att_t1, false);
-        StyleConstants.setFontFamily(att_t1, "Courier New");
+        StyleConstants.setFontFamily(att_t1, "courR24");
         t1.setEditable(false);
         t1.setCharacterAttributes(att_t1, true);
 
@@ -38,7 +38,7 @@ public class FrameBuilder{
         c.weighty = 0.05;
         c.gridy = 1;
         frame.add(inputPanel, c);
-    
+
     }
 
     public void build(JPanel panel, JTextField inputPanel, JPanel textPanel, JTextPane t1, JTextPane t2, JTextPane t3){
@@ -55,7 +55,7 @@ public class FrameBuilder{
         textPanel.add(t1, BorderLayout.WEST);
         textPanel.add(t2, BorderLayout.EAST);
         textPanel.add(t3, BorderLayout.SOUTH);
-           
+
         SimpleAttributeSet att_t1 = new SimpleAttributeSet();
         StyleConstants.setAlignment(att_t1, StyleConstants.ALIGN_LEFT);
         StyleConstants.setForeground(att_t1, Color.WHITE);
@@ -76,6 +76,6 @@ public class FrameBuilder{
         c.weighty = 0.05;
         c.gridy = 1;
         panel.add(inputPanel, c);
-    
+
     }
 }

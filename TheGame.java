@@ -5,11 +5,11 @@ import javax.swing.text.*;
 import java.awt.event.*;
 
 public class TheGame{
-    
+
     double speed = 1;
     int pickerPosition = 1;
     String input = "";
-    
+
     final DataModel model = new DataModel();
     private final Frame frame = new Frame("FERALD'S WORLD");
     Output o = new Output();
@@ -22,31 +22,18 @@ public class TheGame{
     Inventory inv = new Inventory(t2);
     Stats stats = new Stats(t3);
     FrameBuilder bill = new FrameBuilder();
-            
+
     EnterStroke al =  new EnterStroke(inputPanel, model);
-    
-    KeyListener kl = new KeyListener(){
-        public void keyPressed(KeyEvent e){
-            if(e.getKeyCode() == KeyEvent.VK_LEFT){
-            }
-            else if(e.getKeyCode() == KeyEvent.VK_RIGHT){
-            }
-            else if (e.getKeyCode() == KeyEvent.VK_UP)
-                changePosition(-1);
-            else if (e.getKeyCode() == KeyEvent.VK_DOWN)
-                changePosition(1);
-        }
-        public void keyReleased(KeyEvent e){}
-        public void keyTyped(KeyEvent e){}
-    };
-    
+
+    ArrowKeys kl = new ArrowKeys(inputPanel, model);
+
     public TheGame(){
         frame.setBackground(Color.BLACK);
         frame.setLayout(new GridBagLayout());
         //frame.setVisible(true);
     }
-        public void setInput(String str){
-         input = str;
+    public void setInput(String str){
+        input = str;
     }
 
     public void changePosition(int p){
@@ -57,15 +44,15 @@ public class TheGame{
     }
 
     public void run() throws Exception{
-        if(true){
+        if(false){
             Quest_Intro q_i = new Quest_Intro(frame);
             q_i.run(inv, stats, hero);
         }
-        
-        //hero.setGender("Male");
-        //hero.setRace("Orc");
-        //hero.setName("Feralkohol");
-        
+
+        hero.setGender("Male");
+        hero.setRace("Orc");
+        hero.setName("Feralkohol");
+
         if(true){
             Quest_Beginning q_i = new Quest_Beginning(frame);
             q_i.run(inv, stats, hero);

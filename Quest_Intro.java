@@ -25,17 +25,17 @@ public class Quest_Intro extends TheGame{
 
         while(q_iruns){
             o.output(model, t1, "Press START (or enter \"1\" if playing on a computer) to begin.", 0.0, true, false);
-            
+
             inputPanel.setText("");
             model.setInput("");
             input = model.getInput();
-            
+
             while(model.getInput().equals(""))
                 Thread.sleep(100);
-            
+
             if(model.getInput().equals("1")){
                 o.clearGUI(t1);
-                
+
                 BufferedReader in = new BufferedReader(new FileReader("Logo.txt"));
                 String splashLine;
                 while((splashLine = in.readLine()) != null){
@@ -46,8 +46,8 @@ public class Quest_Intro extends TheGame{
                 while(!model.getEnterPressed())
                     Thread.sleep(100);
                 model.setEnterPressed(false);
- 
-                
+
+
                 o.output(model, t1, "Before the adventure can begin you must choose a hero!", 0.0, true);
                 o.output(model, t1, "First, pick a RACE.", 0.0, true);
                 o.output(model, t1, "Human?", 0.0, true);
@@ -55,7 +55,7 @@ public class Quest_Intro extends TheGame{
                 o.output(model, t1, "Elf?", 0.0, true);
                 o.output(model, t1, "Oooor...", 0.0, true);
                 o.output(model, t1, "Dwarf?", 0.0, true);
-                
+
                 while(racePick(model, t1, hero))
                     racePick(model, t1, hero);
 
@@ -64,7 +64,7 @@ public class Quest_Intro extends TheGame{
                     inputPanel.setText("");
                     model.setInput("");
                     input = model.getInput();
-                    
+
                     while(model.getInput().equals(""))
                         Thread.sleep(100);
                     o.clearGUI(t1);
@@ -93,13 +93,13 @@ public class Quest_Intro extends TheGame{
                 namePick(model, t1, hero);
 
                 o.output(model, t1, String.format("You have choosen to play as %s, the %s %s.", hero.getNameU(), hero.getGenderU(), hero.getRaceU()), 2000*speed, true);
-                
+
                 stats.updateStats(t3, hero);
 
                 o.outputSlowQuote(model, t1, "Zzzz......", 0.0, 150*speed, true);
                 o.outputSlowQuote(model, t1, "Zzzzzzzz...", 0.0, 150*speed, true);
                 o.outputSlowQuote(model, t1, "Hrmph...", 0.0, 30*speed, true);
-                
+
                 String g;
                 if(hero.getGender() == "Male")
                     g = "He";
@@ -107,7 +107,7 @@ public class Quest_Intro extends TheGame{
                     g = "She";
                 else
                     g = "He/she";
-               
+
                 o.output(model, t1, g+" is waking up.", 0.0, true);
                 o.outputSlowQuote(model, t1, "What?", 0.0, 100*speed, true);
                 o.outputSlowQuote(model, t1, " Where am I?", 0.0, 100*speed, false);
@@ -134,14 +134,14 @@ public class Quest_Intro extends TheGame{
     public boolean racePick(DataModel model, JTextPane t1, Hero hero) throws Exception{
         boolean racepick = true;
         o.output(model, t1, "Since you're playing on a computer, choose a RACE by entering\n\"1\" for HUMAN, \"2\" for ORC, \"3\" for ELF or \"4\" for DWARF.", 0.0, true, false);
-    
+
         inputPanel.setText("");
         model.setInput("");
         input = model.getInput();
-                 
+
         while(model.getInput().equals(""))
             Thread.sleep(100);
-                
+
         o.clearGUI(t1);
         if(model.getInput().equals("1")){
             hero.setRace("Human");
@@ -167,11 +167,11 @@ public class Quest_Intro extends TheGame{
 
     public void genderPick(DataModel model, JTextPane t1, Hero hero) throws Exception{
         o.output(model, t1, "Please enter \"1\" for MALE, \"2\" for FEMALE or \"3\" for TRANSGENDER.", 0.0, true, false);
-        
+
         inputPanel.setText("");
         model.setInput("");
         input = model.getInput();
-        
+
         while(model.getInput().equals(""))
             Thread.sleep(100);
         o.clearGUI(t1);        
@@ -187,7 +187,7 @@ public class Quest_Intro extends TheGame{
         inputPanel.setText("");
         model.setInput("");
         input = model.getInput();
-                    
+
         while(model.getInput().equals(""))
             Thread.sleep(100);
         o.clearGUI(t1);                                                

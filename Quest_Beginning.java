@@ -22,26 +22,17 @@ public class Quest_Beginning extends TheGame{
         inputPanel.grabFocus(); 
         stats.updateStats(t3, hero);
         boolean q_bruns = true;
-        
+
         while(q_bruns){
             stats.updateStats(t3, hero);
+            
             Picker picker = new Picker();
             String[] options = {"North", "South", "East", "West"};
             String[] hints = {"(Darkness)", "(Leave forest)", "(Forest cabin)", "(Follow path)"};
-            pickerPosition = 0;
-            while(model.getInput().equals("")){
-                Thread.sleep(50);
-                if(pickerPosition > options.length - 1)
-                    pickerPosition = 0;
-                if(pickerPosition < 0)
-                    pickerPosition = options.length - 1;
-                picker.pickOption(t1, options, hints, pickerPosition, "Where do you want do go?");
-                inputPanel.setText(options[pickerPosition]);
-            }
-            inputPanel.setText("");
-            model.setInput("");
-            String choice = options[pickerPosition];
-            
+            String question = "Where do you want to go?";
+            picker.pick(model, t1, options, hints, question, inputPanel);
+            String choice = options[model.getPosition()];
+
             if(choice == "North"){
                 if(hero.getXp() < 50){
                     o.output(model, t1, "\"I have a bad feeling about this...\"", 0.0, true);

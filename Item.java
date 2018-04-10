@@ -3,7 +3,7 @@ class Item{
     private String description;
     private int copies;
     private int dmg;
-    
+
     String getName(){
         return this.name;
     }
@@ -41,10 +41,10 @@ class Pants extends Item{
 }
 class Shoes extends Item{
     public Shoes(){
-       setName("Shoes");
-       setDescription("Shoes! They fit!");
-       setCopies(1);
-       setDmg(1);
+        setName("Shoes");
+        setDescription("Shoes! They fit!");
+        setCopies(1);
+        setDmg(1);
     }
 }
 class SmallShoes extends Item{

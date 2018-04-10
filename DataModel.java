@@ -11,13 +11,14 @@ public class DataModel{
     private String input = "";
     private boolean enterPressed=false;
     private int fontSize = 14;
+    private int pos = 0;
 
     public void addPropertyChangeListener( PropertyChangeListener listener ) {
-      propertyChangeSupport.addPropertyChangeListener( listener );
+        propertyChangeSupport.addPropertyChangeListener( listener );
     }
 
     public String getInput() {
-      return input;
+        return input;
     }
 
     public boolean getEnterPressed() {
@@ -26,6 +27,10 @@ public class DataModel{
 
     public int getFontSize() {
         return fontSize;
+    }
+
+    public int getPosition(){
+        return pos;
     }
 
     public void setFontSize(int newFontSize){
@@ -45,4 +50,15 @@ public class DataModel{
         input = input2;
         propertyChangeSupport.firePropertyChange( "input", input, input2 );
     }
+
+    public void setPosition(int newPosition){
+        int oldPosition = pos;
+        pos = newPosition;
+        propertyChangeSupport.firePropertyChange( "position", pos, newPosition );
+    }
+
+    public void changePosition(int change){
+        setPosition(pos + change);
+    }
+
 }
