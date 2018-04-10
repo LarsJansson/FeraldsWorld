@@ -22,7 +22,7 @@ public class Quest_Beginning extends TheGame{
         inputPanel.grabFocus(); 
         stats.updateStats(t3, hero);
         boolean q_bruns = true;
-        
+
         while(q_bruns){
             stats.updateStats(t3, hero);
             Picker picker = new Picker();
@@ -41,7 +41,7 @@ public class Quest_Beginning extends TheGame{
             inputPanel.setText("");
             model.setInput("");
             String choice = options[pickerPosition];
-            
+
             if(choice == "North"){
                 if(hero.getXp() < 50){
                     o.output(model, t1, "\"I have a bad feeling about this...\"", 0.0, true);

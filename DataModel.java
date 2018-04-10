@@ -13,11 +13,11 @@ public class DataModel{
     private int fontSize = 14;
 
     public void addPropertyChangeListener( PropertyChangeListener listener ) {
-      propertyChangeSupport.addPropertyChangeListener( listener );
+        propertyChangeSupport.addPropertyChangeListener( listener );
     }
 
     public String getInput() {
-      return input;
+        return input;
     }
 
     public boolean getEnterPressed() {

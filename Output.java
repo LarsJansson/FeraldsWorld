@@ -14,7 +14,7 @@ public class Output{
         StyleConstants.setFontSize(att, 14);
         StyleConstants.setFontFamily(att, "Courier New");
     }
-    
+
     public void clearGUI(JTextPane tp){
         tp.setText("");
     }
@@ -65,7 +65,7 @@ public class Output{
         }
         catch (BadLocationException e){}
     }
-    
+
     public void outputHuge(DataModel model, JTextPane tp, String s, double d) throws Exception{
         StyledDocument doc = tp.getStyledDocument();
         att = new SimpleAttributeSet();

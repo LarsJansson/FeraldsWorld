@@ -10,30 +10,30 @@ public class EnterStroke implements ActionListener{
     private String str;
     private JTextField inputPanel;
     private final DataModel dataModel;
-    
-    
+
+
     public EnterStroke(JTextField inputPanel, DataModel model) throws HeadlessException{
-        
+
         this.inputPanel = inputPanel;
         dataModel = model;
         dataModel.addPropertyChangeListener( new PropertyChangeListener() {
             @Override
             public void propertyChange( PropertyChangeEvent evt ) {
-              updateUIFromModel();
+                updateUIFromModel();
             }
         } );
         str = dataModel.getInput();
-        }
+    }
 
-        private void updateUIFromModel(){
-            inputPanel.setText(dataModel.getInput());
-        }
+    private void updateUIFromModel(){
+        inputPanel.setText(dataModel.getInput());
+    }
 
-    
-        public void actionPerformed(ActionEvent e){
-            str = inputPanel.getText();
-            inputPanel.setText("");
-            dataModel.setInput(str);
-            dataModel.setEnterPressed(true);
-        }
+
+    public void actionPerformed(ActionEvent e){
+        str = inputPanel.getText();
+        inputPanel.setText("");
+        dataModel.setInput(str);
+        dataModel.setEnterPressed(true);
+    }
 }

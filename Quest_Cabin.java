@@ -73,7 +73,7 @@ public class Quest_Cabin extends TheGame{
                 o.output(model, t1, "It looks like an old family portrait. A mother, a father and three young children.\nThe photograph must be at least 60 years old, because you recognize\nthe young mother as the old woman living here now.", 0.0, true);
                 o.outputSlowQuote(model, t1, "I wonder what happened to them...", 0.0, 70*speed, true);
                 o.output(model, t1, "Next to the bureau, there's a SMALL CHEST standing on the floor!", 0.0, true);
-                
+
                 String[] options2 = {"Yes", "No"};
                 String[] hints2 = {"", ""};
                 pickerPosition = 0;
@@ -112,20 +112,20 @@ public class Quest_Cabin extends TheGame{
                     o.output(model, t1, "Nice! Added NORMAL SHOES to the inventory!", 0.0, true);
                     inv.add(t2, ns);
                 }   
-                    o.outputSlowQuote(model, t1, "I better get going now. Thank you so much for your help!", 0.0, 70*speed, true);
-                    o.output(model, t1, "Gained 1 xp!", 0.0, true);
-                    q_cruns = false;
-                    hero.xpInc(1);
-                    stats.updateStats(t3, hero);
-                }
-                else if(choice == "Rush forward"){
-                    o.output(model, t1, "\"Ouch!\"", 0.0, true);
-                    o.output(model, t1, "Running with bare feet out here is a bad idea...", 0.0, true);
-                }
-                else{
-                    o.output(model, t1, "\"I'll come back later.\"", 0.0, true);
-                    q_cruns = false;
-                }
+                o.outputSlowQuote(model, t1, "I better get going now. Thank you so much for your help!", 0.0, 70*speed, true);
+                o.output(model, t1, "Gained 1 xp!", 0.0, true);
+                q_cruns = false;
+                hero.xpInc(1);
+                stats.updateStats(t3, hero);
+            }
+            else if(choice == "Rush forward"){
+                o.output(model, t1, "\"Ouch!\"", 0.0, true);
+                o.output(model, t1, "Running with bare feet out here is a bad idea...", 0.0, true);
+            }
+            else{
+                o.output(model, t1, "\"I'll come back later.\"", 0.0, true);
+                q_cruns = false;
+            }
         }
         stats.updateStats(t3, hero);
         super.hero = hero;

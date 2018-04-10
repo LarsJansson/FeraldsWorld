@@ -37,7 +37,7 @@ public class Inventory{
         for(int j = 0; j<length; j++){
             items.remove(0);
         }
-            
+
     }
 
     public void add(JTextPane tp, Item i) throws Exception{
@@ -47,7 +47,7 @@ public class Inventory{
         try {
             doc.insertString(doc.getLength(), "\n", style);
             doc.insertString(doc.getLength(), i.getName(), style);
-            }
+        }
         catch (BadLocationException e){}
         Inventory = tp.getText();
         items.add(i);

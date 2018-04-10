@@ -3,7 +3,7 @@ public class Hero{
     private String race = "";
     private String name = "";
     private int xp = 0;
-    
+
     public void setName(String name){
         this.name = name;
     }
