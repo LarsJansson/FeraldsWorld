@@ -71,3 +71,11 @@ class NormieShoes extends Item{
         setDmg(1);
     }
 }
+class Belt extends Item{
+    public Belt(){
+        setName("Belt");
+        setDescription("A adjustable leather belt. One-size-fits-all.");
+        setCopies(1);
+        setDmg(1);
+    }
+}
