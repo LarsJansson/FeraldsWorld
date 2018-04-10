@@ -25,20 +25,7 @@ public class TheGame{
 
     EnterStroke al =  new EnterStroke(inputPanel, model);
 
-    KeyListener kl = new KeyListener(){
-        public void keyPressed(KeyEvent e){
-            if(e.getKeyCode() == KeyEvent.VK_LEFT){
-            }
-            else if(e.getKeyCode() == KeyEvent.VK_RIGHT){
-            }
-            else if (e.getKeyCode() == KeyEvent.VK_UP)
-                changePosition(-1);
-            else if (e.getKeyCode() == KeyEvent.VK_DOWN)
-                changePosition(1);
-        }
-        public void keyReleased(KeyEvent e){}
-        public void keyTyped(KeyEvent e){}
-    };
+    ArrowKeys kl = new ArrowKeys(inputPanel, model);
 
     public TheGame(){
         frame.setBackground(Color.BLACK);
@@ -57,14 +44,14 @@ public class TheGame{
     }
 
     public void run() throws Exception{
-        if(true){
+        if(false){
             Quest_Intro q_i = new Quest_Intro(frame);
             q_i.run(inv, stats, hero);
         }
 
-        //hero.setGender("Male");
-        //hero.setRace("Orc");
-        //hero.setName("Feralkohol");
+        hero.setGender("Male");
+        hero.setRace("Orc");
+        hero.setName("Feralkohol");
 
         if(true){
             Quest_Beginning q_i = new Quest_Beginning(frame);
