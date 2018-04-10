@@ -56,7 +56,8 @@ public class Quest_Intro extends TheGame{
                 o.output(model, t1, "Oooor...", 0.0, true);
                 o.output(model, t1, "Dwarf?", 0.0, true);
                 
-                racePick(model, t1, hero);
+                while(racePick(model, t1, hero))
+                    racePick(model, t1, hero);
 
                 if(hero.isHuman()){
                     o.output(model, t1, "Oh... A fancy human again. Oh well, to choose gender,\nenter a number between 1 and 10.", 2000*speed, true, false);
@@ -85,8 +86,6 @@ public class Quest_Intro extends TheGame{
                     o.output(model, t1, "\nDo dwarfs have genders?", 0.0, false);
                     genderPick(model, t1, hero);
                 }
-                else
-                    o.output(model, t1, "That was not an option!", 0.0, true);
 
                 o.output(model, t1, "Ok. Now the game can finally begin!", 2000*speed, true);
                 o.output(model, t1, "Wait!", 0.0, true);
@@ -132,7 +131,8 @@ public class Quest_Intro extends TheGame{
         super.stats = stats;
     }
 
-    public void racePick(DataModel model, JTextPane t1, Hero hero) throws Exception{
+    public boolean racePick(DataModel model, JTextPane t1, Hero hero) throws Exception{
+        boolean racepick = true;
         o.output(model, t1, "Since you're playing on a computer, choose a RACE by entering\n\"1\" for HUMAN, \"2\" for ORC, \"3\" for ELF or \"4\" for DWARF.", 0.0, true, false);
     
         inputPanel.setText("");
@@ -143,16 +143,26 @@ public class Quest_Intro extends TheGame{
             Thread.sleep(100);
                 
         o.clearGUI(t1);
-        if(model.getInput().equals("1"))
+        if(model.getInput().equals("1")){
             hero.setRace("Human");
-        else if(model.getInput().equals("2"))
+            racepick = false;
+        }   
+        else if(model.getInput().equals("2")){
             hero.setRace("Orc");
-        else if(model.getInput().equals("3"))
-            hero.setRace("Elf");
-        else if(model.getInput().equals("4"))
-            hero.setRace("Dwarf");
-        else{
+            racepick = false;
         }
+        else if(model.getInput().equals("3")){
+            hero.setRace("Elf");
+            racepick = false;
+        }
+        else if(model.getInput().equals("4")){
+            hero.setRace("Dwarf");
+            racepick = false;
+        }
+        else{
+            o.output(model, t1, "That was not an option!", 0.0, true);
+        }
+        return racepick;
     }
 
     public void genderPick(DataModel model, JTextPane t1, Hero hero) throws Exception{
