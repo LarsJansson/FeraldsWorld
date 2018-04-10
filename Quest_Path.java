@@ -20,6 +20,7 @@ public class Quest_Path extends TheGame{
     public void run(Inventory inv, Stats stats, Hero hero) throws Exception{
         inputPanel.grabFocus();
         stats.updateStats(t3, hero);
+        inv.update(t2);
         boolean q_pruns = true;
 
         while(q_pruns){

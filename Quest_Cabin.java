@@ -16,10 +16,6 @@ public class Quest_Cabin extends TheGame{
         frame.setContentPane(panel);
         frame.setVisible(true);
     }
-
-
-
-
     public void run(Inventory inv, Stats stats, Hero hero) throws Exception{
         inputPanel.grabFocus();
         stats.updateStats(t3, hero);
@@ -32,19 +28,9 @@ public class Quest_Cabin extends TheGame{
             Picker picker = new Picker();
             String[] options = {"Go sneaky peeky", "Rush forward", "Turn back"};
             String[] hints = {"", "", ""};
-            pickerPosition = 0;
-            while(model.getInput().equals("")){
-                Thread.sleep(50);
-                if(pickerPosition > options.length - 1)
-                    pickerPosition = 0;
-                if(pickerPosition < 0)
-                    pickerPosition = options.length - 1;
-                picker.pickOption(t1, options, hints, pickerPosition, "How do you wish to approach?");
-                inputPanel.setText(options[pickerPosition]);
-            }
-            inputPanel.setText("");
-            model.setInput("");
-            String choice = options[pickerPosition];
+            String question = "How do you wish to approach?";
+            picker.pick(model, t1, options, hints, question, inputPanel);
+            String choice = options[model.getPosition()];
 
             if(choice == "Go sneaky peeky"){
                 o.output(model, t1, "You try to use the trees as cover as you move in closer.", 0.0, true);
@@ -74,21 +60,13 @@ public class Quest_Cabin extends TheGame{
                 o.outputSlowQuote(model, t1, "I wonder what happened to them...", 0.0, 70*speed, true);
                 o.output(model, t1, "Next to the bureau, there's a SMALL CHEST standing on the floor!", 0.0, true);
 
-                String[] options2 = {"Yes", "No"};
-                String[] hints2 = {"", ""};
-                pickerPosition = 0;
-                while(model.getInput().equals("")){
-                    Thread.sleep(50);
-                    if(pickerPosition > options2.length - 1)
-                        pickerPosition = 0;
-                    if(pickerPosition < 0)
-                        pickerPosition = options2.length - 1;
-                    picker.pickOption(t1, options2, hints2, pickerPosition, "Try to open it?");
-                    inputPanel.setText(options2[pickerPosition]);
-                }
-                inputPanel.setText("");model.setInput("");
-                String choice2 = options2[pickerPosition];
-                if(choice2 == "Yes"){
+                String[] chestOptions = {"Yes", "No"};
+                String[] chestHints = {"", ""};
+                String chestQuestion = "Try to open it?";
+                picker.pick(model, t1, chestOptions, chestHints, chestQuestion, inputPanel);
+                String chestChoice = options[model.getPosition()];           
+        
+                if(chestChoice == "Yes"){
                     if(inv.search(t2, "SMALL KEY"))
                         o.output(model, t1, "Here's some nice stuff!", 0.0, true);
                     else
