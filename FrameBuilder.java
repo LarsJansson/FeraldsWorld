@@ -8,7 +8,7 @@ public class FrameBuilder{
         inputPanel.setBackground(Color.BLACK);
         inputPanel.setForeground(Color.WHITE);
 
-        inputPanel.setFont(new Font("courR24", Font.PLAIN, 14));
+        inputPanel.setFont(new Font("Courier New", Font.PLAIN, 14));
 
         t1.setBackground(Color.BLACK);
         t2.setBackground(Color.BLACK);
@@ -24,7 +24,7 @@ public class FrameBuilder{
         StyleConstants.setBackground(att_t1, Color.BLACK);
         StyleConstants.setFontSize(att_t1, 14);
         StyleConstants.setBold(att_t1, false);
-        StyleConstants.setFontFamily(att_t1, "courR24");
+        StyleConstants.setFontFamily(att_t1, "Courier New");
         t1.setEditable(false);
         t1.setCharacterAttributes(att_t1, true);
 
