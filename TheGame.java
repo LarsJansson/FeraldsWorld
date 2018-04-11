@@ -6,7 +6,6 @@ import java.awt.event.*;
 
 public class TheGame{
 
-    double speed = 1;
     int pickerPosition = 1;
     String input = "";
 
@@ -44,14 +43,14 @@ public class TheGame{
     }
 
     public void run() throws Exception{
-        if(false){
+        if(true){
             Quest_Intro q_i = new Quest_Intro(frame);
             q_i.run(inv, stats, hero);
         }
 
-        hero.setGender("Male");
-        hero.setRace("Orc");
-        hero.setName("Feralkohol");
+        //hero.setGender("Male");
+        //hero.setRace("Orc");
+        //hero.setName("Feralkohol");
 
         if(true){
             Quest_Beginning q_i = new Quest_Beginning(frame);

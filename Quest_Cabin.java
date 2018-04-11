@@ -22,7 +22,7 @@ public class Quest_Cabin extends TheGame{
         boolean q_cruns = true;
 
         o.output(model, t1, "As you get closer the dark contours emerges to the shape of a small cabin.", 0.0, true);
-        o.outputSlowQuote(model, t1, "Maybe I can find some clothes here...", 0.0, 100*speed, true);     
+        o.outputSlowQuote(model, t1, "Maybe I can find some clothes here...", 0.0, 100, true);     
 
         while(q_cruns){
             Picker picker = new Picker();
@@ -35,29 +35,29 @@ public class Quest_Cabin extends TheGame{
             if(choice == "Go sneaky peeky"){
                 o.output(model, t1, "You try to use the trees as cover as you move in closer.", 0.0, true);
                 o.output(model, t1, "Almost there... You crouch down behind a bush to take a closer look.\nYou don't see any lights in any of the windows.", 0.0, true);
-                o.outputSlowQuote(model, t1, "Maybe no one is home...", 0.0, 70*speed, true);
+                o.outputSlowQuote(model, t1, "Maybe no one is home...", 0.0, 70, true);
                 o.output(model, t1, "You leave your cover and sneak up to one of the windows.", 0.0, true);
                 o.output(model, t1, "As you look inside, a light is turned on!", 0.0, true);
                 o.output(model, t1, "Quickly you crouch down beneath the window!", 0.0, true);
                 o.output(model, t1, "Someone is walking inside!", 0.0, true);
-                o.outputSlowQuote(model, t1, "Hello!?", 0.0, 70*speed, true);
+                o.outputSlowQuote(model, t1, "Hello!?", 0.0, 70, true);
                 o.output(model, t1, "It's the voice of an old woman.", 0.0, true);
-                o.outputSlowQuote(model, t1, "Someone out there?", 0.0, 70*speed, true);
-                o.outputSlowQuote(model, t1, "...", 0.0, 70*speed, true);
+                o.outputSlowQuote(model, t1, "Someone out there?", 0.0, 70, true);
+                o.outputSlowQuote(model, t1, "...", 0.0, 70, true);
                 o.output(model, t1, "For a second you completely forget the fact that you're naked.", 0.0, true);
-                o.outputSlowQuote(model, t1, "It's only me, "+hero.getName()+"!", 0.0, 70*speed, true);
+                o.outputSlowQuote(model, t1, "It's only me, "+hero.getName()+"!", 0.0, 70, true);
                 o.output(model, t1, "A moment of silence is followed by the door opening.\nThe old woman takes a good hard look at you.", 0.0, true);
-                o.outputSlowQuote(model, t1, "What in the name of god is a "+hero.getGenderL()+" "+hero.getRaceL()+" doing\nout here in the middle of the night!?", 0.0, 70*speed, true);
+                o.outputSlowQuote(model, t1, "What in the name of god is a "+hero.getGenderL()+" "+hero.getRaceL()+" doing\nout here in the middle of the night!?", 0.0, 70, true);
                 o.output(model, t1, "You try your best to answer.", 0.0,  true);
-                o.outputSlowQuote(model, t1, "I have no idea! I woke up out here like this!\nPlease, do you have any clothes that I can borrow?\nAnything will do!", 0.0, 70*speed, true);
+                o.outputSlowQuote(model, t1, "I have no idea! I woke up out here like this!\nPlease, do you have any clothes that I can borrow?\nAnything will do!", 0.0, 70, true);
                 o.output(model, t1, "The old women looks at you with sadness in her eyes.", 0.0, true);
-                o.outputSlowQuote(model, t1, "Let me see what I can find. Come inside and warm yourself\nwhile I take a look in the basement.", 0.0, 70*speed, true);
+                o.outputSlowQuote(model, t1, "Let me see what I can find. Come inside and warm yourself\nwhile I take a look in the basement.", 0.0, 70, true);
                 o.output(model, t1, "Once inside she invites you to have a seat in a rocking chair.\nYou use a pillow to cover your private parts. She closes the door\nbehind you, then takes off down a tiny staircase.", 0.0, true);
                 o.output(model, t1, "You look around you.", 0.0, true);
                 o.output(model, t1, "On the other side of the room there's a framed picture standing on a bureau.", 0.0, true);
                 o.output(model, t1, "You walk over for a closer look.", 0.0, true);
                 o.output(model, t1, "It looks like an old family portrait. A mother, a father and three young children.\nThe photograph must be at least 60 years old, because you recognize\nthe young mother as the old woman living here now.", 0.0, true);
-                o.outputSlowQuote(model, t1, "I wonder what happened to them...", 0.0, 70*speed, true);
+                o.outputSlowQuote(model, t1, "I wonder what happened to them...", 0.0, 70, true);
                 o.output(model, t1, "Next to the bureau, there's a SMALL CHEST standing on the floor!", 0.0, true);
 
                 String[] chestOptions = {"Yes", "No"};
@@ -75,22 +75,22 @@ public class Quest_Cabin extends TheGame{
                 o.output(model, t1, "You hear the old lady coming back upstairs.", 0.0, true);
                 if(hero.isMale()){
                     SmallShoes ss = new SmallShoes();
-                    o.outputSlowQuote(model, t1, "I didn't find anything except for these old shoes. They might be\ntoo small for a "+hero.getGenderL()+", but please accept them as a gift!", 0.0, 70*speed, true);
+                    o.outputSlowQuote(model, t1, "I didn't find anything except for these old shoes. They might be\ntoo small for a "+hero.getGenderL()+", but please accept them as a gift!", 0.0, 70, true);
                     o.output(model, t1, "Nice! Added TINY SHOES to the inventory!", 0.0, true);
                     inv.add(t2, ss);
                 }else if(hero.isFemale()){
                     LargeShoes ls = new LargeShoes();
-                    o.outputSlowQuote(model, t1, "I didn't find anything except for these old shoes. They might be\ntoo big for a "+hero.getGenderL()+", but please accept them as a gift!", 0.0, 70*speed, true);
+                    o.outputSlowQuote(model, t1, "I didn't find anything except for these old shoes. They might be\ntoo big for a "+hero.getGenderL()+", but please accept them as a gift!", 0.0, 70, true);
                     o.output(model, t1, "Nice! Added HUGE SHOES to the inventory!", 0.0, true);
                     inv.add(t2, ls);
                 }else{
                     NormieShoes ns = new NormieShoes();
-                    o.outputSlowQuote(model, t1, "I didn't find anything except for these old shoes. They should be\nperfect for a "+hero.getGenderL()+". Please accept them as a gift!", 0.0, 70*speed, true);
+                    o.outputSlowQuote(model, t1, "I didn't find anything except for these old shoes. They should be\nperfect for a "+hero.getGenderL()+". Please accept them as a gift!", 0.0, 70, true);
                     o.output(model, t1, "Although not fit for a tranny, you decide to keep these non glittery shoes.", 0.0, true);
                     o.output(model, t1, "Nice! Added NORMAL SHOES to the inventory!", 0.0, true);
                     inv.add(t2, ns);
                 }   
-                o.outputSlowQuote(model, t1, "I better get going now. Thank you so much for your help!", 0.0, 70*speed, true);
+                o.outputSlowQuote(model, t1, "I better get going now. Thank you so much for your help!", 0.0, 70, true);
                 o.output(model, t1, "Gained 1 xp!", 0.0, true);
                 q_cruns = false;
                 hero.xpInc(1);

@@ -60,7 +60,7 @@ public class Quest_Intro extends TheGame{
                     racePick(model, t1, hero);
 
                 if(hero.isHuman()){
-                    o.output(model, t1, "Oh... A fancy human again. Oh well, to choose gender,\nenter a number between 1 and 10.", 2000*speed, true, false);
+                    o.output(model, t1, "Oh... A fancy human again. Oh well, to choose gender,\nenter a number between 1 and 10.", 2000, true, false);
                     inputPanel.setText("");
                     model.setInput("");
                     input = model.getInput();
@@ -68,37 +68,37 @@ public class Quest_Intro extends TheGame{
                     while(model.getInput().equals(""))
                         Thread.sleep(100);
                     o.clearGUI(t1);
-                    o.output(model, t1, "Ok, this won't do...", 2000*speed, true);
+                    o.output(model, t1, "Ok, this won't do...", 2000, true);
                     genderPick(model, t1, hero);
                 }
                 else if(hero.isOrc()){
-                    o.output(model, t1, "A filthy orc? Really? Oh well, it's your choice!", 2000*speed, true);
+                    o.output(model, t1, "A filthy orc? Really? Oh well, it's your choice!", 2000, true);
                     genderPick(model, t1, hero);
                 }
                 else if(hero.isElf()){
-                    o.output(model, t1, "Excellent choice! Elfs are famous for their wisdom!", 2000*speed, true);
+                    o.output(model, t1, "Excellent choice! Elfs are famous for their wisdom!", 2000, true);
                     o.output(model, t1, "\nAnd their ears...", 0.0, false);
                     genderPick(model, t1, hero);
                 }
                 else if(hero.isDwarf()){
-                    o.output(model, t1, "Oh hello! Didn't see you there! A true dwarf it is!", 2000*speed, true);
+                    o.output(model, t1, "Oh hello! Didn't see you there! A true dwarf it is!", 2000, true);
                     o.output(model, t1, "Maybe this is a stupid question...", 0.0, true);
                     o.output(model, t1, "\nDo dwarfs have genders?", 0.0, false);
                     genderPick(model, t1, hero);
                 }
 
-                o.output(model, t1, "Ok. Now the game can finally begin!", 2000*speed, true);
+                o.output(model, t1, "Ok. Now the game can finally begin!", 2000, true);
                 o.output(model, t1, "Wait!", 0.0, true);
                 o.output(model, t1, "Whats your name?", 0.0, true, false);   
                 namePick(model, t1, hero);
 
-                o.output(model, t1, String.format("You have choosen to play as %s, the %s %s.", hero.getNameU(), hero.getGenderU(), hero.getRaceU()), 2000*speed, true);
+                o.output(model, t1, String.format("You have choosen to play as %s, the %s %s.", hero.getNameU(), hero.getGenderU(), hero.getRaceU()), 2000, true);
 
                 stats.updateStats(t3, hero);
 
-                o.outputSlowQuote(model, t1, "Zzzz......", 0.0, 150*speed, true);
-                o.outputSlowQuote(model, t1, "Zzzzzzzz...", 0.0, 150*speed, true);
-                o.outputSlowQuote(model, t1, "Hrmph...", 0.0, 30*speed, true);
+                o.outputSlowQuote(model, t1, "Zzzz......", 0.0, 150, true);
+                o.outputSlowQuote(model, t1, "Zzzzzzzz...", 0.0, 150, true);
+                o.outputSlowQuote(model, t1, "Hrmph...", 0.0, 30, true);
 
                 String g;
                 if(hero.getGender() == "Male")
@@ -109,8 +109,8 @@ public class Quest_Intro extends TheGame{
                     g = "He/she";
 
                 o.output(model, t1, g+" is waking up.", 0.0, true);
-                o.outputSlowQuote(model, t1, "What?", 0.0, 100*speed, true);
-                o.outputSlowQuote(model, t1, " Where am I?", 0.0, 100*speed, false);
+                o.outputSlowQuote(model, t1, "What?", 0.0, 100, true);
+                o.outputSlowQuote(model, t1, " Where am I?", 0.0, 100, false);
                 o.output(model, t1, "As I tried to rise, it felt like the cold hard ground rose up around my body.", 0.0, true);
                 o.output(model, t1, "Even though the sun was already halfway up, I was still too disoriented\nto rely on any other sense than touch.", 0.0, true);
                 o.output(model, t1, "The giant twig that had found its home in my butt told me I was in a forest.", 0.0, true);
