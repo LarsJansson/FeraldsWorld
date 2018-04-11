@@ -78,11 +78,13 @@ public class Quest_Path extends TheGame{
                 o.outputSlowQuote(model, t1, "\nyou consider abort,", 0.0, 70, false);
             }
             o.outputSlowQuote(model, t1, "\nlonging for home and a bath!", 0.0, 70, false);
-            o.output(model, t1, "An hour or two passes...", 0.0, true);
+            o.output(model, t1, "About half an hour later...", 0.0, true);
             o.outputSlowQuote(model, t1, "\"Strolling this deso...WHAAAH!\"", 0.0, 70, true);
             o.output(model, t1, "All of a sudden you're face down on the ground.", 0.0, true);
             o.output(model, t1, "\"OUCH!\"", 0.0, true);
             o.outputSlowQuote(model, t1, "What happened? I must have tripped on something?", 0.0, 70, true);
+            o.output(model, t1, "Gained 1 XP!", 0.0, true);
+            hero.xpInc(1);
             o.output(model, t1, "Looking down at your feet, you notice that something\nhas wrapped itself around your legs.", 0.0, true);
             o.output(model, t1, "It's a buckled belt!", 0.0, true);
             o.output(model, t1, "After you unbuckle it you manage to get back up on your feet.", 0.0, true);
@@ -104,7 +106,17 @@ public class Quest_Path extends TheGame{
             else{
                 o.outputSlowQuote(model, t1, "Who needs a belt when you don't have pants?", 0.0, 70, true);
             }
+            o.output(model, t1, "You continue to walk on the path until you reach\nwhat seems to be the end of it.", 0.0, true);
+            o.output(model, t1, "Before you lies a lake, and about 200 meters out there's\na small island with a house on it. Bla bla bla...", 0.0, true);
 
+            //if(inv.search(t2, "Belt")){
+            //}
+            //else if(){
+            //}
+            //else if(){
+            //}
+            //else{
+            //}
 
             q_pruns = false;
             stats.updateStats(t3, hero);

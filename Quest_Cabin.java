@@ -59,14 +59,15 @@ public class Quest_Cabin extends TheGame{
                 o.output(model, t1, "It looks like an old family portrait. A mother, a father and three young children.\nThe photograph must be at least 60 years old, because you recognize\nthe young mother as the old woman living here now.", 0.0, true);
                 o.outputSlowQuote(model, t1, "I wonder what happened to them...", 0.0, 70, true);
                 o.output(model, t1, "Next to the bureau, there's a SMALL CHEST standing on the floor!", 0.0, true);
-
-                String[] chestOptions = {"Yes", "No"};
-                String[] chestHints = {"", ""};
-                String chestQuestion = "Try to open it?";
-                picker.pick(model, t1, chestOptions, chestHints, chestQuestion, inputPanel);
-                String chestChoice = options[model.getPosition()];           
+                
+                Picker picker2 = new Picker();
+                String[] options2 = {"Yes", "No"};
+                String[] hints2 = {"", ""};
+                String question2 = "Try to open it?";
+                picker2.pick(model, t1, options2, hints2, question2, inputPanel);
+                String choice2 = options2[model.getPosition()];           
         
-                if(chestChoice == "Yes"){
+                if(choice2 == "Yes"){
                     if(inv.search(t2, "SMALL KEY"))
                         o.output(model, t1, "Here's some nice stuff!", 0.0, true);
                     else
@@ -91,7 +92,7 @@ public class Quest_Cabin extends TheGame{
                     inv.add(t2, ns);
                 }   
                 o.outputSlowQuote(model, t1, "I better get going now. Thank you so much for your help!", 0.0, 70, true);
-                o.output(model, t1, "Gained 1 xp!", 0.0, true);
+                o.output(model, t1, "Gained 1 XP!", 0.0, true);
                 q_cruns = false;
                 hero.xpInc(1);
                 stats.updateStats(t3, hero);
