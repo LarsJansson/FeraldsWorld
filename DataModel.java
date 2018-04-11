@@ -61,4 +61,10 @@ public class DataModel{
         setPosition(pos + change);
     }
 
+
+    public void focusText(){
+    }
+
+    public void focusInventory(){
+    }
 }

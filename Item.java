@@ -3,6 +3,7 @@ class Item{
     private String description;
     private int copies;
     private int dmg;
+    boolean equipped;
 
     String getName(){
         return this.name;
@@ -15,6 +16,9 @@ class Item{
     }
     int getDmg(){
         return this.dmg;
+    }
+    boolean isEquipped(){
+        return equipped;
     }
 
     void setName(String newName){
@@ -29,6 +33,9 @@ class Item{
     void setDmg(int newDmg){
         this.dmg = newDmg;
     }
+    void setEquipped(boolean newEquip){
+        this.equipped = newEquip;
+    }
 }
 
 class Pants extends Item{
@@ -37,6 +44,7 @@ class Pants extends Item{
         setDescription("A regular pair of pants, nothing special. At all. Really, just pants.");
         setCopies(1);
         setDmg(0);
+        setEquipped(false);
     }
 }
 class Shoes extends Item{
@@ -45,6 +53,7 @@ class Shoes extends Item{
         setDescription("Shoes! They fit!");
         setCopies(1);
         setDmg(1);
+        setEquipped(false);
     }
 }
 class SmallShoes extends Item{
@@ -53,6 +62,7 @@ class SmallShoes extends Item{
         setDescription("Shoes! They doesn't really fit.");
         setCopies(1);
         setDmg(1);
+        setEquipped(false);
     }
 }
 class LargeShoes extends Item{
@@ -61,6 +71,7 @@ class LargeShoes extends Item{
         setDescription("Shoes! They doesn't really fit.");
         setCopies(1);
         setDmg(1);
+        setEquipped(false);
     }
 }
 class NormieShoes extends Item{
@@ -69,6 +80,7 @@ class NormieShoes extends Item{
         setDescription("Shoes! Ugly non glittery shoes.");
         setCopies(1);
         setDmg(1);
+        setEquipped(false);
     }
 }
 class Belt extends Item{
@@ -77,5 +89,6 @@ class Belt extends Item{
         setDescription("A adjustable leather belt. One-size-fits-all.");
         setCopies(1);
         setDmg(1);
+        setEquipped(false);
     }
 }

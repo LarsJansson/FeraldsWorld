@@ -101,8 +101,8 @@ public class Output{
         for (i = 0; i < splitString.length; i++){
             if(!model.getEnterPressed())
                 TimeUnit.MILLISECONDS.sleep((long)sp);
-            else
-                TimeUnit.MILLISECONDS.sleep(0);
+            //else
+            //   TimeUnit.MILLISECONDS.sleep(0);
             tp.setText(tp.getText() + splitString[i]);
         }
         model.setEnterPressed(false);
@@ -121,8 +121,8 @@ public class Output{
         for (i = 0; i < splitString.length; i++){
             if(!model.getEnterPressed())
                 TimeUnit.MILLISECONDS.sleep((long)sp);
-            else
-                TimeUnit.MILLISECONDS.sleep(0);
+            //else
+            //    TimeUnit.MILLISECONDS.sleep(0);
             tp.setText("\"" + tp.getText().replaceAll("\"","") + splitString[i] + "\"");
         }
         model.setEnterPressed(false);

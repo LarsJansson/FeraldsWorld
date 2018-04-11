@@ -25,13 +25,15 @@ public class ArrowKeys implements KeyListener{
         dataModel.setPosition(0);
     }
 
-    private void updateUIFromModel(){
-        //inputPanel.setText(dataModel.getInput());
-    }
+    private void updateUIFromModel(){}
 
     public void keyPressed(KeyEvent e){
-        if(e.getKeyCode() == KeyEvent.VK_RIGHT){}
-        else if(e.getKeyCode() == KeyEvent.VK_LEFT){}
+        if(e.getKeyCode() == KeyEvent.VK_RIGHT){
+            dataModel.focusInventory();
+        }
+        else if(e.getKeyCode() == KeyEvent.VK_LEFT){
+            dataModel.focusText();
+        }
         else if(e.getKeyCode() == KeyEvent.VK_UP){
             dataModel.changePosition(-1);
         }
@@ -41,11 +43,4 @@ public class ArrowKeys implements KeyListener{
     }
     public void keyReleased(KeyEvent e){}
     public void keyTyped(KeyEvent e){}
-
-    //public void actionPerformed(ActionEvent e){
-    //    str = inputPanel.getText();
-    //    inputPanel.setText("");
-    //    dataModel.setInput(str);
-    //    dataModel.setEnterPressed(true);
-    //}
 }
